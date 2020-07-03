@@ -1,0 +1,2012 @@
+---
+title: "AI Expert Survey Governance Paper"
+output:
+  bookdown::gitbook
+---
+
+```{r setup, echo=FALSE, include=FALSE, cache=TRUE, warning=FALSE}
+# Code to clean up the 2019 data and merge in the undergraduate university country and work place type
+
+# clear workspace, set seeds, load libraries -------------------------------------------------------
+
+rm(list = ls(all = TRUE))
+
+# Set seed
+set.seed(3489)
+library(lubridate)
+library(wCorr)
+library(haven)
+library(estimatr)
+#library(estimatr)
+library(Hmisc)
+library(magrittr)
+library(dplyr)
+#library(ggplot2) # already included in other packages
+library(car)
+library(sandwich)
+library(lmtest)
+library(labelled)
+library(stringr)
+library(scales)
+library(pander)
+library(knitr)
+library(tidyr)
+library(ggrepel)
+library(questionr)
+library(miceadds)
+library(kableExtra)
+library(shadowtext)
+library(clubSandwich)
+library(extrafont)
+# library(ggrepel) # listed here twice
+library(broom)
+library(countrycode)
+library(expss)
+library(gridExtra)
+loadfonts(device = "pdf")
+library(readxl)
+library(rquery)
+
+# create several different functions --------------------------------------------------------
+
+relabel_var <- function(old_var, old_labels, new_labels) {
+  new_var <- rep(NA, length(old_var))
+  if (is.factor(old_var)) {
+    old_var <- as.character(old_var)
+  }
+  for (i in 1:length(old_labels)) {
+    new_var[old_var == old_labels[i]] <- new_labels[i]
+  }
+  return(new_var)
+}
+
+# Trailing zeros rounding function
+roundfunc <- function(x,
+                      round_digits = 2,
+                      lessthan = TRUE) {
+  if (lessthan) {
+    temp <- ifelse(x > 0 & round(x, round_digits) == 0,
+                   paste0("<0.", rep(0, (round_digits - 1)), 1),
+                   sprintf(paste0("%.", round_digits, "f"), round(x, round_digits)))
+    temp <- ifelse(x < 0 & round(x, round_digits) == 0,
+                   paste0(">-0.", rep(0, (round_digits - 1)), 1),
+                   temp)
+    temp[x == 0] <- 0
+    return(temp)
+  } else {
+    return(sprintf(paste0("%.", round_digits, "f"), round(x, round_digits)))
+  }
+}
+
+catvar_func <-
+  function(outcome,
+           outcome_var,
+           label_var,
+           num_missing,
+           num_DK,
+           shown,
+           output_type,
+           new_values,
+           edit_labels = TRUE,
+           survey_weights = d$survey_weights, id = d$caseid,
+           missing_recode) {
+    # Clean data to make the bar chart
+    # Get the value labels
+    value_labels <- as.data.frame(labelled::val_labels(label_var))
+    value_labels$labels <- row.names(value_labels)
+    names(value_labels)[1] <- "num"
+    # Add in the missings if that's not already in there
+    if (!-99 %in% value_labels$num) {
+        value_labels <- rbind(value_labels, data.frame(num = -99, labels = "Missing"))
+    } 
+    # Remove the row names
+    row.names(value_labels) <- NULL
+    # Make the frequency table
+    sum_func <- function(outcome_var, value, survey_weights) {
+      se_md <- lm(outcome_var[shown] == value ~ 1, 
+                  weights = survey_weights[shown])
+      out <- coeftest(se_md, vcov = vcovHC(se_md, type="HC2"))
+      return(data.frame(num = value, 
+                        Freq = sum(outcome_var[shown & !is.na(outcome_var)] == value),
+                        Prop = as.numeric(out[1]), 
+                        se = as.numeric(out[2])))
+    }
+    value_table <- do.call(rbind, lapply(value_labels$num, sum_func,
+                                         outcome_var = outcome_var,
+                                         survey_weights = survey_weights))
+    # Merge the frequency table with the value labels
+    value_table <-
+      merge(x = value_table, y = value_labels, all.y = TRUE)
+    value_table$group <-
+      ifelse(value_table$num %in% c(num_missing, num_DK),
+             "Don't know/Missing",
+             "Responses")
+    value_table$group <-
+      factor(value_table$group,
+             levels = c("Responses",
+                        "Don't know/Missing"))
+    value_table$labels <- Hmisc::capitalize(value_table$labels)
+    value_table$outcome <- outcome
+    value_table$new_values <- new_values
+    if (edit_labels) {
+      value_table$labels <- ifelse(
+        value_table$group == "Responses",
+        paste0(value_table$new_values, ". ",
+               value_table$labels),
+        value_table$labels
+      )
+    }
+    # Remove the not asked
+    value_table <- value_table[!grepl(pattern = "not asked", 
+                                      value_table$labels, 
+                                      ignore.case = TRUE),]
+    # Get the summary statistics
+    num_outcome <- as.numeric(outcome_var[shown])
+    survey_weights <- survey_weights[shown]
+    num_outcome <-
+      relabel_var(
+        old_var = num_outcome,
+        old_labels = value_table$num,
+        new_labels = value_table$new_values
+      )
+    num_outcome_missing <- is.na(num_outcome)
+    num_outcome[is.na(num_outcome)] <- missing_recode
+    # Get the percent missing
+    percent_missing <-
+      sum(num_outcome_missing) / length(num_outcome_missing)
+    # Get the mean and se
+    md <- if (percent_missing > 0.1) {
+      # If more than 10 percent is missing, then we condition on normalized dummy variable for missingness
+      se_md <- lm(num_outcome ~ scale(num_outcome_missing),
+                  weights = survey_weights)
+      coeftest(se_md, vcov = vcovHC(se_md, type="HC2"))[1,]
+    } else {
+      se_md <- lm(num_outcome ~ 1,
+                  weights = survey_weights)
+      coeftest(se_md, vcov = vcovHC(se_md, type="HC2"))
+    }
+    # Put the summary statistics together
+    value_sum <-
+      data.frame(
+        outcome = outcome,
+        num = md[1],
+        se = md[2],
+        group = "Responses",
+        sum_stat = paste0("Mean: ", roundfunc(md[1]), 
+                          " (MOE: +/-", roundfunc(qnorm(0.975)*md[2]),
+                          "); N = ",
+                          sum(shown)),
+        N = sum(shown)
+      )
+    if (output_type == "num_outcome") {
+      return(num_outcome)
+    } else if (output_type == "value_table") {
+      return(value_table)
+    } else {
+      return(value_sum)
+    }
+  }
+
+read.survey <- function(path){
+  read.csv(path, stringsAsFactors = FALSE) %>%
+    rename( response.id=V1, response.set=V2,   is.ai.researcher=dem_3,
+            status=V7, start.date=V8,  finished=V10, sq_2=aq_2,
+            consent_time_1=consent_tim_1, consent_time_2=consent_tim_2, consent_time_3=consent_tim_3, consent_time_4=consent_tim_4,
+            hh_time.in.field=hh_howlong
+    ) 
+}
+
+# Function to generate numerical summary statistics
+numerical_summary <- function(outcome_name, varname, subset, missing_fill_value = NULL) {
+  outcome <- unlist(d[subset,varname])
+  outcome <- outcome[!outcome == -99]
+  names(outcome) <- NULL
+  missing_outcomes <- is.na(outcome) | outcome == -88
+  missing_fill <-
+    if (!is.na(missing_fill_value)) {
+      missing_fill_value
+    } else {
+      mean(outcome[!missing_outcomes]) 
+    }
+  outcome[missing_outcomes] <- missing_fill
+  percent_missing <- sum(missing_outcomes)/length(outcome)
+  md <- if (percent_missing > 0.1) {
+    # If more than 10 percent is missing, then we condition on normalized dummy variable for missingness
+    se_md <- lm(outcome ~ scale(missing_outcomes))
+    coeftest(se_md, vcov = vcovHC(se_md, type="HC2"))[1,]
+  } else {
+    se_md <- lm(outcome ~ 1)
+    coeftest(se_md, vcov = vcovHC(se_md, type="HC2"))
+  }
+  return(data.frame(outcome_name, mean = md[1], se = md[2], n = length(outcome)))  
+}
+
+
+
+# load 2019 survey data and merge in metadata ---------------------------------------------------
+
+# Small pilot dataset
+p_small <- read_sav("~/Dropbox/AIExperts2019Data/SurveyData/2019_ai_experts_pilot_small.sav")
+p_small <- p_small[!p_small$V3 %in% c("Anonymous", "Baobao Zhang", "Markus Anderljung"),] # Remove testers' names
+p_small_draw <- p_small$emaildraw
+p_small$sample_group <- "Small Pilot"
+
+# CG+ it looks like nobody in this pilot responded about HLMI
+# BZ: Update - We have recontacted these people
+# Bigger pilot sample of 600 people
+p_600 <- read_sav("~/Dropbox/AIExperts2019Data/SurveyData/2019_ai_experts_pilot600.sav")
+p_600 <- p_600[!p_600$V3 %in% c("Anonymous", "Baobao Zhang", "Markus Anderljung"),] # Remove testers' names
+p_600_draw <- p_600$emaildraw
+
+# Import the recontact sample to fix the bad panel sample
+p_fixed_bad <- read_sav("~/Dropbox/AIExperts2019Data/SurveyData/FIX_2019_AI_Experts_Survey__Sept_25_Pilot_Recontact.sav")
+p_fixed_bad <- p_fixed_bad[!p_fixed_bad$V3 %in% c("Anonymous",
+                                                  "Baobao Zhang, Baobao Zhang", # names repeated because we had to use "FirstName" and "LastName" in the contact information upload
+                                                  "Yunwen Lei, Markus Anderljung",
+                                                  "Charlie Giattino, Charlie Giattino"),]
+# Change the variable names that changed with the recontact
+names(p_fixed_bad)[names(p_fixed_bad) == "V8"] <- "V8_fix"
+names(p_fixed_bad)[names(p_fixed_bad) == "V9"] <- "V9_fix"
+names(p_fixed_bad)[names(p_fixed_bad) == "V6"] <- "V6_fix"
+names(p_fixed_bad)[names(p_fixed_bad) == "V6"] <- "V1_fix"
+names(p_fixed_bad)[names(p_fixed_bad) == "V3"] <- "V3_fix"
+p_fixed_bad$fix_bad <- TRUE
+# "Coalesce" merge with the exisiting p_600 dataset
+p_600_fixed_bad <- natural_join(a = p_600, b = p_fixed_bad, by = "V5", jointype = "LEFT")
+# also don't want to replace this column with recontact data because then 78 people get removed later (line 310)
+p_600_fixed_bad$introtext_progress <- p_600$introtext_progress
+p_600_fixed_bad$sample_group <- "600 Pilot"
+  
+# Main dataset
+main <- read_sav("~/Dropbox/AIExperts2019Data/SurveyData/2019_ai_experts_main.sav")
+# Change the names of the AI Governance Challenges variables
+aigov_mc_names <- names(main)[grep(pattern = "aigov_mc_", names(main))]
+change_names <- aigov_mc_names[!aigov_mc_names %in% 
+                                 aigov_mc_names[grep(pattern = "_t_", aigov_mc_names)]]
+names(main)[names(main) %in% c(change_names)] <- paste0("aigov_mc_", 1:13)
+main$sample_group <- "Main"
+
+# Combine the datasets
+d <- plyr::rbind.fill(p_small, p_600_fixed_bad, main) %>% as.data.frame()
+d$weights <- 1
+d <- d[d$introtext_progress == 1 & !is.na(d$introtext_progress),] # Drop people who never moved into the first module
+
+# Removing duplicated responses
+dupemail <- d$V5[duplicated(d$V5)]
+d_dupemail <- d[d$V5 %in% dupemail,]
+d_dupemail <- d_dupemail[order(d_dupemail$V5),]
+# Delete the respondents who didn't fill out the prize draw emails
+remove_email <- d_dupemail$V1[d_dupemail$emaildraw == ""]
+# Keep the first response from the subject
+remove_email <- c(remove_email, "R_2bO6WTkb1PvglHk")
+# Remove the responses from the duplicated emails
+d <- d[!d$V1 %in% remove_email,]
+
+# Merge in the metadata (has emails, response ID, group identifiers, etc., but no actual survey data) from 2016
+s2016_2019 <- read.csv("~/Dropbox/AIExperts2019Data/SurveyData/allpanel.csv", stringsAsFactors=FALSE)
+s2016_2019$in2019 <- s2016_2019$Email %in% d$V5
+
+# Merge in the data about immigration and jobs
+edu <- read_excel("~/Dropbox/AIExperts2019Data/SurveyData/AllExpertsSurvey2019_metadata_Final_QA.xlsx")
+edu <- edu[!is.na(edu$author),]
+names(edu)[names(edu) == "Unique ID"] <- "u_id"
+length(unique(edu$u_id)) == nrow(edu) # check the unique ID variable is unique
+
+# Load in data that gets the missing undergrad uni data
+fixuni <- read_excel("~/Dropbox/AIExperts2019Data/SurveyData/problem_uni_classify.xlsx", sheet = "missing_undergrad")
+# Check the unique variable name
+names(fixuni)[names(fixuni) == "Unique ID"] <- "u_id"
+fixuni <- fixuni[fixuni$emmie_undergrad == 1 & !is.na(fixuni$emmie_undergrad),]
+fixuni <- fixuni[,c("u_id", "undergrad_uni_country", "undergraduate_university",
+                    "undergraduate_year", "undergraduate_dept")]
+names(fixuni)[2:5] <- paste0("fix_", names(fixuni)[2:5])
+
+# Get the cleaned up data for university/country
+ucc <- read_excel("~/Dropbox/AIExperts2019Data/SurveyData/uni_country_clean_QC_checked.xlsx")
+ucc <- dplyr::select(ucc, c("unis", "country"))
+
+# Change the variable names
+names(ucc) <- c("undergraduate_university", "undergrad_uni_country")
+edu_undergrad <- merge(x = edu, y = ucc, all.x = TRUE, by = "undergraduate_university")
+
+# Merge in the information about 
+edu_undergrad <- merge(x = edu_undergrad, y = fixuni, all.x = TRUE, by = "u_id")
+
+# some NAs are actually character strings, "Na"; functions like is.na can't find the strings
+edu_undergrad[edu_undergrad == "Na"] <- NA
+
+# Fill in the fixed information
+# Undergrad uni country
+edu_undergrad$undergrad_uni_country <- ifelse(is.na(edu_undergrad$undergrad_uni_country),
+                                              edu_undergrad$fix_undergrad_uni_country,
+                                              edu_undergrad$undergrad_uni_country)
+# Undergrad uni
+edu_undergrad$undergraduate_university <- ifelse(is.na(edu_undergrad$undergraduate_university),
+                                                 edu_undergrad$fix_undergraduate_university,
+                                                 edu_undergrad$undergraduate_university)
+# Undergrad uni graduation year
+edu_undergrad$undergraduate_year <- ifelse(is.na(edu_undergrad$undergraduate_year),
+                                           edu_undergrad$fix_undergraduate_year,
+                                           edu_undergrad$undergraduate_year)
+# Undergrad uni department
+edu_undergrad$undergraduate_dept <- ifelse(is.na(edu_undergrad$undergraduate_dept),
+                                           edu_undergrad$fix_undergraduate_dept,
+                                           edu_undergrad$undergraduate_dept)
+# Check up the emails
+edu_undergrad$author_email <- tolower(edu_undergrad$author_email)
+edu_undergrad <- edu_undergrad[,c("author", "author_email", "authorid", "u_id", "undergrad_uni_country", "undergraduate_university",
+                                  "undergraduate_year", "undergraduate_dept","nips_author_id","icml_author_id","phd_university",
+                                  "phd_year","phd_dept","gender")]
+
+# Merge in the edu
+names(d)[names(d) == "V5"] <- "author_email"
+d$author_email <- tolower(d$author_email)
+names(d)[names(d) == "V3"] <- "author"
+# Fix the double names
+split_name <- function(x) {
+  strsplit(x = x, split = ", ")[[1]][1]
+}
+d$author <- do.call(rbind, lapply(d$author, split_name))
+
+# Load in the work type classification
+worktype <- read_excel("~/Dropbox/AIExperts2019Data/SurveyData/aiexpertssurvey2019_metadata_workplace_type_Hine_edits_xlsx.xlsx",skip = 1)
+# some NAs are actually character strings, "NA"; functions like is.na can't find the strings
+worktype[worktype == "NA" | worktype == "`"] <- NA
+names(worktype)[names(worktype) == "Unique ID"] <- "u_id"
+worktype <- worktype[,c("author_email", "u_id", "academic", "industry", "other")]
+worktype$academic <- worktype$academic == 1 & !is.na(worktype$academic)
+worktype$industry <- worktype$industry == 1 & !is.na(worktype$industry)
+worktype$other <- worktype$other == 1 & !is.na(worktype$other)
+worktype <- worktype[!is.na(worktype$author_email),]
+
+# Merge in the work type classification
+worktype$author_email <- tolower(worktype$author_email)
+d_wt <- merge(x = d, y = worktype, all.x = TRUE, by = "author_email")
+# Fix the duplicated author emails
+d_wt_dup <- d_wt$author_email[duplicated(d_wt$author_email)]
+# Output the duplicated author emails so we can check them off 
+d_wt_check <- d_wt[d_wt$author_email %in% d_wt_dup, c("u_id", "author", "author_email", "academic", "industry", "other")]
+write.csv(d_wt_check, "~/Dropbox/AIExperts2019Data/SurveyData/aiexpertssurvey2019_duplicated_worktype+cg.csv",
+          row.names = FALSE)
+# Import the ones to keep: CG's newly exported dataset doesn't change this one
+wt_dup_keep <- read.csv("~/Dropbox/AIExperts2019Data/SurveyData/aiexpertssurvey2019_duplicated_worktype_filled.csv", stringsAsFactors=FALSE)
+d <- d_wt[!d_wt$u_id %in% wt_dup_keep$u_id[wt_dup_keep$keep == 0],]
+
+# Split d in to two datasets
+d$authorid <- as.numeric(d$authorid)
+d_authorid <- d[d$authorid %in% edu_undergrad$authorid & !is.na(d$authorid),]
+d_nauthorid <- d[!d$authorid %in% edu_undergrad$authorid | is.na(d$authorid),]
+
+# Dataset with all the author IDs
+pre_d_edu_authorid <- nrow(d_authorid)
+d_edu_authorid <- merge(x = d_authorid, y = edu_undergrad, all.x = TRUE, by = "authorid")
+d_edu_authorid$undergraduate_year <- as.numeric(d_edu_authorid$undergraduate_year)
+# Check that the row numbers match
+pre_d_edu_authorid == nrow(d_edu_authorid)
+
+# Dataset missing the author IDs
+pre_d_edu_nauthorid <- nrow(d_nauthorid)
+d_edu_nauthorid <- merge(x = d_nauthorid, y = edu_undergrad, all.x = TRUE, by = "author_email")
+# Remove the duplicated authors
+duplicate_emails <- d_edu_nauthorid$author_email[duplicated(d_edu_nauthorid$author_email)]
+# Remove the duplicated email subjects 
+remove_rows <- c(which(d_edu_nauthorid$author_email %in% duplicate_emails))
+# Remove jamieson@cs.washington.edu (first instance); remove rexying@stanford.edu (second instance)
+remove_rows <- remove_rows[c(1,3)]
+d_edu_nauthorid <- d_edu_nauthorid[-remove_rows,]
+# Check that the row numbers match
+pre_d_edu_nauthorid == nrow(d_edu_nauthorid)
+
+# Fill in the missing university and work place type data
+missing_uni_meta_29_march_filled <- read_excel("~/Dropbox/AIExperts2019Data/SurveyData/missing_uni_meta_29_march_filled.xlsx")
+# Fix variable name issues
+d_edu_nauthorid$author.y <- NULL
+names(d_edu_nauthorid)[names(d_edu_nauthorid) == "author.x"] <- "author"
+# Merge with the "fix" dataset
+d_edu_nauthorid <- merge(x = d_edu_nauthorid, y = missing_uni_meta_29_march_filled, all.x = TRUE,
+                         by = "V1")
+# Undergrad uni country
+d_edu_nauthorid$undergrad_uni_country <- ifelse(is.na(d_edu_nauthorid$undergrad_uni_country.x),
+                                                d_edu_nauthorid$undergrad_uni_country.y,
+                                                d_edu_nauthorid$undergrad_uni_country.x)
+d_edu_nauthorid$undergrad_uni_country.x <- NULL
+d_edu_nauthorid$undergrad_uni_country.y <- NULL
+# Undergrad university
+d_edu_nauthorid$undergraduate_university <- ifelse(is.na(d_edu_nauthorid$undergraduate_university.x),
+                                                   d_edu_nauthorid$undergraduate_university.y,
+                                                   d_edu_nauthorid$undergraduate_university.x)
+d_edu_nauthorid$undergraduate_university.x <- NULL
+d_edu_nauthorid$undergraduate_university.y <- NULL
+d_edu_nauthorid$undergraduate_university[d_edu_nauthorid$undergraduate_university == "Na"] <- NA
+# Undergrad graduation year
+d_edu_nauthorid$undergraduate_year <- ifelse(is.na(d_edu_nauthorid$undergraduate_year.x),
+                                             d_edu_nauthorid$undergraduate_year.y,
+                                             d_edu_nauthorid$undergraduate_year.x)
+d_edu_nauthorid$undergraduate_year.x <- NULL
+d_edu_nauthorid$undergraduate_year.y <- NULL
+d_edu_nauthorid$undergraduate_year <- as.numeric(d_edu_nauthorid$undergraduate_year)
+# Whether they work in academic institutions
+d_edu_nauthorid$academic.y <- d_edu_nauthorid$academic.y == 1 | !is.na(d_edu_nauthorid$academic.y)
+d_edu_nauthorid$academic.y[is.na(d_edu_nauthorid$academic.y)] <- FALSE
+d_edu_nauthorid$academic <- ifelse(is.na(d_edu_nauthorid$academic.x),
+                                   d_edu_nauthorid$academic.y,
+                                   d_edu_nauthorid$academic.x)
+d_edu_nauthorid$academic.x <- NULL
+d_edu_nauthorid$academic.y <- NULL
+# Whether they work in industry
+d_edu_nauthorid$industry.y <- d_edu_nauthorid$industry.y == 1 | !is.na(d_edu_nauthorid$industry.y)
+d_edu_nauthorid$industry.y[is.na(d_edu_nauthorid$industry.y)] <- FALSE
+d_edu_nauthorid$industry <- ifelse(is.na(d_edu_nauthorid$industry.x),
+                                   d_edu_nauthorid$industry.y,
+                                   d_edu_nauthorid$industry.x)
+d_edu_nauthorid$industry.x <- NULL
+d_edu_nauthorid$industry.y <- NULL
+# Whether they work in other organizations (e.g., governmental, non-profit)
+d_edu_nauthorid$other.y <- d_edu_nauthorid$other.y == 1 | !is.na(d_edu_nauthorid$other.y)
+d_edu_nauthorid$other.y[is.na(d_edu_nauthorid$other.y)] <- FALSE
+d_edu_nauthorid$other <- ifelse(is.na(d_edu_nauthorid$other.x),
+                                d_edu_nauthorid$other.y,
+                                d_edu_nauthorid$other.x)
+d_edu_nauthorid$other.x <- NULL
+d_edu_nauthorid$other.y <- NULL
+
+# Recombine the dataset
+d_combo <- plyr::rbind.fill(d_edu_nauthorid, d_edu_authorid)
+d_combo$author_email.y <- NULL
+names(d_combo)[names(d_combo) == "author_email.x"] <- "author_email"
+d_combo$author <- NULL
+d_combo$author.x <- NULL
+d_combo$author.y <- NULL
+
+# Final check
+nrow(d_combo) == nrow(d)
+
+# Rename the dataset
+d <- d_combo
+
+# Clean up some duplicated variables
+# authorid
+d$authorid_fill <- ifelse(is.na(d$authorid.y), d$authorid.x, d$authorid.y)
+d$authorid <- ifelse(is.na(d$authorid), d$authorid_fill, d$authorid)
+d$authorid.x <- NULL
+d$authorid.y <- NULL
+d$authorid_fill <- NULL
+
+
+# Clean the Qualtrics survey randomization metadata
+# Remove the outdated metadata
+d[,grep(pattern = "DO_", x = names(d))] <- NULL
+# Load in the updated Qualtrics randomization metadata
+m_p_small <- read_sav("~/Dropbox/AIExperts2019Data/SurveyData/governance_data/2019_ai_experts_pilot_small.sav")
+m_p_small$sample_group <- "Small Pilot"
+m_p_600 <- read_sav("~/Dropbox/AIExperts2019Data/SurveyData/governance_data/2019_ai_experts_pilot600.sav")
+m_p_600$sample_group <- "600 Pilot"
+m_main <- read_sav("~/Dropbox/AIExperts2019Data/SurveyData/governance_data/2019_ai_experts_main.sav")
+m_main$sample_group <- "Main"
+# Combine the three datasets above 
+m_dat <- plyr::rbind.fill(m_p_small, m_p_600, m_main)
+# Select only the survey ID and the metadata
+m_dat <- dplyr::select(m_dat, c("ResponseId", names(m_dat)[grep(pattern = "DO_", x = names(m_dat))]))
+# Merge into the d dataframe
+d$ResponseId <- d$V1
+d <- merge(x = d, y = m_dat, all.x = TRUE, by = "ResponseId")
+
+# Check the country breakdown
+country_table <- data.frame(table(d$workcountry))
+names(country_table)[names(country_table) == "Var1"] <- "Country"
+country_table$Country <- as.character(country_table$Country) # changing to char from being a factor with levels for each country
+country_table$Country[country_table$Country == ""] <- "Missing"
+country_table <- country_table[order(country_table$Freq),]
+country_table$Country <- factor(country_table$Country, levels = country_table$Country) # switching back to be factor with levels
+
+# Create the region
+d$region <- "Other"
+# CG+ because bug: previously missing work countries were being labeled as "Other" since the previous line made that the default
+d$region[d$workcountry==""] <- "Missing"
+# moved this to be above next lines which call it
+european_c <- c("the UK", "France", "Switzerland", "Germany", "Italy", "Netherlands", 
+                "Sweden", "Austria", "Spain", "Portugal", 
+                "Poland", "Finland", "Russian Federation", "Denmark", "Belgium")
+# d$region[d$workcountry %in% european_c & !is.na(d$workcountry)] <- "Europe" # bug: is.na here is not finding missing cells, isn't actually necessary
+d$region[d$workcountry %in% european_c] <- "Europe"
+d$region[d$workcountry %in% c("the US", "Canada")] <- "North America"
+d$region[d$workcountry %in% c("China", "South Korea (Republic of Korea)", "Japan", "India",
+                              "Singapore")] <- "Asia"
+```
+
+# Trust in various actors
+
+## Survey question 
+
+Suppose that the following organizations were in a position to strongly shape the development and use of advanced AI. **How much trust do you have in each of these organizations to do so in the best interests of the public?** 
+
+[Respondents will be shown 5 randomly-selected actors.]
+
+Included if the person does not work in the U.S.:
+
+- The government of <INSERT NAME OF YOUR COUNTRY OF WORK>
+- The military of <INSERT NAME OF YOUR COUNTRY OF WORK>
+
+Included if the person works in the U.S. or China:
+
+- The U.S. military
+- The Chinese military
+
+To everyone else:
+
+- The US government
+- The Chinese government 
+- The United Nations (UN)
+- The European Union (EU)
+- An intergovernmental AI research organization (similar to CERN)
+- Google 
+- Facebook 
+- Apple 
+- Microsoft 
+- Amazon
+- OpenAI
+- DeepMind
+- Tencent
+- Baidu
+- Alibaba
+- Non-governmental scientific organizations (e.g., AAAI)
+- Partnership on AI, a consortium of tech companies, academics, and civil society groups
+
+Answer choices:
+
+- A great deal of trust (3)
+- A fair amount of trust (2)
+- Not too much trust (1)
+- No trust at all (0)
+- I don’t know
+
+## Overall results
+
+```{r trust-all, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=7}
+# Trust in various actors
+
+# Load the script with the variable labels
+# Variables shown to respondents who work/study in the US or China
+trust_uschina <- read.csv("~/Dropbox/AIExperts2019Data/SurveyData/trust_actors_var_uschina.csv", stringsAsFactors=FALSE)
+names(trust_uschina)[1] <- "varname_uschina"
+trust_uschina$varnum_uschina <- as.numeric(gsub(pattern = "uschinatrust_", replacement = "",
+                                     trust_uschina$varname_uschina))
+# Variables shown to respondents who work/study not in the US or China
+trust_nonuschina <- read.csv("~/Dropbox/AIExperts2019Data/SurveyData/trust_actors_var_nonuschina.csv", stringsAsFactors=FALSE)
+names(trust_nonuschina)[1] <- "varname_nonuschina"
+trust_nonuschina$varnum_nonuschina <- as.numeric(gsub(pattern = "nonuschinatrust_", 
+                                                      replacement = "",
+                                     trust_nonuschina$varname_nonuschina))
+# Merge the data frames above
+trust_vars <- merge(x = trust_uschina, y = trust_nonuschina, all.x = TRUE)
+# Order by variable number
+trust_vars <- trust_vars[order(trust_vars$varnum_uschina),]
+# Function to analyze the data
+d$undergrad_uni_country[is.na(d$undergrad_uni_country)] <- "Unknown"
+mysubset <- d$undergrad_uni_country == "the US"
+# Function to generate the trust outcomes
+trust_func <- function(varnum, mysubset = rep(TRUE, nrow(d)),
+                       subset_name = "All", return_analysis_output = TRUE) {
+  # Check to see if the actor for non-US/China respondents is missing
+  if (varnum %in% trust_vars$varnum_nonuschina) {
+    # If both US/China and non-US/China respondents are shown the actor, we need to merge the responses
+    x <- ifelse(is.na(d[,paste0("nonuschinatrust_", varnum)]),
+                d[,paste0("uschinatrust_", varnum)],
+                d[,paste0("nonuschinatrust_", varnum)])
+    # Check if the actor is randomly selected to be shown to the respondents
+    shown <- !is.na(d[,paste0("uschinatrust_DO_uschinatrust_", varnum)]) |
+      !is.na(d[,paste0("nonuschinatrust_DO_nonuschinatrust_", varnum)])
+  } else {
+    x <- d[,paste0("uschinatrust_", varnum)]
+    # Check if the actor is randomly selected to be shown to the respondents
+    shown <- !is.na(d[,paste0("uschinatrust_DO_uschinatrust_", varnum)])
+  }
+  outcome <- x[shown] # remove the not shown responses
+  id <- d$ResponseId[shown]
+  mysubset <- mysubset[shown] # remove the not shown responses
+  missing_outcomes <- is.na(outcome) | outcome == -88 | outcome == -99 # the missing or DK outcomes
+  missing_fill <- mean(outcome[!missing_outcomes]) # mean impute using the non-missings
+  outcome[missing_outcomes] <- missing_fill # fill in the missings 
+  # Subset by the mysubset variable
+  outcome <- outcome[mysubset]
+  missing_outcomes <- missing_outcomes[mysubset]
+  id <- id[mysubset]
+  # Calculate the missing percentage 
+  percent_missing <- sum(missing_outcomes)/length(outcome) # get hte percentage missing
+  md <- if (percent_missing > 0.1) {
+    # If more than 10 percent is missing, then we condition on normalized dummy variable for missingness
+    lm_robust(outcome ~ scale(missing_outcomes))
+  } else {
+    lm_robust(outcome ~ 1)
+  }
+  # Output the results
+  output_table <- data.frame(outcome_name = trust_vars$varlabel[trust_vars$varnum_uschina == varnum], 
+                    mean = md$coefficients[1], se = md$std.error[1], n = length(outcome),
+                    subset = subset_name, org_type = trust_vars$Org[trust_vars$varnum_uschina == varnum])  
+  row.names(output_table) <- NULL
+  if (return_analysis_output) {
+    return(output_table)
+  } else {
+    return(data.frame(id, outcome_name = trust_vars$varlabel[trust_vars$varnum_uschina == varnum],
+                      outcome, missing_outcomes, subset_name))
+  }
+}
+
+# All respondents
+trust_res_e <- do.call(rbind, lapply(trust_vars$varnum_uschina, trust_func))
+trust_res_e$outcome_name <- factor(trust_res_e$outcome_name, levels = rev(trust_res_e$outcome_name))
+
+
+# Make the graph
+ggplot(data = trust_res_e) +
+  geom_pointrange(aes(x = outcome_name, y = mean, ymin = qnorm(0.025)*se + mean, 
+                      ymax = qnorm(0.975)*se + mean)) +
+  scale_x_discrete(name = "Actors", labels = function(x) str_wrap(x, width = 35)) +
+  scale_y_continuous(name = "Trust rating (0 = no trust at all; 3 = great deal of trust)") +
+  coord_flip() + theme_bw() + facet_grid(org_type~., scales = "free_y", space = "free_y", 
+             labeller = label_wrap_gen(width = 35)) +
+  ggtitle(str_wrap("Rating trust in actors to shape the development and use of AI in the public interest (all respondents)", width = 75))
+
+# Make the table
+kable(trust_res_e, digits = 2, row.names = FALSE, col.names = c("Actor", "Mean", "SE", 
+                                                              "N", "Subset", "Actor Type"),
+      caption = "Rating trust in actors to shape the development and\nuse of AI in the public interest (all respondents)", align = "l")
+
+
+```
+
+## Comparing AI experts results with public opinion results 
+
+```{r trust-compare-with-public, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=12}
+# Remove the trust_res data frame
+trust_res_e$respondents <- "Experts"
+trust_res_e$group <- "Trust to develop and manage AI"
+
+# Load in the public opinion results
+load("~/Dropbox/AIExperts2019Data/2018_public_opinion/2018_public_opinion_trust_actors.RData")
+trust_res_p <- trust_res # Rename the data frame
+trust_res_p$group <- ifelse(trust_res_p$group == "Trust in various actors to develop AI in the interest of the public", 
+                            "Trust to develop AI", "Trust to manage AI")
+trust_res_p$respondents <- "Public"
+names(trust_res_p)[names(trust_res_p) == "num"] <- "mean"
+names(trust_res_p)[names(trust_res_p) == "outcome"] <- "outcome_name"
+names(trust_res_p)[names(trust_res_p) == "N"] <- "n"
+# Change "U.S. government" to "National government"
+trust_res_p$org_type <- as.character(trust_res_p$Org)
+trust_res_p$org_type[trust_res_p$org_type == "U.S. government"] <- "National government"
+trust_res_p$Org <- NULL
+
+# Combine the two datasets
+trust_res_compare <- plyr::rbind.fill(trust_res_e, trust_res_p)
+trust_res_compare$split_group <- paste0(trust_res_compare$respondents, " - ",
+                                        trust_res_compare$group)
+# Data visualization
+trust_res_compare$org_type <- factor(trust_res_compare$org_type, 
+                                     levels = c("National government",
+                                                "International",
+                                                "Corporate",
+                                                "Other"))
+# Make the graph
+ggplot(data = trust_res_compare) +
+  geom_pointrange(aes(x = outcome_name, y = mean, ymin = qnorm(0.025)*se + mean, 
+                      ymax = qnorm(0.975)*se + mean, color = split_group, 
+                      shape = split_group),
+                  position = position_dodge(width = 1)) +
+  scale_x_discrete(name = "Actors", labels = function(x) str_wrap(x, width = 35)) +
+  scale_y_continuous(name = "Trust rating (0 = no trust at all; 3 = great deal of trust)") +
+  coord_flip() + theme_bw() + 
+  scale_color_manual(values = c("black", "grey50", "grey50"), name = "Country") +
+  scale_shape_manual(values = c(1, 2, 3), name = "Country") +
+  facet_grid(org_type~., scales = "free_y", space = "free_y", 
+             labeller = label_wrap_gen(width = 35)) +
+  ggtitle(str_wrap("Rating trust in actors to shape the development and use of AI in the public interest (AI experts vs. the US public)", 75)) + 
+  theme(legend.position = "bottom", legend.direction = "vertical")
+
+# Make the table
+kable(trust_res_compare[,c("outcome_name", "mean", "se", "n", "org_type", "respondents")],
+      digits = 2, row.names = FALSE, col.names = c("Actor", "Mean", "SE",
+                                                   "N", "Actor type", "Respondent type"),
+      caption = "Rating trust in actors to shape the development and use of AI in the public interest (AI experts vs. the US public)", align = "l")
+```
+
+## Results by undergraduate country
+
+```{r trust-by-country, echo=FALSE, fig.height=8}
+# By country of undergrad
+d$undergrad_uni_country[is.na(d$undergrad_uni_country)] <- "Unknown"
+# Fix this particular case where the country is labeled as MIT
+d$undergrad_uni_country[d$undergrad_uni_country == "MIT"] <- "the US"
+
+# Make a frequency table
+ug_country_freq <- as.data.frame(table(d$undergrad_uni_country))
+ug_country_freq <- ug_country_freq[order(ug_country_freq$Freq),]
+
+# the US
+trust_res_us <- do.call(rbind, lapply(1:nrow(trust_vars), trust_func, 
+                                      mysubset = d$undergrad_uni_country == "the US",
+                                      subset_name = "US"))
+# China
+trust_res_china <- do.call(rbind, lapply(1:nrow(trust_vars), trust_func, 
+                                      mysubset = d$undergrad_uni_country == "China",
+                                      subset_name = "China"))
+# Combine the two
+trust_res_subset_ug_country <- rbind(trust_res_us, trust_res_china)
+
+# Revert the list of actors for plotting
+trust_res_subset_ug_country$outcome_name <- factor(trust_res_subset_ug_country$outcome_name, 
+                                 levels = rev(trust_res_us$outcome_name))
+
+# Data frame for the colors and shapes for each demographic subgroup
+demo_color_shape <-
+  data.frame(
+    subset = c(
+      "US",
+      "China",
+      "Europe",
+      "North America",
+      "Asia",
+      "Academic",
+      "Industry"
+    ),
+    color = as.character(
+      c(
+        "purple",
+        "darkgreen",
+        "red",
+        "blue",
+        "darkorange",
+        "violet",
+        "cornflowerblue"
+      )
+    ),
+    shape = as.numeric(c(1:2, 4:6, 7:8))
+  )
+
+# Make the graph
+ggplot(data = trust_res_subset_ug_country) +
+  geom_pointrange(aes(x = outcome_name, y = mean, ymin = qnorm(0.025)*se + mean, 
+                      ymax = qnorm(0.975)*se + mean, color = subset, shape = subset),
+                  position = position_dodge(width = 1)) +
+  scale_x_discrete(name = "Actors", labels = function(x) str_wrap(x, width = 35)) +
+  scale_y_continuous(name = "Trust rating (0 = no trust at all; 3 = great deal of trust)") +
+  coord_flip() + theme_bw() + 
+  scale_color_manual(values = c("purple", "darkgreen"), name = "Country") +
+  scale_shape_manual(values = c(1, 2), name = "Country") +
+  facet_grid(org_type~., scales = "free_y", space = "free_y", 
+             labeller = label_wrap_gen(width = 35)) +
+  ggtitle(str_wrap("Rating trust in actors to shape the development and use of AI in the public interest (by undergraduate country)", 75)) + theme(legend.position = "bottom")
+
+# Make the table
+kable(trust_res_subset_ug_country, digits = 2, row.names = FALSE, 
+      col.names = c("Actor", "Mean", "SE", "N", "Subset", "Actor Type"),
+      caption = "Rating trust in actors to shape the development and use of AI in the public interest (by undergraduate country)")
+
+```
+
+## Results by undergraduate region
+
+```{r trust-by-region, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=10}
+# Make variable for undergraduate university region: Other, Europe, Asia, North America, and Unknown
+d$undergrad_uni_region <- "Other"
+d$undergrad_uni_region[d$undergrad_uni_country %in% c("Austria", "Bulgaria", "Czech Republic", "Denmark", "Finland", "Romania", "Serbia",
+  "Slovak Republic (Slovakia)", "Sweden", "Ukraine", "Poland", "Switzerland", "Belguim",
+  "Portugal", "Russian Federation", "Spain", "Greece", "Netherlands", "Italy", "France",
+  "Germany", "the UK")] <- "Europe"
+d$undergrad_uni_region[d$undergrad_uni_country %in% c("the US", "Canada", "Mexico")] <- "North America"
+d$undergrad_uni_region[d$undergrad_uni_country %in% 
+                         c("China", "India", "Iran", "Israel",
+                          "South Korea (Republic of Korea)",
+                           "Turkey", "Japan", "Taiwan",
+                            "Singapore", "Thailand", "Saudi Arabia",
+                            "Mongolia", "Bangaladesh", "Armenia")] <- "Asia"
+d$undergrad_uni_region[d$undergrad_uni_country == "Unknown"] <- "Unknown"
+
+# Europe
+trust_res_europe <- do.call(rbind, lapply(1:nrow(trust_vars), trust_func, 
+                                      mysubset = d$undergrad_uni_region == "Europe",
+                                      subset_name = "Europe"))
+# North America
+trust_res_north_america <- do.call(rbind, lapply(1:nrow(trust_vars), trust_func, 
+                                      mysubset = d$undergrad_uni_region == "North America",
+                                      subset_name = "North America"))
+
+# Asia
+trust_res_asia <- do.call(rbind, lapply(1:nrow(trust_vars), trust_func, 
+                                      mysubset = d$undergrad_uni_region == "Asia",
+                                      subset_name = "Asia"))
+# Combine the three
+trust_res_subset_ug_region <- rbind(trust_res_europe, trust_res_north_america, trust_res_asia)
+
+# Revert the list of actors for plotting
+trust_res_subset_ug_region$outcome_name <- factor(trust_res_subset_ug_region$outcome_name, 
+                                 levels = rev(trust_res_asia$outcome_name))
+
+# Make the graph
+ggplot(data = trust_res_subset_ug_region) +
+  geom_pointrange(aes(x = outcome_name, y = mean, ymin = qnorm(0.025)*se + mean, 
+                      ymax = qnorm(0.975)*se + mean, color = subset, shape = subset),
+                  position = position_dodge(width = 1)) +
+  scale_x_discrete(name = "Actors", labels = function(x) str_wrap(x, width = 35)) +
+  scale_y_continuous(name = "Trust rating (0 = no trust at all; 3 = great deal of trust)") +
+  coord_flip() + theme_bw() + 
+  scale_color_manual(values = c("red", "blue", "darkorange"), 
+                     name = "Region") +
+  scale_shape_manual(values = c(4, 5, 6), name = "Region") +
+  facet_grid(org_type~., scales = "free_y", space = "free_y", 
+             labeller = label_wrap_gen(width = 35)) +
+  ggtitle(str_wrap("Rating trust in actors to shape the development and use of AI in the public interest (by undergraduate region)", 75)) + theme(legend.position = "bottom")
+
+# Make the table
+kable(trust_res_subset_ug_region, digits = 2, row.names = FALSE, 
+      col.names = c("Actor", "Mean", "SE", "N", "Subset", "Actor Type"),
+      caption = "Rating trust in actors to shape the development and use of AI in the public interest (by undergraduate region)")
+
+```
+
+```{r trust-by-work-type, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=8}
+# By type of workplace: academia vs. industry
+
+# Academic
+trust_res_academic <- do.call(rbind, lapply(1:nrow(trust_vars), trust_func, 
+                                      mysubset = d$academic,
+                                      subset_name = "Academic"))
+
+# Industry
+trust_res_industry <- do.call(rbind, lapply(1:nrow(trust_vars), trust_func, 
+                                      mysubset = d$industry,
+                                      subset_name = "Industry"))
+
+# Combine the two
+trust_res_subset_work_type <- rbind(trust_res_academic, trust_res_industry)
+
+# Revert the list of actors for plotting
+trust_res_subset_work_type$outcome_name <- factor(trust_res_subset_work_type$outcome_name, 
+                                 levels = rev(trust_res_academic$outcome_name))
+
+# Make the graph
+ggplot(data = trust_res_subset_work_type) +
+  geom_pointrange(aes(x = outcome_name, y = mean, ymin = qnorm(0.025)*se + mean, 
+                      ymax = qnorm(0.975)*se + mean, color = subset, shape = subset),
+                  position = position_dodge(width = 1)) +
+  scale_x_discrete(name = "Actors", labels = function(x) str_wrap(x, width = 35)) +
+  scale_y_continuous(name = "Trust rating (0 = no trust at all; 3 = great deal of trust)") +
+  coord_flip() + theme_bw() + 
+  scale_color_manual(values = c("violet", "cornflowerblue"), 
+                     name = "Workplace type") +
+  scale_shape_manual(values = c(7, 8), name = "Workplace type") +
+  facet_grid(org_type~., scales = "free_y", space = "free_y", 
+             labeller = label_wrap_gen(width = 35)) +
+  ggtitle(str_wrap("Rating trust in actors to shape the development and use of AI in the public interest (by workplace type)", 75)) + theme(legend.position = "bottom")
+
+# Make the table
+kable(trust_res_subset_work_type, digits = 2, row.names = FALSE, 
+      col.names = c("Actor", "Mean", "SE", "N", "Subset", "Actor Type"),
+      caption = "Rating trust in actors to shape the development and use of AI in the public interest (by workplace type)")
+
+```
+
+## F-test to test whether the trust in all the actors are the same 
+
+```{r trust-f-test, echo=FALSE, cache=TRUE, warning=FALSE, results='asis'}
+# Get the raw output in a long data frame
+trust_res_raw <- do.call(rbind, lapply(trust_vars$varnum_uschina, trust_func, return_analysis_output = FALSE))
+# Regression model
+trust_res_md <- lm(outcome ~ outcome_name, data = trust_res_raw) 
+trust_res_md_covariates <- gsub(pattern = "outcome_name", x = names(trust_res_md$coefficients),
+                                  trust_res_md, replacement = "")
+# Make regression table in stargazer
+stargazer::stargazer(trust_res_md, type = "html", 
+                     covariate.labels = trust_res_md_covariates, 
+                     star.cutoffs = c(0.05, 0.01, 0.001),
+          se = starprep(trust_res_md, clusters = trust_res_raw$id), # cluster by respondent id
+          p = starprep(trust_res_md, clusters = trust_res_raw$id, stat = "p.value"),
+          caption = "Regressing trust on all the actors")
+
+```
+
+# AI governance challenges
+
+## Survey question
+
+**In the next 10 years, how important is it for tech companies and governments to carefully manage the following issues?**
+
+[Respondents will be shown 5 randomly-selected items.]
+
+- Ensure fairness and transparency in AI used in hiring
+- Ensure fairness and transparency in AI used in criminal justice
+- Make AI used for medical diagnosis accurate and transparent
+- Protect data privacy
+- Ensure that autonomous vehicles are safe
+- Prevent AI from being used to spread fake and harmful content online
+- Prevent AI cyber attacks against governments, companies, organizations, and individuals
+- Prevent AI-assisted surveillance from violating privacy and civil liberties
+- Reducing risks from U.S.-China competition over AI 
+- Make sure AI systems are safe, trustworthy, and aligned with human values
+- Develop treaties to prevent the misuse of lethal autonomous weapons
+- Guarantee a good standard of living for those who lose their jobs to automation
+- Prevent critical AI systems failures, such as a multi-day regional power outage or a trillion dollar market crash from automated algorithms
+
+Answer choices:
+Slider that you can choose in between whole numbers (to 1 decimal point), marked 
+- 3 = Very important
+- 2 = Somewhat important
+- 1 = Not too important
+- 0 = Not at all important
+- I don't know
+
+## Overall results
+
+```{r governance-challenges-all, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=5}
+
+# Fix issue with the display variable problem in the "main" dataset
+# Data frame that lines up the variable numbers
+fix_aigov_show <- data.frame(correct_num = 1:13,
+                             incorrect_num = c(14:25, 27))
+# Loop through to fix the problem
+for (i in 1:nrow(fix_aigov_show)) {
+  x <- d[,paste0("aigov_mc_DO_aigov_mc_", fix_aigov_show$correct_num[i])]
+  d[,paste0("aigov_mc_DO_aigov_mc_", fix_aigov_show$correct_num[i])] <- ifelse(
+    is.na(x), d[,paste0("aigov_mc_DO_", fix_aigov_show$incorrect_num[i])], x
+  )
+}
+
+# Labels for the governance challenges 
+gov_challenges <-
+  c(
+    "Hiring bias", # 14
+    "Criminal justice bias", # 15
+    "Disease diagnosis", # 16
+    "Data privacy", # 17
+    "Autonomous vehicles", # 18
+    "Digital manipulation", # 19
+    "Cyber attacks", # 20
+    "Surveillance", # 21
+    "U.S.-China arms race", # 22
+    "Value alignment", # 23
+    "Autonomous weapons", # 24
+    "Technological unemployment", # 25
+    "Critical AI systems failure" # 27
+  )
+
+# Function to do the governance challenge outcomes
+governance_challenge_func <- function(varnum, mysubset = rep(TRUE, nrow(d)),
+                       subset_name = "All", return_analysis_output = TRUE) {
+  # the outcome variable
+  x <- d[,paste0("aigov_mc_", varnum)]
+  # whether the variable is shown to respondents
+  shown <- !is.na(d[,paste0("aigov_mc_DO_aigov_mc_", varnum)])
+  outcome <- x[shown] # remove the not shown responses
+  id <- d$ResponseId[shown]
+  mysubset <- mysubset[shown] # remove the not shown responses
+  missing_outcomes <- is.na(outcome) | outcome == -88 | outcome == -99 # the missing or DK outcomes
+  missing_fill <- mean(outcome[!missing_outcomes]) # mean impute using the non-missings
+  outcome[missing_outcomes] <- missing_fill # fill in the missings 
+  # Subset by the mysubset variable
+  outcome <- outcome[mysubset]
+  missing_outcomes <- missing_outcomes[mysubset]
+  id <- id[mysubset]
+  # Calculate the missing percentage 
+  percent_missing <- sum(missing_outcomes)/length(outcome) # get hte percentage missing
+  md <- if (percent_missing > 0.1) {
+    # If more than 10 percent is missing, then we condition on normalized dummy variable for missingness
+    lm_robust(outcome ~ scale(missing_outcomes))
+  } else {
+    lm_robust(outcome ~ 1)
+  }
+  # Output the results
+  output_table <- data.frame(outcome_name = gov_challenges[varnum],
+                    mean = md$coefficients[1], se = md$std.error[1], n = length(outcome),
+                    subset = subset_name)  
+  row.names(output_table) <- NULL
+  if (return_analysis_output) {
+    return(output_table)
+  } else {
+    return(data.frame(id, outcome_name = gov_challenges[varnum],
+                      outcome, missing_outcomes, subset_name))
+  }
+}
+
+# Use the function above on all 13 governance challenges
+govchallenges_imp_e <- do.call(rbind, lapply(1:length(gov_challenges),
+                                           governance_challenge_func))
+
+# Reverse the factor levels for data viz
+govchallenges_imp_e$outcome_name <- factor(govchallenges_imp_e$outcome_name, 
+                                         levels = rev(levels(govchallenges_imp_e$outcome_name)))
+
+# Create the plot
+ggplot(data = govchallenges_imp_e) +
+  geom_pointrange(aes(x = outcome_name, y = mean, ymin = qnorm(0.025)*se + mean, 
+                      ymax = qnorm(0.975)*se + mean)) +
+  scale_x_discrete( 
+    name = "AI governance challenge") +
+  scale_y_continuous(name = "Mean issue importance (0 = not important at all; 3 = very important)", limits = c(1.3, 3)) +
+  coord_flip() + theme_bw() + 
+  ggtitle("Rating issue importance of AI governance challenges")
+
+# Make the table
+kable(govchallenges_imp_e,
+      digits = 2, row.names = FALSE, col.names = c("Actor", "Mean", "SE", "N", "Subset"),
+      caption = "Rating issue importance of AI governance challenges")
+
+# Label this data set as the one using expert respondents
+govchallenges_imp_e$respondents <- "Experts"
+
+```
+
+## Compare with the public opinion results
+
+```{r governance-challenges-compare-public, echo=FALSE, fig.height=8}
+# Load in the public opinion dataset
+load("~/Dropbox/AIExperts2019Data/2018_public_opinion/2018_public_opinion_ai_governance_challenges.RData")
+govchallenges_imp_p <- ag_sum_US[,c("gov_challenge", "importance", "importance_se", "N")]
+# Change the variable names to match the ones in the expert results data frame
+names(govchallenges_imp_p) <- c("outcome_name", "mean", "se", "n")
+govchallenges_imp_p$respondents = "Public"
+# Combine the two data frames
+govchallenges_imp_compare <- plyr::rbind.fill(govchallenges_imp_e, govchallenges_imp_p)
+
+# Make the graph
+ggplot(data = govchallenges_imp_compare) +
+  geom_pointrange(aes(x = outcome_name, y = mean, ymin = qnorm(0.025)*se + mean, 
+                      ymax = qnorm(0.975)*se + mean, 
+                      color = respondents, shape = respondents),
+                  position = position_dodge(width = 1)) +
+  scale_x_discrete( 
+    name = "AI governance challenge") +
+  scale_y_continuous(name = "Mean issue importance (0 = not important at all; 3 = very important)", limits = c(1.3, 3)) +
+  coord_flip() + theme_bw() + 
+  scale_color_manual(values = c("black", "grey50"), name = "Country") +
+  scale_shape_manual(values = c(1, 2), name = "Country") +
+  theme(legend.position = "bottom") +
+  ggtitle("Rating issue importance of AI governance challenges (AI experts vs. US public)")
+
+# Generate the table
+kable(govchallenges_imp_compare[,-which(names(govchallenges_imp_compare) == "subset")], 
+      digits = 2, row.names = FALSE, col.names =
+        c("AI governance challenge", "Mean", "SE", "N", "Respondent type"),
+      caption = "Rating issue importance of AI governance challenges (AI experts vs. US public)")
+
+# Get the top 5 for each survey respondent type
+
+# For AI Experts
+top5_e <- govchallenges_imp_e$outcome_name[order(govchallenges_imp_e$mean, decreasing = TRUE)][1:5]
+
+# For the US public
+top5_p <- govchallenges_imp_p$outcome_name[order(govchallenges_imp_p$mean, decreasing = TRUE)][1:5]
+
+# Combine the top 5 results
+kable(data.frame(ranking = 1:5, top5_e, top5_p), row.names = FALSE, 
+      col.names = c("Ranking", "Experts", "Public"), align = "l",
+      caption = "Top 5 most important AI governance challenges (AI experts vs. US public)")
+```
+
+## Results by country 
+
+```{r governance-challenges-by-country, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=8}
+
+# US
+govchallenges_imp_us <- do.call(rbind, lapply(1:length(gov_challenges),
+                                              governance_challenge_func, 
+                                      mysubset = d$undergrad_uni_country == "the US",
+                                      subset_name = "US"))
+# China
+govchallenges_imp_china <- do.call(rbind, lapply(1:length(gov_challenges), 
+                                                 governance_challenge_func, 
+                                      mysubset = d$undergrad_uni_country == "China",
+                                      subset_name = "China"))
+
+# Combine the two
+govchallenges_imp_subset_ug_country <- rbind(govchallenges_imp_us, govchallenges_imp_china)
+
+# Revert the list of actors for plotting
+govchallenges_imp_subset_ug_country$outcome_name <-
+  factor(govchallenges_imp_subset_ug_country$outcome_name, 
+                                 levels = rev(govchallenges_imp_us$outcome_name))
+
+# Make the graph
+ggplot(data = govchallenges_imp_subset_ug_country) +
+  geom_pointrange(aes(x = outcome_name, y = mean, ymin = qnorm(0.025)*se + mean, 
+                      ymax = qnorm(0.975)*se + mean, color = subset, shape = subset),
+                  position = position_dodge(width = 1)) +
+  scale_x_discrete( 
+    name = "AI governance challenge") +
+  scale_y_continuous(name = "Mean issue importance (0 = not important at all; 3 = very important)", limits = c(1.3, 3)) +
+  coord_flip() + theme_bw() + 
+  scale_color_manual(values = c("purple", "darkgreen"), name = "Country") +
+  scale_shape_manual(values = c(1, 2), name = "Country") +
+  theme(legend.position = "bottom") +
+  ggtitle("Rating issue importance of AI governance challenges (by undergraduate country)")
+
+# Make the table
+kable(govchallenges_imp_subset_ug_country, 
+      digits = 2, row.names = FALSE, col.names = c("Actor", "Mean", "SE", "N", "Subset"),
+      caption = "Rating issue importance of AI governance challenges (by undergraduate university country)")
+
+```
+
+```{r governance-challenges-by-region, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=8}
+
+# Europe
+govchallenges_imp_europe <- do.call(rbind, lapply(1:length(gov_challenges), governance_challenge_func, 
+                                      mysubset = d$undergrad_uni_region == "Europe",
+                                      subset_name = "Europe"))
+# North America
+govchallenges_imp_north_america <- do.call(rbind, lapply(1:length(gov_challenges), governance_challenge_func, 
+                                      mysubset = d$undergrad_uni_region == "North America",
+                                      subset_name = "North America"))
+
+# Asia
+govchallenges_imp_asia <- do.call(rbind, lapply(1:length(gov_challenges),
+                                                governance_challenge_func, 
+                                      mysubset = d$undergrad_uni_region == "Asia",
+                                      subset_name = "Asia"))
+# Combine the three
+govchallenges_imp_subset_ug_region <- rbind(govchallenges_imp_europe, 
+                                            govchallenges_imp_north_america, 
+                                            govchallenges_imp_asia)
+
+# Revert the list of actors for plotting
+govchallenges_imp_subset_ug_region$outcome_name <-
+  factor(govchallenges_imp_subset_ug_region$outcome_name, 
+                                 levels = rev(govchallenges_imp_asia$outcome_name))
+
+# Make the graph
+ggplot(data = govchallenges_imp_subset_ug_region) +
+  geom_pointrange(aes(x = outcome_name, y = mean, ymin = qnorm(0.025)*se + mean, 
+                      ymax = qnorm(0.975)*se + mean, color = subset, shape = subset),
+                  position = position_dodge(width = 1)) +
+  scale_x_discrete( 
+    name = "AI governance challenge") +
+  scale_y_continuous(name = "Mean issue importance (0 = not important at all; 3 = very important)", limits = c(1.3, 3)) +
+  coord_flip() + theme_bw() + 
+  scale_color_manual(values = c("red", "blue", "darkorange"), 
+                     name = "Region") +
+  scale_shape_manual(values = c(4, 5, 6), name = "Region") +
+   theme(legend.position = "bottom") +
+  ggtitle("Rating issue importance of AI governance challenges (by undergraduate region)")
+
+# Make the table
+kable(govchallenges_imp_subset_ug_region, digits = 2, row.names = FALSE, 
+      col.names = c("Actor", "Mean", "SE", "N", "Subset"),
+      caption = "Rating issue importance of AI governance challenges (by undergraduate university region)")
+
+```
+
+## Results by workplace type
+
+```{r governance-challenges-by-work-type, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=6}
+# By type of workplace: academia vs. industry
+
+# Academic
+govchallenges_imp_academic <- do.call(rbind, lapply(1:length(gov_challenges), 
+                                                    governance_challenge_func, 
+                                      mysubset = d$academic,
+                                      subset_name = "Academic"))
+
+# Industry
+govchallenges_imp_industry <- do.call(rbind, lapply(1:length(gov_challenges), 
+                                                    governance_challenge_func, 
+                                      mysubset = d$industry,
+                                      subset_name = "Industry"))
+
+# Combine the two
+govchallenges_imp_subset_work_type <- rbind(govchallenges_imp_academic,
+                                            govchallenges_imp_industry)
+
+# Revert the list of actors for plotting
+govchallenges_imp_subset_work_type$outcome_name <-
+  factor(govchallenges_imp_subset_work_type$outcome_name, 
+                                 levels = rev(govchallenges_imp_academic$outcome_name))
+
+# Make the graph
+ggplot(data = govchallenges_imp_subset_work_type) +
+  geom_pointrange(aes(x = outcome_name, y = mean, ymin = qnorm(0.025)*se + mean, 
+                      ymax = qnorm(0.975)*se + mean, color = subset, shape = subset),
+                  position = position_dodge(width = 1)) +
+  scale_x_discrete(name = "AI governance challenge") +
+  scale_y_continuous(name = "Mean issue importance (0 = not important at all; 3 = very important)", limits = c(1.3, 3)) +
+  coord_flip() + theme_bw() + 
+  scale_color_manual(values = c("violet", "cornflowerblue"), 
+                     name = "Workplace type") +
+  scale_shape_manual(values = c(7, 8), name = "Workplace type") +
+  theme(legend.position = "bottom") + 
+  ggtitle("Rating issue importance of AI governance challenges (by workplace type)")
+
+# Make the table
+kable(govchallenges_imp_subset_work_type, digits = 2, row.names = FALSE, 
+      col.names = c("Actor", "Mean", "SE", "N", "Subset"),
+      caption = "Rating issue importance of AI governance challenges (by workplace type)")
+
+```
+
+## F-test to test whether the governance challenges produced different responses
+
+```{r ai-governance-f-test, echo=FALSE, results='asis'}
+# Get the raw output in a long data frame
+govchallenges_imp_raw <- do.call(rbind, lapply(1:length(gov_challenges), 
+                                               governance_challenge_func, 
+                                               return_analysis_output = FALSE))
+
+# Regression model
+govchallenges_imp_md <- lm(outcome ~ outcome_name, 
+       data = govchallenges_imp_raw) 
+
+# Clean up the covariate names
+govchallenges_covariates <- gsub(pattern = "outcome_name", 
+                                             replacement = "", 
+                                 x = names(govchallenges_imp_md$coefficients))
+
+# Make regression table in stargazer
+stargazer::stargazer(govchallenges_imp_md, type = "html", style = "apsr", star.cutoffs = c(0.05, 0.01, 0.001),
+                     covariate.labels = govchallenges_covariates,
+          se = starprep(govchallenges_imp_md, clusters = 
+                          govchallenges_imp_raw$id), # cluster by respondent id
+          p = starprep(govchallenges_imp_md, clusters = 
+                         govchallenges_imp_raw$id, 
+                       stat = "p.value"), caption = "Regressing perceived issue importance on all AI governance challenges")
+```
+
+# AI safety
+
+## Familiarity with AI safety research 
+
+### Survey question 
+
+**How familiar are you with AI safety research?**
+
+Use the slider to indicate your familiarity.
+
+- 0 means not familiar at all (e.g., this is the first time you’re hearing about the concept)
+- 4 means very familiar (e.g., you have worked on the topic)
+
+```{r ai-safety-overall, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=4}
+# Familiarity
+# Labels for the outcomes
+main$aisafety_fam_1_labelled <- labelled(x = main$aisafety_fam_1,
+                                         c("0. Not familiar at all" = 0, "1" = 1, "2" = 2, "3" = 3, "4. Very familiar" = 4, "Missing" = -99)
+)
+
+# Get the missing fill-in value
+aisafety_fam_fill <- mean(d$aisafety_fam_1[!is.na(d$aisafety_fam_1) & d$aisafety_fam_1 != -99])
+d$aisafety_fam_1[!is.na(d$aisafety_intro) & is.na(d$aisafety_fam_1)] <- -99
+
+# Fun the analysis function
+aisafety_familiar <- catvar_func(
+  outcome = "Familiarity with AI safety",
+  outcome_var = d$aisafety_fam_1,
+  label_var = main$aisafety_fam_1_labelled,
+  output_type = "value_table",
+  shown = !is.na(d$aisafety_intro),
+  num_missing = -99,
+  num_DK = -88, edit_labels = FALSE,
+  new_values <- c(NA, 0:4),
+  survey_weights = d$weights,
+  missing_recode = aisafety_fam_fill
+)
+
+# Clean up the data
+aisafety_familiar$labels <- factor(aisafety_familiar$labels, levels = aisafety_familiar$labels[c(2:6, 1)])
+
+# Make the graph
+ggplot(data = aisafety_familiar[aisafety_familiar$labels != "Not shown"]) +
+  geom_bar(aes(x = labels, y = Prop), stat = "identity", alpha = 0.5) +
+  geom_pointrange(aes(x = labels, y = Prop, ymin = qnorm(0.025)*se + Prop, 
+                      ymax = qnorm(0.975)*se + Prop)) +
+  scale_x_discrete(name = "Outcome") +
+  scale_y_continuous(labels = scales::percent, 
+                     name = "Percentage of respondents") +
+  theme_bw() + ggtitle("Familiarity with AI safety")
+
+# Make the table
+kable(aisafety_familiar[,c("labels", "Prop", "se", "Freq")], digits = 2, 
+      col.names = c("Outcome", "Proportion", "SE", "Frequency"), row.names = FALSE,
+      caption = "Familiarity with AI safety")
+```
+
+### Familiarity with AI safety research by demographic subgroups
+
+```{r ai-safety-by-demo, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=5}
+# Function to generate the demographic breakdowns
+# Outputs the numerical summary for each subgroup 
+ai_safety_familiar_func <- function(mysubset, group_name, big_group) {
+  value_summary <- catvar_func(
+  outcome = "Familiarity with AI safety",
+  outcome_var = d$aisafety_fam_1,
+  label_var = main$aisafety_fam_1_labelled,
+  output_type = "value_sum",
+  shown = !is.na(d$aisafety_intro) & mysubset,
+  num_missing = -99,
+  num_DK = -88, edit_labels = FALSE,
+  new_values <- c(NA, 0:4),
+  survey_weights = d$weights,
+  missing_recode = aisafety_fam_fill
+)
+  value_summary$group <- group_name
+  value_summary$big_group <- big_group
+  row.names(value_summary) <- NULL 
+  return(value_summary)
+}  
+
+ai_safety_familiar_demo <- rbind(
+  # By undergraduate country
+  ai_safety_familiar_func(mysubset = d$undergrad_uni_country == "the US", 
+                        group_name = "US",big_group = "Undergraduate country"),
+  ai_safety_familiar_func(mysubset = d$undergrad_uni_country == "China", 
+                        group_name = "China", big_group = "Undergraduate country"),
+  ai_safety_familiar_func(mysubset = d$undergrad_uni_region == "Europe", 
+                        group_name = "Europe", big_group = "Undergraduate region"),
+  ai_safety_familiar_func(mysubset = d$undergrad_uni_region == "North America", 
+                        group_name = "North America", big_group = "Undergraduate region"),
+  ai_safety_familiar_func(mysubset = d$undergrad_uni_region == "Asia", 
+                        group_name = "Asia", big_group = "Undergraduate region"),
+  ai_safety_familiar_func(mysubset = d$academic, 
+                        group_name = "Academic", big_group = "Workplace type"),
+  ai_safety_familiar_func(mysubset = d$industry, 
+                        group_name = "Industry", big_group = "Workplace type")
+)
+
+# Make the graph
+ggplot(data = ai_safety_familiar_demo) + 
+  geom_pointrange(aes(x = group, y = num, ymin = qnorm(0.025)*se + num, 
+                      ymax = qnorm(0.975)*se + num)) +
+  facet_grid(big_group~., scales = "free_y", space = "free_y", 
+             labeller = label_wrap_gen(width = 35)) +
+  scale_x_discrete(name = "Demographic subgroup") +
+  scale_y_continuous("Familiarity with AI safety") + coord_flip() +
+  theme_bw() + ggtitle("Familiarity with AI safety (by demographic subgroups)")
+
+# Make the table
+kable(ai_safety_familiar_demo[,c("group", "big_group", "num", "se", "N")],
+      row.names = FALSE, digits = 2, col.names = c("Subgroup", "Subgroup type",
+                                                   "Mean", "SE", "N"),
+      caption = "Familiarity with AI safety (by demographic subgroups)")
+
+```
+
+## Prioritizing AI safety Research 
+
+### Survey question
+
+How much should AI safety research be prioritized -- by, for instance, the tech industry, the academic field, and governments -- relative to today?
+
+Answer choices:
+
+- Much less (-2)	
+- Less (-1)	
+- About the same (0)	
+- More (1)	
+- Much more (2)
+- I don’t know
+ 
+### Overall results
+
+```{r aisafety-prioritize-overall, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=5}
+
+# Fill in the missing data values
+aisafety_prioritize_fill <- mean(d$aisafety_prioritize[d$aisafety_prioritize != -99 &
+                                                         d$aisafety_prioritize != -88 &
+                                                         !is.na(d$aisafety_prioritize)])
+
+# Change the missing values to -99
+d$aisafety_prioritize[!is.na(d$aisafety_intro) & is.na(d$aisafety_prioritize)] <- -99
+
+aisafety_prioritize <- catvar_func(
+  outcome = "How much to prioritize AI safety",
+  outcome_var = d$aisafety_prioritize,
+  label_var = main$aisafety_prioritize,
+  output_type = "value_table",
+  shown = !is.na(d$aisafety_intro),
+  num_missing = -99,
+  num_DK = -88, edit_labels = FALSE,
+  new_values <- c(NA, NA, -2, -1, 0, 1, 2),
+  survey_weights = d$weights,
+  missing_recode = aisafety_prioritize_fill
+)
+
+# Re-order the levels for data viz
+aisafety_prioritize$labels <- factor(aisafety_prioritize$labels, 
+                                     levels = aisafety_prioritize$labels[c(3:7, 2:1)])
+# Make the figure
+ggplot(data = aisafety_prioritize) +
+  geom_bar(aes(x = labels, y = Prop), stat = "identity", alpha = 0.5) +
+  geom_pointrange(aes(x = labels, y = Prop, ymin = qnorm(0.025)*se + Prop, 
+                      ymax = qnorm(0.975)*se + Prop)) +
+  scale_x_discrete(name = "Outcome") +
+  scale_y_continuous(labels = scales::percent, 
+                     name = "Percentage of respondents") +
+  theme_bw() + ggtitle("How much should AI safety be proritized")
+
+# Make the table
+kable(aisafety_prioritize[,c("labels", "Prop", "se", "Freq")], digits = 2, 
+      col.names = c("Outcome", "Proportion", "SE", "Frequency"), row.names = FALSE,
+      caption = "How much should AI safety be proritized")
+
+```
+
+### Results by demographic subgroups 
+
+```{r aisafety-prioritize-by-demo, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=5.5}
+# Function to generate the demographic breakdowns
+# Outputs the numerical summary for each subgroup 
+aisafety_prioritize_func <- function(mysubset, group_name, big_group) {
+  value_summary <- catvar_func(
+  outcome = "How much to prioritize AI safety",
+  outcome_var = d$aisafety_prioritize,
+  label_var = main$aisafety_prioritize,
+  output_type = "value_sum",
+  shown = !is.na(d$aisafety_intro) & mysubset,
+  num_missing = -99,
+  num_DK = -88, edit_labels = FALSE,
+  new_values <- c(NA, NA, -2, -1, 0, 1, 2),
+  survey_weights = d$weights,
+  missing_recode = aisafety_prioritize_fill
+)
+  value_summary$group <- group_name
+  value_summary$big_group <- big_group
+  row.names(value_summary) <- NULL 
+  return(value_summary)
+}  
+
+aisafety_prioritize_demo <- rbind(
+  # By undergraduate country
+  aisafety_prioritize_func(mysubset = d$undergrad_uni_country == "the US", 
+                        group_name = "US",big_group = "Undergraduate country"),
+  aisafety_prioritize_func(mysubset = d$undergrad_uni_country == "China", 
+                        group_name = "China", big_group = "Undergraduate country"),
+  aisafety_prioritize_func(mysubset = d$undergrad_uni_region == "Europe", 
+                        group_name = "Europe", big_group = "Undergraduate region"),
+  aisafety_prioritize_func(mysubset = d$undergrad_uni_region == "North America", 
+                        group_name = "North America", big_group = "Undergraduate region"),
+  aisafety_prioritize_func(mysubset = d$undergrad_uni_region == "Asia", 
+                        group_name = "Asia", big_group = "Undergraduate region"),
+  aisafety_prioritize_func(mysubset = d$academic, 
+                        group_name = "Academic", big_group = "Workplace type"),
+  aisafety_prioritize_func(mysubset = d$industry, 
+                        group_name = "Industry", big_group = "Workplace type")
+)
+
+# Make the graph
+ggplot(data = aisafety_prioritize_demo) + 
+  geom_pointrange(aes(x = group, y = num, ymin = qnorm(0.025)*se + num, 
+                      ymax = qnorm(0.975)*se + num)) +
+  facet_grid(big_group~., scales = "free_y", space = "free_y", 
+             labeller = label_wrap_gen(width = 35)) +
+  scale_x_discrete(name = "Demographic subgroup") +
+  scale_y_continuous("How much should AI safety be proritized") + coord_flip() +
+  theme_bw() + ggtitle("How much should AI safety be proritized (by demographic subgroups)")
+
+# Make the table
+kable(ai_safety_familiar_demo[,c("group", "big_group", "num", "se", "N")],
+      row.names = FALSE, digits = 2, col.names = c("Subgroup", "Subgroup type",
+                                                   "Mean", "SE", "N"))
+
+```
+
+```{r aisafety-familiar-prioritize-cor, echo=FALSE, cache=TRUE, fig.height=5, results='asis'} 
+# Correlation between familiarity with AI safety research and how much AI safety research should be prioritized
+# Put together a small dataset
+aisafety <- data.frame(fam = d$aisafety_fam_1[!is.na(d$aisafety_intro)],
+                       prioritize = d$aisafety_prioritize[!is.na(d$aisafety_intro)])
+# Fill in the missing values
+aisafety$fam[aisafety$fam %in% c(-99, -88)] <- aisafety_fam_fill
+aisafety$prioritize[aisafety$prioritize %in% c(-99, -88)] <- aisafety_prioritize_fill
+
+# Generate the correlation
+kable(cor(aisafety$fam, aisafety$prioritize), row.names = FALSE, col.names = NULL,
+                 caption = "Correlation between familiarity with AI safety research and how much AI safety research should be prioritized")
+      
+# Linear regression
+aisafety_md <- lm(prioritize ~ fam, data = aisafety)
+stargazer::stargazer(aisafety_md, type = "html", star.cutoffs = c(0.05, 0.01, 0.001),
+                     covariate.labels = c("(Intercept)", "Familiarity with AI safety"),
+          se = starprep(aisafety_md), 
+          p = starprep(aisafety_md,
+                       stat = "p.value"),
+          caption = "Regression analysis: predicting how much AI safety should be prioritized using familiarity with AI safety research ")
+
+# Make a graph
+ggplot(aisafety, aes(x = fam, y = prioritize)) +
+  geom_jitter() + geom_smooth(method = "lm") + xlab("Familiarity with AI safety\n(0 = not familiar at all; 4 = very familiar)") +
+  ylab("How much should AI safety be proritized\n(-2 = much less; 2 = much more)") +
+  theme_bw() + ggtitle("Relationship between familiarity with AI safety and\nperception of how much AI safety should be prioritized")
+
+```
+
+# Military applications of AI
+
+## Support for Others and Themselves Researching Military Technology
+
+[Respondents get 2 out of the 3 applications below; the order that the two questions will appear will be randomized.] 
+
+Applications: 
+
+- Lethal autonomous weapons to be used by the military of
+- Surveillance technologies to be used by intelligence agencies of
+- Logistics algorithms to optimize storage and transportation for the military of
+
+Do you support or oppose researchers in <INSERT NAME OF YOUR COUNTRY OF WORK> working on the development of [application] <INSERT NAME OF YOUR COUNTRY OF WORK>?
+
+[When they are asked about LAWs: Lethal autonomous weapons are systems that, once activated by a human, are capable of targeting and firing on their own.]
+
+[When they are asked about surveillance: Intelligence agencies could use AI to expand their capacity to analyze image, video, sound, and text data.]
+
+[When they are asked about logistics: The military could use machine learning algorithms to improve their logistics, such as the storage, purchasing and transportation  of weapons and food.]
+
+Answer choices:
+
+- Strongly support (2)
+- Somewhat support (1)
+- Neither support nor oppose (0)
+- Somewhat oppose (-1)
+- Strongly oppose (-2)
+- I don’t know
+
+### Overall results
+
+```{r military-applications, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=5.5}
+
+# Lethal autonomous weapons
+# Convert the missing values to -99
+d$others_laws[!is.na(d$FL_58_DO_FL_83) & is.na(d$others_laws)] <- -99
+# Get the missing fill in value
+laws_fill <- mean(d$others_laws[!d$others_laws %in% c(-88, -99) & !is.na(d$FL_58_DO_FL_83)])
+
+# Surveillance 
+# Convert the missing values to -99
+d$others_surve[!is.na(d$FL_58_DO_FL_84) & is.na(d$others_surve)] <- -99
+# Get the missing fill in value
+surve_fill <- mean(d$others_surve[!d$others_surve %in% c(-88, -99) &
+                                    !is.na(d$FL_58_DO_FL_84)])
+
+# Logistics
+# Convert the missing values to -99
+d$others_log[!is.na(d$FL_58_DO_FL_85) & is.na(d$others_log)] <- -99
+# Get the missing fill in value
+log_fill <- mean(d$others_log[!d$others_log %in% c(-88, -99) & !is.na(d$FL_58_DO_FL_85)])
+
+# General function to analyze the military application question
+mil_app_response <- function(outcome_name, outcome_var, label_var, missing_recode, shown, 
+                    subset = rep(TRUE, nrow(d)), outcome_type = "num_outcome") {
+  response <- catvar_func(
+  outcome = outcome_name,
+  outcome_var = outcome_var,
+  label_var = label_var,
+  output_type = outcome_type,
+  shown = shown & subset,
+  num_missing = -99,
+  num_DK = -88, edit_labels = FALSE,
+  new_values <- c(NA, NA, -2, -1, 0, 1, 2),
+  survey_weights = d$weights,
+  missing_recode = missing_recode
+)
+  if (outcome_type == "num_outcome") {
+    return(data.frame(id = d$ResponseId[shown], response = response,
+           outcome_name = outcome_name)) 
+  }
+  if (outcome_type == "value_table") {
+    return(response)
+  } else {
+    return(response)
+  }
+}
+
+mil_com <- rbind( 
+  mil_app_response(outcome_name = "Lethal autonomous weapons", outcome_var = d$others_laws, 
+        label_var = main$others_laws, missing_recode = laws_fill, 
+        shown = !is.na(d$FL_58_DO_FL_83), outcome_type = "value_table"),
+  mil_app_response(outcome_name = "Surveillance", outcome_var = d$others_surve, 
+        label_var = main$others_surve, missing_recode = surve_fill, 
+        shown = !is.na(d$FL_58_DO_FL_84), outcome_type = "value_table"),
+  mil_app_response(outcome_name = "Logistics", outcome_var = d$others_log, 
+        label_var = main$others_log, missing_recode = log_fill, 
+        shown = !is.na(d$FL_58_DO_FL_85), outcome_type = "value_table")
+)
+
+
+# Clean up the results for data viz
+mil_com$labels <- factor(mil_com$labels, levels = c("Strongly oppose", "Somewhat oppose",
+                                                    "Neither support nor oppose",
+                                                    "Somewhat support", "Strongly support",
+                                                    "I don’t know", "Missing"))
+mil_com$outcome <- factor(mil_com$outcome, levels = c("Lethal autonomous weapons",
+                                                      "Surveillance",
+                                                      "Logistics"))
+# Make the plot
+ggplot(data = mil_com) +
+  geom_bar(aes(x = labels, y = Prop, fill = outcome), stat = "identity", 
+           position = "dodge", alpha = 0.75) +
+  scale_x_discrete(name = "Outcome", labels = function(x) str_wrap(x, width = 10)) +
+  scale_y_continuous(labels = scales::percent, 
+                     name = "Percentage of respondents") +
+  scale_fill_discrete(name = "Applications") +
+  theme_bw() + ggtitle("Attitudes toward researchers working on military applications of AI") +
+  theme(legend.position = "bottom")
+
+# Make the table
+kable(mil_com[,c("outcome", "labels", "Prop", "se", "Freq")], 
+      digits = 2, row.names = FALSE, col.names = c("Outcome", "Responses", "Proportion",
+                                                   "SE", "Frequency"),
+      caption = "Attitudes toward researchers working on military applications of AI")
+```
+
+### Results by demographic subgroups 
+
+```{r military-applications-demo, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=6}
+# Make a general function to produce the results by demographic subgroup
+mil_app_response_demo <- function(mysubset, mysubset_name, big_group) {
+  mil_com <- rbind(
+    mil_app_response(
+      outcome_name = "Lethal autonomous weapons",
+      outcome_var = d$others_laws,
+      label_var = main$others_laws,
+      missing_recode = laws_fill,
+      shown = !is.na(d$FL_58_DO_FL_83),
+      outcome_type = "value_sum",
+      subset = mysubset
+    ),
+    mil_app_response(
+      outcome_name = "Surveillance",
+      outcome_var = d$others_surve,
+      label_var = main$others_surve,
+      missing_recode = surve_fill,
+      shown = !is.na(d$FL_58_DO_FL_84),
+      outcome_type = "value_sum",
+      subset = mysubset
+    ),
+    mil_app_response(
+      outcome_name = "Logistics",
+      outcome_var = d$others_log,
+      label_var = main$others_log,
+      missing_recode = log_fill,
+      shown = !is.na(d$FL_58_DO_FL_85),
+      outcome_type = "value_sum",
+      subset = mysubset
+    )
+  )
+  mil_com$subset <- mysubset_name
+  mil_com$big_group <- big_group
+  return(mil_com)
+}
+
+# By country
+mil_app_country <- rbind(mil_app_response_demo(mysubset = d$undergrad_uni_country == "the US",
+                      mysubset_name = "US",
+                      big_group = "Undergraduate country"),
+                      mil_app_response_demo(mysubset = d$undergrad_uni_country == "China",
+                      mysubset_name = "China",
+                      big_group = "Undergraduate country"))
+
+# Clean up the factors                      
+mil_app_country$subset <- factor(mil_app_country$subset, levels = c("US", "China"))
+
+# By region
+mil_app_region <- rbind(mil_app_response_demo(mysubset = d$undergrad_uni_region == "Europe",
+                      mysubset_name = "Europe",
+                      big_group = "Undergraduate region"),
+                      mil_app_response_demo(mysubset = 
+                                              d$undergrad_uni_region == "North America",
+                      mysubset_name = "North America",
+                      big_group = "Undergraduate region"),
+                      mil_app_response_demo(mysubset = d$undergrad_uni_region == "Asia",
+                      mysubset_name = "Asia",
+                      big_group = "Undergraduate region"))
+
+# Clean up the factors                      
+mil_app_region$subset <- factor(mil_app_region$subset, 
+                                levels = c("Europe", "North America", "Asia"))
+
+# By workplace type
+mil_app_workplace <- rbind(mil_app_response_demo(mysubset = d$academic,
+                      mysubset_name = "Academic",
+                      big_group = "Workplace type"),
+                      mil_app_response_demo(mysubset = d$industry,
+                      mysubset_name = "Industry",
+                      big_group = "Workplace type"))
+
+# Clean up the factors                      
+mil_app_workplace$subset <- factor(mil_app_workplace$subset, 
+                                   levels = c("Academic", "Industry"))
+
+# Combine the results
+mil_app_demo <- rbind(mil_app_country, mil_app_region, mil_app_workplace)
+
+# Re-order the levels in the outcome variables
+mil_app_demo$outcome <- factor(mil_app_demo$outcome, levels = c("Logistics",
+                                                                "Surveillance",
+                                                                "Lethal autonomous weapons"))
+
+# Make the graph
+ggplot(data = mil_app_demo) +
+  geom_pointrange(aes(x = outcome, y = num, ymin = qnorm(0.025)*se + num, 
+                      ymax = qnorm(0.975)*se + num, color = subset, shape = subset),
+                  position = position_dodge(width = 1)) +
+  scale_x_discrete( 
+    name = "Application type") +
+  scale_y_continuous(name = "Mean response (-2 = strongly oppose; 2 = strongly support)") +
+  facet_grid(big_group~.) +
+  coord_flip() + theme_bw() + 
+  scale_color_manual(values = as.character(demo_color_shape$color), name = "Subgroup") +
+  scale_shape_manual(values = as.numeric(demo_color_shape$shape), name = "Subgroup") +
+  theme(legend.position = "bottom") +
+  ggtitle("Attitudes toward researchers working on military applications of AI (by demographic subgroup)")
+
+# Make the table
+kable(
+  mil_app_demo[, c("outcome", "num", "se", "N", "subset", "big_group")],
+  digits = 2,
+  row.names = FALSE,
+  col.names = c(
+    "Application type",
+    "Mean",
+    "SE",
+    "N",
+    "Subgroup",
+    "Subgroup Type"
+  ),
+  caption = "Attitudes toward researchers working on military applications of AI (by demographic subgroup)"
+)
+
+```
+
+## Collective action
+
+[Only show below question if somewhat oppose and strongly oppose]
+
+**Suppose your organization has decided to research [application] <INSERT YOUR COUNTRY HERE>.**
+
+Which, if any, of the following actions would you take?
+- Nothing
+- Actively avoid working on the project
+- Expressing your concern to a superior in your organization involved in the decision
+- Sign a petition against the decision
+- Participate in a public protest
+- Speak out against the decision anonymously to the media or online
+- Speak out against the decision publicly to the media or online
+- Resign or threaten to resign from your job
+- Other: [short textbox]
+
+```{r collective-action, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=6}
+
+# Create a data frame with the variable numbers and labels
+ca_label <- data.frame(varnum = c(1, 4:10), 
+           varlabel = c("Nothing", 
+             "Actively avoid working on the project",
+             "Expressing your concern to a superior in your organization involved in the decision",
+             "Sign a petition against the decision",
+             "Participate in a public protest",
+             "Speak out against the decision anonymously to the media or online",
+             "Speak out against the decision publicly to the media or online",
+             "Resign or threaten to resign from your job"))
+
+# Function to analyze the questions
+ca_func <- function(projectvar, project_type, varnum, mysubset = rep(TRUE, nrow(d)),
+                       subset_name = "All", return_analysis_output = TRUE) {
+  # the outcome variable
+  x <- d[,paste0(projectvar, varnum)]
+  # whether the variable is shown to respondents
+  shown <- !is.na(d[,paste0(projectvar, "DO_", varnum)])
+  outcome <- x[shown] # remove the not shown responses
+  id <- d$ResponseId[shown]
+  mysubset <- mysubset[shown] # remove the not shown responses
+  missing_outcomes <- is.na(outcome) | outcome == -88 | outcome == -99 # the missing or DK outcomes
+  missing_fill <- mean(outcome[!missing_outcomes]) # mean impute using the non-missings
+  outcome[missing_outcomes] <- missing_fill # fill in the missings 
+  # Subset by the mysubset variable
+  outcome <- outcome[mysubset]
+  missing_outcomes <- missing_outcomes[mysubset]
+  id <- id[mysubset]
+  # Calculate the missing percentage 
+  percent_missing <- sum(missing_outcomes)/length(outcome) # get hte percentage missing
+  md <- if (percent_missing > 0.1) {
+    # If more than 10 percent is missing, then we condition on normalized dummy variable for missingness
+    lm_robust(outcome ~ scale(missing_outcomes))
+  } else {
+    lm_robust(outcome ~ 1)
+  }
+  # Output the results
+  output_table <- data.frame(project_type = project_type, outcome_name = ca_label$varlabel[ca_label$varnum == varnum],
+                    mean = md$coefficients[1], se = md$std.error[1], n = length(outcome),
+                    subset = subset_name)  
+  row.names(output_table) <- NULL
+  if (return_analysis_output) {
+    return(output_table)
+  } else {
+    return(data.frame(id, project_type, outcome_name = ca_label$varlabel[ca_label$varnum == varnum],
+                      outcome, missing_outcomes, subset_name))
+  }
+}
+
+# Run the analysis on the 3 different types of military applications
+ca_res <- rbind(
+  do.call(rbind, lapply(ca_label$varnum, ca_func, projectvar = "self_laws_", 
+       project_type = "Lethal autonomous weapons")),
+  do.call(rbind, lapply(ca_label$varnum, ca_func, projectvar = "self_surve_", 
+       project_type = "Surveillance")),
+  do.call(rbind, lapply(ca_label$varnum, ca_func, projectvar = "self_laws_", 
+       project_type = "Logistics"))
+)
+
+# Level up the levels in the actions
+ca_res$outcome_name <- factor(ca_res$outcome_name, levels = ca_res$outcome_name[1:8])
+
+# Make the graph
+ggplot(ca_res, mapping = aes(x = outcome_name, y = mean, 
+                             fill = project_type)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") + coord_flip() +
+  scale_x_discrete(name = "Actions", labels = function(x) str_wrap(x, width = 30)) +
+  scale_fill_manual(values = c("lavender", "navy", "lightcoral"), name = "Application type") +
+  theme_bw() +
+  theme(legend.position = "bottom") + ylab("Proportion of respondents") +
+  ggtitle("Support for collective action against research into military applications of AI")
+
+# Make the table
+kable(ca_res[,c("project_type", "outcome_name", "mean", "se", "n")], 
+      digits = 2, row.names = FALSE, col.names = c("Application type", 
+                                                   "Collective action", "Proportion",
+                                                   "SE", "N"),
+      caption = "Support for collective action against research into military applications of AI")
+
+```
+
+## Response to Google pulling out of Project Maven
+
+### Survey question 
+
+Google had a contract to work on Project Maven, a US Department of Defense project that develops and integrates computer vision algorithms to support military operations. Some Google employees voiced ethical concerns regarding the project. Google decided not to renew its Project Maven contract with the US Department of Defense.
+
+Do you support or oppose this decision by Google not to renew its contract? 
+
+Answer choices:
+
+- Strongly support (2)
+- Somewhat support (1)
+- Neither support nor oppose (0)
+- Somewhat oppose (-1)
+- Strongly oppose (-2)
+- I don’t know
+
+### Overall results
+
+```{r maven, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=6}
+# Project Maven
+
+# Change the missing 
+d$maven[is.na(d$maven) & !is.na(d$FL_32_DO_FL_63)] <- -99
+
+# Fill in the missing
+maven_fill <- mean(d$maven[!d$maven %in% c(-88, -99) & !is.na(d$FL_32_DO_FL_63)])
+
+maven_res <- catvar_func(
+  outcome = "Attitudes toward Project Maven",
+  outcome_var = d$maven,
+  label_var = main$maven,
+  output_type = "value_table",
+  shown = !is.na(d$FL_32_DO_FL_63),
+  num_missing = -99,
+  num_DK = -88, edit_labels = FALSE,
+  new_values <- c(NA, NA, -2, -1, 0, 1, 2),
+  survey_weights = d$weights,
+  missing_recode = maven_fill
+)
+
+# Re-order the levels
+maven_res$labels <- factor(maven_res$labels, levels = maven_res$labels[c(3:7, 2, 1)])
+
+ggplot(data = maven_res) +
+  geom_bar(aes(x = labels, y = Prop), stat = "identity", alpha = 0.5) +
+  geom_pointrange(aes(x = labels, y = Prop, ymin = qnorm(0.025)*se + Prop, 
+                      ymax = qnorm(0.975)*se + Prop)) +
+  scale_x_discrete(name = "Outcome", labels = function(x) str_wrap(x, width = 10)) +
+  scale_y_continuous(labels = scales::percent, 
+                     name = "Percentage of respondents") +
+  theme_bw() + ggtitle("Attitudes toward Google pulling out of Project Maven")
+
+# Make the table
+kable(maven_res[,c("labels", "Prop", "se", "Freq")], 
+      digits = 2, row.names = FALSE, col.names = c("Response", "Proportion",
+                                                   "SE", "Frequency"),
+      caption = "Attitudes toward Google pulling out of Project Maven")
+
+```
+
+### Project Maven open-ended comments
+
+[Optional question]: Would you like to elaborate on the reasoning behind your previous answer? 
+
+[Text box]
+
+
+```{r maven-textbox, echo=FALSE, cache=TRUE, warning=FALSE, fig.height=6}
+# Directly output the comments
+kable(data.frame(row_id = 1:length(d$mavencomment[d$mavencomment != ""]),
+  comments = d$mavencomment[d$mavencomment != ""]), col.names = 
+    c("Reponse number", "Open-ended comments"))
+```
+
+### Correlation between attitude to Google pulling out of Project Maven and view toward lethal 
+
+```{r corr-support-laws-maven, echo=FALSE, cache=TRUE, warning=FALSE, results='asis', fig.height=6}
+# Get the numerical data from the attitudes data
+
+# Get the raw Project Maven results
+maven_res_raw <- catvar_func(
+  outcome = "Attitudes toward Project Maven",
+  outcome_var = d$maven,
+  label_var = main$maven,
+  output_type = "num_outcome",
+  shown = !is.na(d$FL_32_DO_FL_63),
+  num_missing = -99,
+  num_DK = -88, edit_labels = FALSE,
+  new_values <- c(NA, NA, -2, -1, 0, 1, 2),
+  survey_weights = d$weights,
+  missing_recode = maven_fill
+)
+# Get the Respondent IDs
+maven_res_dat <- data.frame(id = d$ResponseId[!is.na(d$FL_32_DO_FL_63)],
+                            response_maven = maven_res_raw)
+# Create a missing outcome variable
+maven_res_dat$response_maven_m <- !maven_res_dat$response_maven %in% c(-2, -1, 0, 1, 2)
+
+# Correlation between support for lethal autonmous weapons and support for Google pulling out of Project Maven
+laws_raw <- mil_app_response(outcome_name = "Lethal autonomous weapons", 
+                             outcome_var = d$others_laws, 
+        label_var = main$others_laws, missing_recode = laws_fill, 
+        shown = !is.na(d$FL_58_DO_FL_83))
+names(laws_raw)[names(laws_raw) == "response"] <- "others_laws_response"
+maven_laws_raw <- merge(x = laws_raw, y = maven_res_dat, all.x = TRUE, by = "id")
+
+# Regression analysis
+# y = support for Google pulling out of Project Maven
+# main predictor variable = support for 
+response_maven_laws <- lm(response_maven ~ others_laws_response,
+          data = maven_laws_raw)
+
+stargazer::stargazer(response_maven_laws, type = "html",  star.cutoffs = c(0.05, 0.01, 0.001),
+                     covariate.labels = c("(Intercept)", "Support for researchers working on lethal autonomous weapons"),
+          se = starprep(response_maven_laws), # cluster by respondent id
+          p = starprep(response_maven_laws, stat = "p.value"))
+
+```
+
+### Correlation between attitude to Google pulling out of Project Maven and view toward military applications of AI
+
+```{r corr-support-mil-app-maven, echo=FALSE, results='asis', cache=TRUE, warning=FALSE, fig.height=6}
+# Correlation between support for researchers working on military applications of AI and support for Google canceling Project Maven
+# Get out the raw results
+mil_other_raw <- rbind(
+  mil_app_response(outcome_name = "Lethal autonomous weapons", outcome_var = d$others_laws, 
+        label_var = main$others_laws, missing_recode = laws_fill, 
+        shown = !is.na(d$FL_58_DO_FL_83)),
+  mil_app_response(outcome_name = "Surveillance", outcome_var = d$others_surve, 
+        label_var = main$others_surve, missing_recode = surve_fill, 
+        shown = !is.na(d$FL_58_DO_FL_84)),
+  mil_app_response(outcome_name = "Logistics", outcome_var = d$others_log, 
+        label_var = main$others_log, missing_recode = log_fill, 
+        shown = !is.na(d$FL_58_DO_FL_85))
+)
+# Get the mean support for each respondents
+mil_other_sum <- mil_other_raw %>% group_by(id) %>% dplyr::summarise(
+  support_mil_app = mean(response),
+  laws = sum(outcome_name == "Lethal autonomous weapons"),
+  surve = sum(outcome_name == "Surveillance"),
+  log = sum(outcome_name == "Logistics")
+)
+
+# Combine with the subject id
+maven_res_dat <- merge(x = maven_res_dat, y = mil_other_sum, all.x = TRUE, by = "id")
+
+# Regression analysis
+# y = support for Google pulling out of Project Maven
+# main predictor variable = mean support for researchers working on military applications of AI
+response_maven_others_md <- lm(response_maven ~ support_mil_app + surve + log,
+          data = maven_res_dat)
+
+stargazer::stargazer(response_maven_laws, type = "html", 
+                     covariate.labels = c("(Intercept)",  star.cutoffs = c(0.05, 0.01, 0.001),
+                                          "Support for researchers working on military applications of AI (averaged across 2 applications)",
+                                          "Asked about surveillance",
+                                          "Asked about logistics"),
+          se = starprep(response_maven_others_md), # cluster by respondent id
+          p = starprep(response_maven_others_md, stat = "p.value"))
+```
