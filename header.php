@@ -2,7 +2,7 @@
 
 <HTML> 
 <head>
-<title>Christopher S. Warshaw</title>
+<title>Michael Hankinson</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta name="AUTHOR" content="Chris Warshaw, Christopher J. Warshaw">
 <meta name="DESCRIPTION" content="Christopher S. Warshaw -- Assistant Professor -->
