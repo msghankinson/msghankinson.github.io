@@ -2,9 +2,9 @@
 include("header.php")
 ?>
 
-<H1>Christopher S. Warshaw</H1>
+<H1>Michael Hankinson</H1>
 <br>
-<p><IMG SRC="Warshaw_photo_formal.jpg" width="300" style="float:right; margin:0 5px 0 25px;" >
+<p><IMG SRC="headshot.jpg" width="300" style="float:right; margin:0 5px 0 25px;" >
 
 I am an Assistant Professor of <a href="https://politicalscience.columbian.gwu.edu/christopher-warshaw" target="_blank">Political Science</a> at <a href="https://politicalscience.columbian.gwu.edu" target="_blank">George Washington University</a>. Previously, I was an Associate Professor (without tenure) at <a href="https://polisci.mit.edu" target="_blank">the Massachusetts Institute of Technology</a>.  My areas of research are American Politics, Representation, Public Opinion, State and Local Politics, Environmental Politics and Policy, and Statistical Methodology.  
 
