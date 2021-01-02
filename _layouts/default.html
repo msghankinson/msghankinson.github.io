@@ -76,15 +76,22 @@
   {{ content }}
 
 </div>
+
+
   
   <footer>
+    n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
    <ul>
-   <li><a href="mailto:baobaozhangresearch@gmail.com">Email</a></li>
-   <li><a href="https://github.com/13bzhang">GitHub</a></li>
-   <li><a href="https://scholar.google.com/citations?user=yqpOQRsAAAAJ&hl=en">Google Scholar</a></li>
-   <li><a href="https://twitter.com/baobaofzhang">Twitter</a></li>
+   <li><a href="mailto:hankinson@gwu.edu">Email</a></li>
+   <li><a href="https://github.com/msghankinson">GitHub</a></li>
+   <li><a href="https://scholar.google.com/citations?user=b0HaWaYAAAAJ&hl=en">Google Scholar</a></li>
+   <li><a href="https://twitter.com/msghankinson">Twitter</a></li>
    </ul>
-   <p>Website updated on May 5, 2020.</p>
+   <p>Website updated on <p id="date">.</p>
   </footer>
   </body>
 
