@@ -1,0 +1,25 @@
+Figure,M23,Enforcement,Context,"(matching),",n,o expo,sure,,0.29,0.71
+Figure,M24,Treatment,"Race, ex",posure,,,,,1.00,1.00
+Figure,M24,Treatment,"Race, no",exposure,,,,,0.53,0.87
+Figure,M24,Treatment,Race by,respondent,(B,"lack),",exp,osure,0.07,0.54
+Figure,M24,Treatment,Race by,respondent,(B,"lack),",no e,xposure,0.84,1.00
+Figure,M24,Treatment,Race by,respondent,(w,"hite),",exp,osure,0.25,0.71
+Figure,M24,Treatment,Race by,respondent,(w,"hite),",no e,xposure,0.11,0.55
+Figure,M24,Enforcement,"Race, ex",posure,,,,,0.20,0.69
+Figure,M24,Enforcement,"Race, no",exposure,,,,,0.70,0.97
+Figure,M24,Enforcement,Race by,respondent,(B,"lack),",exp,osure,0.26,0.71
+Figure,M24,Enforcement,Race by,respondent,(B,"lack),",no e,xposure,0.06,0.52
+Figure,M24,Enforcement,Race by,respondent,(w,"hite),",exp,osure,0.14,0.59
+Figure,M24,Enforcement,Race by,respondent,(w,"hite),",no e,xposure,0.50,0.86
+Figure,M25,Treatment,"Gender,",exposure,,,,,0.62,0.94
+Figure,M25,Treatment,"Gender,",no exposure,,,,,0.53,0.87
+Figure,M25,Treatment,Gender,by responde,nt,(man),", ex",posure,0.56,0.88
+Figure,M25,Treatment,Gender,by responde,nt,(man),", no",exposure,0.87,1.00
+Figure,M25,Treatment,Gender,by responde,nt,(woma,"n),",exposure,0.89,1.00
+Figure,M25,Treatment,Gender,by responde,nt,(woma,"n),",no exposure,0.29,0.71
+Figure,M25,Enforcement,"Gender,",exposure,,,,,0.09,0.55
+Figure,M25,Enforcement,"Gender,",no exposure,,,,,0.94,1.00
+Figure,M25,Enforcement,Gender,by responde,nt,(man),", ex",posure,0.18,0.68
+Figure,M25,Enforcement,Gender,by responde,nt,(man),", no",exposure,0.18,0.68
+Figure,M25,Enforcement,Gender,by responde,nt,(woma,"n),",exposure,0.29,0.71
+Figure,M25,Enforcement,Gender,by responde,nt,(woma,"n),",no exposure,0.15,0.61

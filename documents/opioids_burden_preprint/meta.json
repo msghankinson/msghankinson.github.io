@@ -1,0 +1,212 @@
+{
+  "slug": "opioids_burden_preprint",
+  "pages": 37,
+  "title": "Concentrated Burdens: How Self-Interest and Partisanship Shape Opinion on Opioid Treatment Policy",
+  "words": 7611,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Policy support with 95% confidence intervals among respondent subgroups.",
+      "page": 8,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Effect of self-interest on policy support across both funding models with 95% (thin lines) and 90% (thick lines) confidence intervals.",
+      "page": 9,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Effect of partisanship on policy support across both funding models with 95% (thin lines) and 90% (thick lines) confidence intervals.",
+      "page": 10,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 4",
+      "caption": "Effect of self-interest on policy support by partisanship across both funding models with 95% (thin lines) and 90% (thick lines) confidence intervals.",
+      "page": 11,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 5",
+      "caption": "Effect of spatial self-interest on policy support by partisanship with 95% (thin lines) and 90% (thick lines) confidence intervals.",
+      "page": 12,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A1",
+      "caption": "Personal exposure to the opioid crisis",
+      "page": 21,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A2",
+      "caption": "Treatment funding policy support and 95%-confidence intervals by respondent characteristics.",
+      "page": 28,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A3",
+      "caption": "Clinic construction policy support and 95%-confidence intervals by respondent characteristics.",
+      "page": 31,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A4",
+      "caption": "Clinic construction policy support and 95%-confidence intervals by respondent income compared to median income within respondent\u2019s state.",
+      "page": 34,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A5",
+      "caption": "Clinic construction policy support and 95%-confidence intervals by respondent\u2019s county\u2019s overdose rate compared to median overdose rate within respondent\u2019s state.",
+      "page": 34,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A6",
+      "caption": "Clinic construction policy support and 95%-confidence intervals by respondent partisanship.",
+      "page": 35,
+      "image": "figures/fig-11.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A7",
+      "caption": "Clinic construction policy support and 95%-confidence intervals by respondent\u2019s personal exposure to someone who has been addicted to opioids.",
+      "page": 35,
+      "image": "figures/fig-12.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table A1",
+      "caption": "Descriptive Characteristics of AmeriSpeak Survey Sample",
+      "page": 20,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A2",
+      "caption": "Predictors of Personal Exposure to Opioid Addiction",
+      "page": 22,
+      "image": "tables/tab-02.png",
+      "csv": null
+    },
+    {
+      "kind": "table",
+      "label": "Table A3",
+      "caption": "Experimental Balance on Covariates",
+      "page": 23,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A4",
+      "caption": "Policy Support Among Demographic Subgroups",
+      "page": 24,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A5",
+      "caption": "Financial Self-Interest Effects",
+      "page": 26,
+      "image": "tables/tab-05.png",
+      "csv": null
+    },
+    {
+      "kind": "table",
+      "label": "Table A6",
+      "caption": "Financial Self-Interest Effect: Heterogeneity by Respondent Characteristics",
+      "page": 27,
+      "image": "tables/tab-06.png",
+      "csv": "tables/tab-06.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A7",
+      "caption": "Spatial Self-Interest Effects",
+      "page": 30,
+      "image": "tables/tab-07.png",
+      "csv": null
+    },
+    {
+      "kind": "table",
+      "label": "Table A9",
+      "caption": "Spatial Self-Interest Treatment Effect: Heterogeneity by Respondent Character- istics",
+      "page": 33,
+      "image": "tables/tab-08.png",
+      "csv": "tables/tab-08.csv"
+    }
+  ],
+  "headings": [
+    "Justin de Benedictis-Kessner\u2217 Michael Hankinson\u2020",
+    "July 9, 2019",
+    "Theoretical Expectations",
+    "Research Design and Data",
+    "Results",
+    "Financial Self-Interest",
+    "Spatial Self-Interest and the Implementation of Infrastructure",
+    "Conclusion",
+    "References",
+    "Supplementary Appendix for",
+    "A Survey Sample Characteristics",
+    "B Demographic Balance Across Experimental Condi-",
+    "tions",
+    "C Descriptive Results in Tabular Form",
+    "D Treatment Funding Results in Tabular Form",
+    "E NIMBY Experiment in Tabular Form",
+    "F Survey Questions",
+    "1. The [STATE] government is considering a policy to fund medication-assisted treatment",
+    "1. Strongly support",
+    "2. Somewhat support",
+    "3. Neither support nor oppose",
+    "4. Somewhat oppose",
+    "5. Strongly oppose",
+    "2. Medication-assisted treatment clinics provide help for people with substance abuse prob-",
+    "1. Strongly support",
+    "2. Somewhat support",
+    "3. Neither support nor oppose",
+    "4. Somewhat oppose",
+    "5. Strongly oppose",
+    "1. Yes, me",
+    "2. Yes, a family member",
+    "3. Yes, a close friend",
+    "4. Yes, an acquaintance",
+    "5. No, I do not know anyone who has ever been addicted to opioids"
+  ],
+  "warnings": [
+    "Table A2: no machine-readable CSV",
+    "Table A5: no machine-readable CSV",
+    "Table A7: no machine-readable CSV",
+    "could not locate region for Table A8 on p.32"
+  ]
+}

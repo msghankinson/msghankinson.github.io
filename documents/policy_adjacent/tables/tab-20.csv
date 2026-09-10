@@ -1,0 +1,26 @@
+,,,(0.007),,(0.009)
+L,IHTC F,E,Yes,,Yes
+L,IHTC S,E Clusters,Yes,,Yes
+R,2,,0.197,,0.190
+A,dj. R2,,0.194,,0.187
+N,um. obs,.,136416,,121908
+R,MSE,,0.514,,0.511
+N,Cluster,s,456,,456
+∗∗,∗p < 0.001,; ∗∗p < 0.01; ∗p < 0.05,,,
+r,Design,with Homeownersh,"ip, DV =",V,oted in
+,,,All,,Clean
+,LIHTC,Project,−0.047∗,−,0.052∗
+,,,(0.023),(,0.023)
+,Renter,Blocks,0.042∗,,0.039
+,,,(0.021),(,0.023)
+,LIHTC,x Renter Blocks,0.021,,0.025
+,,,(0.030),(,0.033)
+,CBSA F,E,Yes,,Yes
+,LIHTC,SE Clusters,Yes,,Yes
+,R2,,0.135,,0.122
+,Adj. R2,,0.134,,0.122
+,Num. o,bs.,90941,,79453
+,RMSE,,0.545,,0.543
+,N Clust,ers,843,,824
+,∗∗∗p < 0.0,01; ∗∗p < 0.01; ∗p < 0.0,5,,
+ar,Design,with Homeowners,"hip, DV =",V,oted in

@@ -1,0 +1,17 @@
+able 4: Effect of Incumbent Prote,ction on,Post-Districting Ele,ction
+"comes, Latino Opportunity",Districts,,
+,Total,Total,Any
+N,ew Cands.,Latino Cands. Lati,no Ele
+1 Incumbent,-0.707**,-0.337+,-0.171*
+,(0.254),(0.187),(0.079)
+2+ Incumbents,-0.620+,-0.332,-0.141
+,(0.368),(0.271),(0.115)
+"District: Prop. of CVAP, Hispanic",2.440,3.706*,1.428+
+,(2.312),(1.704),(0.723)
+"District: Prop. of CVAP, White",2.641,1.456,0.028
+,(2.369),(1.745),(0.740)
+(Intercept),-3.628,-3.734,-0.879
+,(6.498),(4.787),(2.031)
+N,145,145,145
+R2,0.237,0.278,0.262
+Controls,Yes,Yes,Yes

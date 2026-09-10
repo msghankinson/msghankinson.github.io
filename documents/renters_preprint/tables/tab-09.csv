@@ -1,0 +1,20 @@
+ble B.8: Support for B,an on Neighbor,hood Developmen,t - 7
+,Bivariate F,ull Full with,Fixed
+,(1) (,2),(3)
+Homeownership,.26,.27,.25
+,(.06),(.07),(.09)
+"Ideology, Liberal",,−.08,−.06
+,,(.03),(.04)
+"Income, Log",,−.01,−.02
+,,(.03),(.04)
+"White, Non-Hispanic",,−.12,−.17
+,,(.07),(.08)
+Age,,.002,.003
+,,(.002),(.002
+Male,,−.12,−.11
+,,(.06),(.08)
+Constant,3.60,3.61,3.78
+,(.05),(.10),(.20)
+Observations,"2,998 2,",941 2,",941"
+R2,.01 .,01,.24
+Adjusted R2,.01 .,01,.02

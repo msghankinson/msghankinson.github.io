@@ -1,0 +1,28 @@
+,,,,(0.008),(,0.007,),(0.010),,(0.009)
+,LIHTC,FE,,Yes,,Yes,,Yes,,Yes
+,LIHTC,SE Clus,ters,Yes,,Yes,,Yes,,Yes
+,R2,,,0.236,,0.236,,0.237,,0.219
+,Adj. R2,,,0.175,,0.175,,0.175,,0.180
+,Num. o,bs.,60,00,600,0,60,00,92,92
+,RMSE,,,0.477,,0.477,,0.476,,0.468
+,N Clust,ers,4,44,44,4,4,44,4,46
+,∗∗∗p < 0.0,01; ∗∗p <,0.01; ∗p < 0,.05,,,,,,
+Table D-7,: Effect,"of new,",nearby L,IHTC o,n chan,ge in,support,for hou,sing bo,nds us
+design.,,,,,,,,,,
+,,,,B,inary,,Units,Co,ntinuou,s
+,,LIHTC,Project,,0.025∗∗,,0.018∗,,0.025∗,
+,,,,(,0.009),,(0.008),,(0.011),
+,,% Rente,rs,−,0.002,,−0.022∗∗,∗,−0.006,
+,,,,(,0.010),,(0.006),,(0.013),
+,,LIHTC,x % Rent,ers −,0.038∗∗,,−0.041∗∗,∗,−0.041∗,
+,,,,(,0.013),,(0.011),,(0.016),
+,,CBSA F,E,,Yes,,Yes,,Yes,
+,,LIHTC,SE Clust,ers,Yes,,Yes,,Yes,
+,,R2,,,0.063,,0.065,,0.064,
+,,Adj. R2,,,0.055,,0.057,,0.059,
+,,Num. o,bs.,403,8,40,38,61,44,
+,,RMSE,,,0.516,,0.515,,0.503,
+,,N Clust,ers,76,3,7,63,8,10,
+,,∗∗∗p < 0.0,01; ∗∗p < 0.,01; ∗p < 0.0,5,,,,,
+Table D-8,: Effect,"of new,",nearby L,IHTC on,chang,e in s,upport f,or hous,ing bon,ds usin
+design.,,,,,,,,,,

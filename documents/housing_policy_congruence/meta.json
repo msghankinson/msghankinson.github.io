@@ -1,0 +1,199 @@
+{
+  "slug": "housing_policy_congruence",
+  "pages": 42,
+  "title": "\u201cCity Limits\u201d of Representation: How Perceptions of Public Opinion and Fiscal Constraints Shape Legislator Housing Attitudes",
+  "words": 12526,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Policy agreement, by policymaker vote on each policy",
+      "page": 18,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Predicted probability of councilmember voting for a policy from a logistic regression curve given district-level public opinion. 95% confidence intervals shaded. Dotted lines show the 50% marks in opinion support and policy probability.",
+      "page": 18,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "compares the average councilmember\u2019s perception of public support for each policy to the observed average public support in the sampled districts using the grand mean approach (results are similar using MRP estimates, although these do not incorporate estimates of uncertainty, see",
+      "page": 19,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Appendix Figure D-5",
+      "caption": "). Councilmembers underestimate public support for zoning reform by 11 points, tax incentives for affordable housing by 29 percentage points, and rent control by 39 points.11",
+      "page": 19,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 4",
+      "caption": "enhances our understanding of Figure 3 by plotting councilmembers\u2019 perceptions of 11Note the average misperception varies slightly under the grand mean approach. For example, Councilmembers underestimate support for rent control by 43 percentage points using the grand mean approach. However, we reccomend caution in interpreting the rent control estimates via the grand mean approach due to the smaller sample size of the combined surveys, and the fact that this approach does not account for biased sampling with weights. CES questions incorporate CES weights.",
+      "page": 19,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 5",
+      "caption": "Councilmember perception of policy support compared to public opinion as estimated using the grand mean approach. 21",
+      "page": 22,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 6",
+      "caption": "Councilmember misperception of public opinion by salience for housing policy in district.",
+      "page": 23,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 7",
+      "caption": "Predicted probability of councilmember voting for a policy from a logistic regression curve given perceptions of district-level public opinion. 95% confidence intervals shaded. Dotted lines show the 50% marks in opinion support and policy probability.",
+      "page": 24,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 8",
+      "caption": "Agreement between councilmember position and public support compared to councilmem- ber misperception of public support. Red dotted line indicates the average gap between perception and public opinion for that policy.",
+      "page": 25,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 9",
+      "caption": "Councilmember ranking of factors\u2019 influence on their housing policy decisions.",
+      "page": 27,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 10",
+      "caption": "Councilmember probability of supporting zoning reform compared to their perception of public opinion. Data subsetted based on perceived effects of policy on the budget.",
+      "page": 28,
+      "image": "figures/fig-11.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-1",
+      "caption": "Councilmember probability of supporting housing policy compared to their perception of public opinion, moderated by if they rank public opinion above or below that of meeting atten- dees.",
+      "page": 39,
+      "image": "figures/fig-12.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-2",
+      "caption": "Councilmember probability of supporting housing policy compared to their perception of public opinion, moderated by if they rank public opinion above or below that of business interests.",
+      "page": 39,
+      "image": "figures/fig-13.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-3",
+      "caption": "Councilmember probability of supporting zoning reform compared to their perception of public opinion. Data subsetted based on perceived effects of policy on the budget and the relative importance of the budget compared to public opinion in decision making.",
+      "page": 40,
+      "image": "figures/fig-14.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-4",
+      "caption": "Councilmember probability of supporting affordable housing tax credits reform com- pared to their perception of public opinion. Data subsetted based on perceived effects of policy on the budget and the relative importance of the budget compared to public opinion in decision making.",
+      "page": 40,
+      "image": "figures/fig-15.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-5",
+      "caption": "Councilmember policy support compared to public opinion as estimated using the MRP.",
+      "page": 42,
+      "image": "figures/fig-16.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-6",
+      "caption": "Average Marginal Component Effects from conjoint experiment",
+      "page": 42,
+      "image": "figures/fig-17.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table 1",
+      "caption": "Housing Policies",
+      "page": 9,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 2",
+      "caption": "MRP Predicted Support for Housing Policies",
+      "page": 11,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 3",
+      "caption": "Policy Support and Congruence",
+      "page": 17,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 4",
+      "caption": "Expected Fiscal Impacts of Housing Policies",
+      "page": 29,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    }
+  ],
+  "headings": [
+    "Theory",
+    "Design",
+    "Pre-Registered Hypotheses",
+    "Analytical Strategy",
+    "Results",
+    "Discussion",
+    "Conclusion",
+    "References",
+    "Online Appendix",
+    "A MRP Estimation",
+    "B Additional Pre-Registered Hypotheses",
+    "C Survey Questions",
+    "1. Lately, there\u2019s been growing discussion about housing affordability \u2014 rising home prices and",
+    "2. If the following policy were proposed in your (municipality/State legislature), how would you",
+    "D Additional Figures and Tables"
+  ],
+  "warnings": [
+    "could not locate region for Figure 6 on p.21",
+    "could not locate region for Figure 8 on p.24"
+  ]
+}

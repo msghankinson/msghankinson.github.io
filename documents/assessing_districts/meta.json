@@ -1,0 +1,114 @@
+{
+  "slug": "assessing_districts",
+  "pages": 45,
+  "title": "Assessing District Elections as a Remedy in State Voting Rights Acts",
+  "words": 16875,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Simulation distributions of share of districts with majority-Latino CVAP. The solid line shows the SMC distribution of majority-Latino districts, and the dotted line shows the short-burst range. The red diamond marks the enacted plan; the number at right gives its percentile in the simulation distribution.",
+      "page": 15,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Simulation distributions of expected Latino council share, assuming each city\u2019s observed turnout gap. Presentation follows Figure 2.",
+      "page": 16,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 4",
+      "caption": "Effect of closing the turnout gap. Black-filled circles represent the city\u2019s estimated Latino council share under the most favorable map. Grey triangles are the expected council share assuming no turnout gap.",
+      "page": 18,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 5",
+      "caption": "Relationship between Latino CVAP share and expected Latino council share. Black curve indicates the observed relationship in our data, modeled using a generalized additive model to allow for nonlinearities. Dashed curves model the relationship under different levels of Latino cohesion (left) and non-Latino crossover support (right). Histograms at bottom show the distribution of Latino CVAP share for cities in our sample.",
+      "page": 19,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 6",
+      "caption": "Relationship between electoral system and Latino descriptive representation under vary- ing levels of Latino cohesion and non-Latino crossover. Each point is one city; boxed labels report the cross-city median. Expected shares incorporate each city\u2019s observed turnout gap; the bench- mark is the unadjusted CVAP share.",
+      "page": 20,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-1",
+      "caption": "Relationship between electoral system and Latino descriptive representation under varying levels of Latino cohesion, non-Latino crossover, and within-bloc coordination on candidates.",
+      "page": 44,
+      "image": "figures/fig-06.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table A-1",
+      "caption": "City Data Collection Status",
+      "page": 28,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A-2",
+      "caption": "City Summary Statistics",
+      "page": 29,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A-3",
+      "caption": "City-Level Summary Statistics",
+      "page": 31,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B-4",
+      "caption": "Electoral Remedies Available Under State Voting Rights Acts",
+      "page": 34,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-5",
+      "caption": "redist Plan Diagnostics",
+      "page": 37,
+      "image": "tables/tab-05.png",
+      "csv": "tables/tab-05.csv"
+    }
+  ],
+  "headings": [
+    "Introduction",
+    "How State VRAs Aim to Increase Minority Descriptive",
+    "Representation",
+    "The California Voting Rights Act",
+    "Data and Methodology",
+    "Results",
+    "Discussion",
+    "References",
+    "Supplemental Information for \u201cAssessing District Elections as a",
+    "1 Mean (SD)",
+    "References"
+  ],
+  "warnings": [
+    "could not locate region for Figure 1 on p.10"
+  ]
+}

@@ -1,0 +1,23 @@
+N Clusters,,,142,142,,142,142
+∗∗∗p < 0.001; ∗∗p < 0.01,; ∗p < 0.05,,,,,,
+able G-7: Effect o,f change in,a precinct’s,median househ,old income,on s,upport fo,r voters’
+"eto, 1993. Treatm",ent data ar,e winsorized.,Controls incl,uded in all,mo,"dels, but",excluded
+om table due to s,pace constr,aints.,,,,,
+,,,Suppo,rt for voters,’ ve,"to, 1993",
+,,,Model 1,Model 2,M,odel 3,Model 4
+Pct. point ∆ in fo,"reign born,",1980-93,0.015∗∗∗,0.013∗∗∗,,,
+,,,(0.003),(0.002),,,
+Prop. ∆ in foreig,"n born, 1980",-93,,,,0.002,−0.000
+,,,,,(,0.002),(0.002)
+Place Fixed Effec,ts,,Yes,Yes,,Yes,Yes
+Controls,,,Yes,Yes,,Yes,Yes
+Time-varying Con,trols,,No,Yes,,No,Yes
+R2,,,0.717,0.733,,0.710,0.729
+Adj. R2,,,0.705,0.722,,0.698,0.717
+Num. obs.,,36,51 36,49,365,1 3,649
+RMSE,,,2.725,2.647,,2.757,2.668
+N Clusters,,1,42 1,42,14,2,142
+∗∗∗p < 0.001; ∗∗p < 0.01,; ∗p < 0.05,,,,,,
+able G-8: Effect o,f change in,a precinct’s,percent foreign,born on su,ppo,rt for vot,"ers’ veto,"
+993. Treatment d,ata are win,sorized. Con,trols included,in all mode,"ls,",but exclu,ded from
+able due to space,constraints.,,,,,,

@@ -1,0 +1,13 @@
+Statistic,Mean S,t. Dev.,Median,Min,Max,N
+Female,0.70,0.46,1,0,1,251
+White,0.49,0.50,0,0,1,255
+Black,0.29,0.45,0,0,1,255
+Latino,0.10,0.30,0,0,1,255
+Asian,0.04,0.20,0,0,1,255
+Age,44.15,14.43,40,23,80,255
+College educated,0.73,0.45,1,0,1,255
+Income >90k,0.43,0.50,0,0,1,222
+Homeowner,0.54,0.50,1,0,1,246
+Democrat,0.79,0.41,1,0,1,255
+Liberal,0.79,0.41,1,0,1,255
+Attended meeting,0.35,0.48,0,0,1,255

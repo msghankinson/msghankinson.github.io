@@ -1,0 +1,112 @@
+{
+  "slug": "interest_groups",
+  "pages": 31,
+  "title": "When Do Local Interest Groups Participate in the Housing Entitlement Process?",
+  "words": 9360,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Causal DAG summarizing the relationship between the zoning tax and union activity, with major confounders.",
+      "page": 10,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Distribution of zoning tax across cities in our data. Negative values should be interpreted as non-significant zoning taxes (Gyourko and Krimmel 2021).",
+      "page": 14,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Relationship between zoning tax and binary indicator for union mention, by quartile of the zoning tax. Unit of analysis is municipality. Black points represent means by group, with 95% confidence intervals. Binary indicator for union mention is jittered for visualization purposes only.",
+      "page": 16,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-1",
+      "caption": "Distribution of the number of city council and planning commission meetings per city in our sample.",
+      "page": 28,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-2",
+      "caption": "Distribution of union mentions in city council and planning commission meetings per city in our sample.",
+      "page": 28,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-3",
+      "caption": "Cities with zoning tax estimates from Gyourko and Krimmel (2021) and with at least 10 meetings posted to LocalView.",
+      "page": 29,
+      "image": "figures/fig-06.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table 1",
+      "caption": "Effect of zoning tax on probabilty of having a union mention, all meetings.",
+      "page": 17,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A-1",
+      "caption": "Summary Statistics",
+      "page": 27,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A-2",
+      "caption": "Number of cities per CBSA in LocalView data CBSA Number of Places New York-Newark-Jersey City, NY-NJ-PA 24 Chicago-Naperville-Elgin, IL-IN-WI 21 Detroit-Warren-Dearborn, MI 19 Minneapolis-St. Paul-Bloomington, MN-WI 16 Los Angeles-Long Beach-Anaheim, CA 12 San Francisco-Oakland-Berkeley, CA 9 Philadelphia-Camden-Wilmington, PA-NJ-DE-MD 8",
+      "page": 30,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B-3",
+      "caption": "Effect of zoning tax on probabilty of having a union mention, city council meetings only.",
+      "page": 31,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B-4",
+      "caption": "Effect of zoning tax on probabilty of having a union mention, city planning meetings only.",
+      "page": 31,
+      "image": "tables/tab-05.png",
+      "csv": "tables/tab-05.csv"
+    }
+  ],
+  "headings": [
+    "Introduction",
+    "Theory",
+    "Data and Measurement",
+    "Methods",
+    "Results",
+    "Directions for Future Research",
+    "Discussion",
+    "Conclusion",
+    "References",
+    "2009. Lobbying and Policy Change: Who Wins, Who Loses, and Why. Chicago, IL: University",
+    "Online Appendix for \u201cWhen Do Local Interest Groups Participate"
+  ],
+  "warnings": []
+}

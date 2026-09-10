@@ -1,0 +1,26 @@
+ariables,,,Mean,SD
+ependent variables,,,,
+Metropolitan-level propor,tion of su,bprime,0.284,0.218
+"lending in minority tracts,",2006,,,
+Metropolitan-level targeti,"ng index,",2006,0.634,0.271
+Tract-level subprime loan,"rate, 200",6,0.305,0.165
+egregation indices (metrop,olitan lev,el),,
+Black/Hispanic clustering,"index, 20",00,0.586,0.146
+Black/Hispanic-white diss,imilarity i,"ndex, 2000",0.549,0.103
+Black/Hispanic isolation i,"ndex, 200",0,0.496,0.154
+Metropolitan-level control,variables,,,
+"Logged population, 2005",–2007,1,4.2,0.669
+Logged median household,"income,",2005–2007 1,0.9,0.192
+Proportion black/Hispani,"c, 2005–2",007,0.283,0.159
+Region (dummies),,,,
+Northeast,,,0.230,0.423
+Midwest,,,0.180,0.386
+South,,,0.370,0.485
+West,,,0.220,0.416
+Ratio of 2000–2006 hous,ing starts,to 2000 units,0.121,0.073
+Relative change in housing,price ind,"ex, 2000–2006",4.07,2.53
+ract-level control variable,s,,,
+"Minority tract dummy, 20",00,,0.251,0.434
+"Population (square root),",2000,6,4.0 1,7.3
+Owner-occupied units per,"person, 2",000,0.237,0.095
+Logged median income tr,act-to-CB,"SA ratio, 2000",4.62,0.675

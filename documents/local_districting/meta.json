@@ -1,0 +1,173 @@
+{
+  "slug": "local_districting",
+  "pages": 57,
+  "title": "Districting Without Parties: How City Council Maps Increase Minority Representation",
+  "words": 18931,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Anaheim Example (a) Map 1: \u201cThe People\u2019s Map\u201d",
+      "page": 14,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Simulation Distributions of Council Seats with Latino CVAP Majorities, City of Anaheim",
+      "page": 15,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Correlations Between Share of Seats with Majority Latino CVAP and Latino Electoral Advantage",
+      "page": 21,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 4",
+      "caption": "Correlations, Dissimilarity Index of Plans and Measures of Electoral Advantage \u2014 by Citywide Voting-Age Population",
+      "page": 23,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 5",
+      "caption": "Probability of Electing a Coethnic Councilmember in a District as a Function of CVAP, Latino vs. White",
+      "page": 25,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-1",
+      "caption": "Using the Dissimilarity Index to Measure Concentration of Latino Voters",
+      "page": 39,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-2",
+      "caption": "Simulation Distributions: Share of Council Seats Where Latinos Are the Majority of the Citizen Voting-Age Population",
+      "page": 50,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-3",
+      "caption": "Simulation Distributions: Expected Share of Council Seats Held by Latinos",
+      "page": 51,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-4",
+      "caption": "Simulation Distributions: Probability of at Least One Latino on Council",
+      "page": 52,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-5",
+      "caption": "Simulation Distributions: Probability of Latino Majority on Council",
+      "page": 53,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-6",
+      "caption": "Simulation Distributions: Dissimilarity Index of Plans, Latino vs. Non-Latino",
+      "page": 54,
+      "image": "figures/fig-11.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-7",
+      "caption": "Correlations Between Measures of Latino Electoral Advantage",
+      "page": 55,
+      "image": "figures/fig-12.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-8",
+      "caption": "Correlations Between Share of Seats with Majority Democratic Registered Voters and Latino Electoral Advantage",
+      "page": 56,
+      "image": "figures/fig-13.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table B-1",
+      "caption": "Diagnostics from Redistricting Simulations",
+      "page": 43,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-1",
+      "caption": "Estimated Coefficients from Logistic Regression Predicting District-Level Probability of Electing Latino Candidates (1) and White Candidates (2)",
+      "page": 48,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-2",
+      "caption": "Confusion Matrix and Statistics for the Prediction Model (1=Latino candidate elected, 0=other candidate elected) Reference Prediction 0 1 0 142 36 1 3 21",
+      "page": 48,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    }
+  ],
+  "headings": [
+    "Introduction",
+    "Theory and Literature",
+    "Background: Legislative Districting and the CVRA",
+    "Data and Methodology",
+    "Results",
+    "1.0 Latino",
+    "1.0 Latino",
+    "1.0 Latino",
+    "1.0 Latino",
+    "Discussion",
+    "Conclusion",
+    "References",
+    "Online Appendix for \u201cDistricting Without Parties: How City Coun-",
+    "Contents",
+    "2. Voting-Age Population. We collected block-level total population from the 2010 Decennial",
+    "1. Total citizen voting-age population",
+    "2. Black or African American (alone) citizen voting-age population",
+    "3. Asian (alone) citizen voting-age population",
+    "4. Hispanic or Latino citizen voting-age population",
+    "5. Not Hispanic or Latino citizen voting-age population",
+    "6. White citizen voting-age population",
+    "1. Banning: first conducted election in 2016, reports 2010\u20132014 5-year estimates in supporting",
+    "2. Brea: first conducted election in 2022, reports 2015\u20132019 5-year estimates in supporting",
+    "3. Menlo Park: first conducted election in 2018, reports 2011\u20132015 5-year estimates in supporting",
+    "4. Rancho Cucamonga: first conducted election in 2018, reports 2010\u20132014 5-year estimates in",
+    "5. Richmond: first conducted election in 2020, reports 2012\u20132016 5-year estimates in supporting",
+    "3. Income. We collected block group-level median household income from the Census American",
+    "5. Statewide Election Returns. We measure the support for Latino candidates in statewide",
+    "1. Estimation Step: We begin by estimating a logistic regression on real-world city council",
+    "References"
+  ],
+  "warnings": [
+    "could not locate region for Figure A-1 on p.38"
+  ]
+}

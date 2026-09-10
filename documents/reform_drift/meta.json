@@ -1,0 +1,214 @@
+{
+  "slug": "reform_drift",
+  "pages": 70,
+  "title": "Reform Drift:",
+  "words": 20536,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Avoidance of Incumbent Pairings in South Pasadena, CA. On the left, district lines adopted by the city council are displayed with shading identifying each district and black dots indicating where each of the 5 incumbents reside. On the right, district lines from a \u201crepresentative\u201d simulated plan are shown.",
+      "page": 22,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Appendix Figure D-9",
+      "caption": ", there do not seem to be any geographic patterns in incumbent protection. From the Bay Area to southern California, cities avoided incumbent pairings to a far greater extent than would be expected by random chance.",
+      "page": 26,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Location of the Adopted Plan\u2019s Proportion Alone in the City\u2019s Simulation c Distribution of Proportion Alone . This histogram shows the distribution of percentiles c of Proportion Alone within cities\u2019 own simulation distributions of the same metric, de- c fined as the number of incumbents assigned to their own district divided by the number of incumbents on the council at the time the city switched to district elections. Red dashed line is at the median (100) and blue dotted line is at the mean (89).",
+      "page": 26,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Simulation Distributions of Proportion Alone . Summary statistics of the c distributions of Proportion Alone over simulated plans in every city, defined as the c number of incumbents assigned to their own district divided by the number of incum- bents on the council at the time the city switched to district elections. Thin black lines span the range of the simulation distribution. Thick black lines span the 25th to 75th per- centiles of the simulation distribution\u2014if omitted, this indicates that the range collapses to the median value. Black points represent the median of the simulation distribution.",
+      "page": 27,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-1",
+      "caption": "City Council Minutes from South San Francisco, CA. From the 7/11/2018 meeting of the city council, Mayor Normandy, Mayor Pro Tern Matsumoto, Councilmem- ber Garbarino, and Councilmember Gupta are considered incumbent members for the purposes of districting.",
+      "page": 46,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-2",
+      "caption": "Histogram of ENC.",
+      "page": 55,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-3",
+      "caption": "Density of BISG Predicted Probabilities.",
+      "page": 56,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-4",
+      "caption": "Quantity of Interest Comparisons Across Simulation Settings.",
+      "page": 59,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-5",
+      "caption": "Comparison of Proportion Alone Percentile in Original Plans versus Con- strained Plans.",
+      "page": 60,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-6",
+      "caption": "Comparison of Simulated Alone Probability in Original Plans versus Con- strained Plans.",
+      "page": 61,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-7",
+      "caption": "Simulation Distribution of Neighborhood Splits.",
+      "page": 61,
+      "image": "figures/fig-11.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C-8",
+      "caption": "Simulation Distributions of Highlighted Metrics.",
+      "page": 66,
+      "image": "figures/fig-12.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-9",
+      "caption": "Spatial Distribution of Cities in Our Sample. The locations of our 87 cities, with points slightly jittered for visibility. Points are colored according to the percentile of the city\u2019s simulation distribution of Proportion Alone in which the enacted plan falls. c",
+      "page": 67,
+      "image": "figures/fig-13.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-10",
+      "caption": "Minority Representation versus Incumbent Protection. Each point repre- sents the percentile of the simulation distribution of Proportion Alone (y-axis) versus c the percentile of the simulation distribution of the proportion of city council districts where a majority of the citizen voting age population is nonwhite (x-axis). The size of points correspond to the city\u2019s citizen voting age population (CVAP).",
+      "page": 67,
+      "image": "figures/fig-14.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table 4",
+      "caption": "Effect of Incumbent Protection on Post-Districting Election Out- comes, Latino Opportunity Districts Total Total Any New Cands. Latino Cands. Latino Elected 1 Incumbent -0.707** -0.337+ -0.171* (0.254) (0.187) (0.079) 2+ Incumbents -0.620+ -0.332 -0.141 (0.368) (0.271) (0.115) District: Prop. of CVAP, Hispanic 2.440 3.706* 1.428+",
+      "page": 34,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-5",
+      "caption": "All Post-Switch Elections New cands Lat. cands Lat. elected New cands Lat. cands Lat. elected Proportion Alone \u22121.638** \u22120.584 \u22120.110 (0.490) (0.474) (0.212) Quantile(Proportion Alone) \u22122.129* \u22120.746 \u22120.224 (0.831) (0.810) (0.320) Post-Redistricting (2022+) \u22120.530 \u22120.610* \u22120.035 \u22120.566 \u22120.623* \u22120.038 (0.395) (0.252) (0.119) (0.395) (0.258) (0.120) N 324 324 324 324 324 324",
+      "page": 63,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-6",
+      "caption": "First vs. Subsequent Elections New cands Lat. cands Lat. elected New cands Lat. cands Lat. elected Proportion Alone \u22121.321** \u22120.498 \u22120.155 (0.501) (0.449) (0.211) Quantile(Proportion Alone) \u22121.677+ \u22120.603 \u22120.169 (0.936) (0.775) (0.352) imes First Election \u22121.198 \u22120.324 0.170 \u22121.634 \u22120.516 \u22120.199 (1.013) (0.528) (0.227) (1.709) (0.685) (0.321) Post-Redistricting (2022+) \u22120.533 \u22120.611* \u22120.035 \u22120.563 \u22120.622* \u22120.038",
+      "page": 63,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-7",
+      "caption": "2+ Post-switch Elections Only New cands Lat. cands Lat. elected New cands Lat. cands Lat. elected Proportion Alone \u22121.321** \u22120.498 \u22120.155 (0.501) (0.450) (0.211) Quantile(Proportion Alone) \u22121.677+ \u22120.603 \u22120.169 (0.937) (0.775) (0.352) Post-Redistricting (2022+) \u22120.533 \u22120.611* \u22120.035 \u22120.563 \u22120.622* \u22120.038 (0.398) (0.254) (0.119) (0.398) (0.260) (0.121) N 237 237 237 237 237 237",
+      "page": 64,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    }
+  ],
+  "headings": [
+    "How Incumbent Protection Undermines",
+    "Descriptive Representation in Local Government",
+    "Introduction",
+    "Theory and Background",
+    "When Institutional Reform Reproduces Power",
+    "Transitioning from At-Large to District-Based City Council Elections",
+    "Under the California Voting Rights Act",
+    "Avoidance of Incumbent Pairings in the Design of District Maps",
+    "Hypotheses and Contribution",
+    "Data",
+    "Methodology",
+    "Results",
+    "Incumbent Protection Is Clearly Detectable and Pervasive",
+    "When Are Incumbents Protected?",
+    "Incumbent Protection Deters Candidate Entry and Erodes Diversity on",
+    "Councils",
+    "1 Incumbent -0.936*** -0.318** -0.096*",
+    "Discussion",
+    "References",
+    "Online Appendix for \u201cReform Drift: How Incumbent Pro-",
+    "tection Undermines Descriptive Representation in Local Gov-",
+    "ernment\u201d",
+    "Contents",
+    "A Data Construction",
+    "2. Voting-Age Population. We collected block-level total population from the 2010 De-",
+    "1. Total citizen voting-age population",
+    "2. Black or African American (alone) citizen voting-age population",
+    "3. Asian (alone) citizen voting-age population",
+    "4. Hispanic or Latino citizen voting-age population",
+    "5. Not Hispanic or Latino citizen voting-age population",
+    "6. White citizen voting-age population",
+    "3. Income. We collected block group-level median household income from the Census",
+    "4. Partisanship. Here, we wish to compute two block-level variables estimated at the",
+    "1 Mean (SD)",
+    "2 W NW",
+    "B District Simulations",
+    "1. Use the get_plans_matrix() function to extract the matrix of district assignments",
+    "3. For each column (representing a single simulation draw), apply the following func-",
+    "5. For the enacted plan (column 1) and all simulated plans, Proportion Alone is",
+    "C Supplemental Analyses",
+    "D Additional Tables and Figures",
+    "1 Incumbent -0.707** -0.337+ -0.171*",
+    "References"
+  ],
+  "warnings": [
+    "could not locate region for Appendix Figure A-1 on p.16",
+    "could not locate region for Table 1 on p.29",
+    "could not locate region for Table 2 on p.32",
+    "could not locate region for Table 3 on p.33",
+    "could not locate region for Table A-1 on p.47",
+    "could not locate region for Table A-2 on p.52",
+    "could not locate region for Table A-3 on p.53",
+    "could not locate region for Figure A-3 on p.55",
+    "could not locate region for Table C-4 on p.62",
+    "could not locate region for Table C-8 on p.64",
+    "could not locate region for Table C-9 on p.65",
+    "could not locate region for Table D-10 on p.68",
+    "could not locate region for Table D-11 on p.69"
+  ]
+}

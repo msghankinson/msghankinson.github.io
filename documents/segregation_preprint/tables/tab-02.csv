@@ -1,0 +1,51 @@
+Minority tra,"ct, 2000",0.15**,0.14**,
+,,(0.02),(0.02),
+Population (,"square root),",0.00,0.00,
+2000,,(0.00),(0.00),
+Ownership r,"ate, 2000",0.02,0.02,
+,,(0.09),(0.10),Dow
+Log median,tract-to-CBSA,–0.12**,–0.12**,nlo
+income ratio,", 2000",(0.04),(0.04),ad
+,,,,ed
+etropolitan,level,,,fr
+,,,,o
+(Intercept),,0.28**,0.28**,m
+,,,,h
+,,(0.01),(0.01),ttp
+,,,,:/
+Segregation,clustering,0.05,–0.01,/sf.
+"index, 2000",,(0.04),(0.03),oxf
+,,,,o
+Proportion,black/,0.00,0.06,rdjo
+"Hispanic, 20",06,(0.05),(0.05),ur
+,,,,na
+Log of popu,"lation, 2006",0.00,0.00,ls.
+,,,,o
+,,(0.01),(0.01),rg/
+Log median,household,–0.17**,–0.18**,at
+,,,,H
+"income, 200",6,(0.02),(0.02),arv
+,,,,a
+West,,–0.03*,–0.04**,rd
+,,,,L
+,,(0.01),(0.01),ibr
+,,,,a
+Midwest,,0.04**,0.04**,ry
+,,,,o
+,,(0.01),(0.01),n
+,,,,Ap
+South,,–0.01,–0.01,ril
+,,(0.01),(0.01),"24,"
+Housing sta,"rts ratio,",0.16*,0.15†,201
+2000–2006,,(0.08),(0.08),5
+Change in h,ousing price,0.01**,0.01**,
+"index, 2000",–2006,(0.00),(0.00),
+ross-level in,teraction,,,
+Segregation,clustering,,0.22**,
+index × min,ority tract,,(0.08),
+evel-1 N,,96,96,
+evel-1 varia,nce,0.02,0.02,
+evel-1 expla,ined variation,0.48,0.48,
+evel-2 N,3,"7,018 3","7,018",
+evel-2 varia,nce,0.00,0.00,
+evel-2 expla,ined variation,0.47,0.51,

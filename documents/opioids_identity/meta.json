@@ -1,0 +1,347 @@
+{
+  "slug": "opioids_identity",
+  "pages": 76,
+  "title": "How the Identity of Substance Users Shapes Public Opinion on Opioid Policy",
+  "words": 17895,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Example photos accompanying news story (from the white/Black male Oxycontin conditions)",
+      "page": 10,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Treatment effects and confidence intervals among all respondents on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%- confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 12,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Treatment effects and confidence intervals by respondent race on unit scale interval outcome. Points indicate the difference in policy support between respondents who saw a Black individual profiled and a white individual profiled, with 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 14,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 4",
+      "caption": "Treatment effects and confidence intervals by respondent gender on unit scale in- terval outcome. Points indicate the difference in levels of policy support between respondents who saw a male substance user profiled and those who saw a female substance user profiled, with 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 16,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 5",
+      "caption": "Treatment effects and confidence intervals by respondent geographic context on unit scale interval outcome. Points indicate the difference in policy support between re- spondents who saw a rural individual profiled vs. a suburban individual profiled (circles), rural vs. urban individual (triangles), or suburban vs. urban individual (squares), with 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 17,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 6",
+      "caption": "Treatment effects and confidence intervals for match between respondent charac- teristic and substance user attributes on unit scale interval outcome. Points indicate the dif- ference in each policy outcome between respondents who matched the individual profiled and those who didn\u2019t match them for each of the three identity attributes, with 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 18,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 7",
+      "caption": "Treatment effects and confidence intervals among all respondents on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of perceived blame between respondents in the baseline condition (no confidence interval) of initially using heroin compared to respondents in conditions where the substance user was described with different initial drug use of either illegally-obtained OxyContin or legally pre- scribed OxyContin. Lines indicate 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 20,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 8",
+      "caption": "Treatment effects and confidence intervals for match between respondent charac- teristic and substance user attributes on unit scale interval outcome. Points indicate the dif- ference in each policy outcome between respondents who matched the individual profiled and those who didn\u2019t match them for each of the three identity attributes, with 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 22,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-1",
+      "caption": "Manipulation checks by experimental attribute. Points indicate the percent of respondents correctly recalling the attributes of the individual profiled. We note that these strong treatment effects on our manipulation check recall questions do, however, accompany relatively low overall \u201cpassage rates\u201d on some of these questions, potentially due to strong underlying assumptions that respondents have about substance users and the traits that we experimentally manipulate. Figure D-2 shows the proportion of respondents recalling each relevant attribute for our main manipulations. As Kane and Barabas (2019) note, however, we should interpret significant differences in passage rates between conditions (i.e. the ATEs presented above) alongside these modest passage rates",
+      "page": 40,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-2",
+      "caption": "Manipulation check responses by experimental condition.",
+      "page": 41,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-3",
+      "caption": "Pilot study treatment effects and confidence intervals by respondent race. Points indicate the difference in levels of support between respondents who saw a black individual profiled and a white individual profiled, with 95%-confidence intervals (thin lines) and 90%- confidence intervals (thick lines).",
+      "page": 42,
+      "image": "figures/fig-11.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-4",
+      "caption": "Pilot study treatment effects and confidence intervals by respondent geographic context. Points indicate the difference in levels of support between respondents who saw a rural individual profiled and a non-rural individual profiled, with 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 44,
+      "image": "figures/fig-12.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure G-5",
+      "caption": "Treatment effects and confidence intervals among all respondents. Points are regression coefficients and indicate the difference in levels of support for increasing policy funding between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 46,
+      "image": "figures/fig-13.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure G-6",
+      "caption": "Treatment effects and confidence intervals by respondent race. Points indicate the difference in levels of support for increasing policy funding between respondents who saw a Black individual profiled and a white individual profiled, with 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 47,
+      "image": "figures/fig-14.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure G-7",
+      "caption": "Treatment effects and confidence intervals by respondent gender. Points indicate the difference in levels of support for increasing policy funding between respondents who saw a male substance user profiled and those who saw a female substance user profiled, with 95%- confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 48,
+      "image": "figures/fig-15.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure G-8",
+      "caption": "Treatment effects and confidence intervals by respondent geographic context. Points indicate the difference in levels of support for increasing policy funding between respondents who saw a rural individual profiled vs. an urban individual profiled (triangles), rural vs. suburban individual (circles), or suburban vs. urban individual (squares), with 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 49,
+      "image": "figures/fig-16.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure G-9",
+      "caption": "Treatment effects and confidence intervals for match between respondent charac- teristic and substance user attributes. Points indicate the difference in each policy outcome between respondents who matched the individual profiled and those who didn\u2019t match them for each of the three identity attributes, with 95%-confidence intervals (thin lines) and 90%- confidence intervals (thick lines).",
+      "page": 50,
+      "image": "figures/fig-17.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure H-10",
+      "caption": "Treatment effects and confidence intervals among all respondents on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%- confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 51,
+      "image": "figures/fig-18.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure I-11",
+      "caption": "Treatment effects and confidence intervals of race and gender on treatment spending by location condition on unit scale interval outcome. Points are regression coef- ficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%-confidence intervals (thin lines) and 90%- confidence intervals (thick lines).",
+      "page": 52,
+      "image": "figures/fig-19.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure I-12",
+      "caption": "Treatment effects and confidence intervals of race and gender on enforcement spending by location condition on unit scale interval outcome. Points are regression coef- ficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%-confidence intervals (thin lines) and 90%- confidence intervals (thick lines).",
+      "page": 53,
+      "image": "figures/fig-20.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure I-13",
+      "caption": "Treatment effects and confidence intervals of race on treatment spending by gen- der condition on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute lev- els. Lines indicate 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 54,
+      "image": "figures/fig-21.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure I-14",
+      "caption": "Treatment effects and confidence intervals of race on enforcement spending by gender condition on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 55,
+      "image": "figures/fig-22.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure I-15",
+      "caption": "Interaction of pathway to addiction and treatment variables on support for spending on treatment. Treatment effects and confidence intervals among all respondents on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 56,
+      "image": "figures/fig-23.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure I-16",
+      "caption": "Interaction of pathway to addiction and treatment variables on support for spending on enforcement. Treatment effects and confidence intervals among all respondents on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 57,
+      "image": "figures/fig-24.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure I-17",
+      "caption": "Interaction of insurance and treatment variables on support for spending on treatment. Treatment effects and confidence intervals among all respondents on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%- confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 58,
+      "image": "figures/fig-25.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure I-18",
+      "caption": "Interaction of insurance and treatment variables on support for spending on enforcement. Treatment effects and confidence intervals among all respondents on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%- confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 59,
+      "image": "figures/fig-26.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure J-19",
+      "caption": "Treatment effects and confidence intervals among Democratic respondents on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 60,
+      "image": "figures/fig-27.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure J-20",
+      "caption": "Treatment effects and confidence intervals among Republican respondents on unit scale interval outcome. Points are regression coefficients and indicate the difference in levels of policy support between respondents in the baseline level condition (no confidence interval) compared to respondents in conditions with all other attribute levels. Lines indicate 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 61,
+      "image": "figures/fig-28.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure L-21",
+      "caption": "Treatment effects and confidence intervals by respondent race. Points indicate the difference in levels of support for increasing policy funding between respondents who saw a black substance user profiled and those who saw a white substance user profiled, with 95%-confidence intervals. Total Effect represents a composition of the Average Direct Effect (ADE) and the Average Causal Mediation Effect (ACME).",
+      "page": 69,
+      "image": "figures/fig-29.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure L-22",
+      "caption": "Treatment effects and confidence intervals by respondent gender. Points in- dicate the difference in levels of support for increasing policy funding between respondents who saw a female substance user profiled and those who saw a male substance user profiled, with 95%-confidence intervals. Total Effect represents a composition of the Average Direct Effect (ADE) and the Average Causal Mediation Effect (ACME).",
+      "page": 70,
+      "image": "figures/fig-30.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure M-23",
+      "caption": "Treatment effects and confidence intervals for match between respondent char- acteristic and substance user attributes on unit scale interval outcome. Points indicate the difference in each policy outcome between respondents who matched the individual pro- filed and those who didn\u2019t match them for each of the three identity attributes, with 95%- confidence intervals (thin lines) and 90%-confidence intervals (thick lines). Filled circles indicate treatment effects among respondents who reported knowing someone with opioid addiction issues, and triangles indicate those respondents who reported not knowing anyone struggling with addiction.",
+      "page": 71,
+      "image": "figures/fig-31.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure M-24",
+      "caption": "Treatment effects and confidence intervals by respondent race and personal exposure to addiction. Points indicate the difference in levels of support for increasing policy funding between respondents who saw a black individual profiled and a white individual profiled, with 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines). Filled circles indicate treatment effects among respondents who reported knowing someone with opioid addiction issues, and triangles indicate those respondents who reported not knowing anyone struggling with addiction.",
+      "page": 72,
+      "image": "figures/fig-32.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure M-25",
+      "caption": "Treatment effects and confidence intervals by respondent gender. Points in- dicate the difference in levels of support for increasing policy funding between respondents who saw a male substance user profiled and those who saw a female substance user profiled, with 95%-confidence intervals (thin lines) and 90%-confidence intervals (thick lines). Filled circles indicate treatment effects among respondents who reported knowing someone with opioid addiction issues, and triangles indicate those respondents who reported not knowing anyone struggling with addiction.",
+      "page": 73,
+      "image": "figures/fig-33.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table F-1",
+      "caption": "Sample Descriptive Statistics",
+      "page": 45,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table K-2",
+      "caption": "Multiple hypothesis testing corrections using q-values",
+      "page": 68,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    }
+  ],
+  "headings": [
+    "Justin de Benedictis-Kessner Michael Hankinson",
+    "December 16, 2022",
+    "Theory and Hypotheses",
+    "Research Design and Data",
+    "Results",
+    "Moderation from Respondents\u2019 Identities",
+    "Mechanisms",
+    "Conclusion",
+    "References",
+    "Supplementary Appendix for",
+    "Justin de Benedictis-Kessner Michael Hankinson",
+    "December 8, 2022",
+    "Contents",
+    "A Survey Instrument",
+    "Experimental Vignette",
+    "Outcome Variables",
+    "Manipulation Checks",
+    "Demographic Variables",
+    "B Experimental Manipulations",
+    "2. Gender - name and use of he/she pronouns",
+    "3. Residential location",
+    "4. Pathway to addiction - story of person varied according to below options, along",
+    "5. Insurance coverage",
+    "C Photos from Experiment",
+    "D Results from Manipulation Checks",
+    "E Power Analyses from Pilot Study",
+    "F Descriptive Characteristics of Survey Respondents",
+    "G Results Using Alternative Coding of DV",
+    "Treatment effect of recipient race",
+    "on spending support (black-white)",
+    "Treatment effect of recipient gender",
+    "on funding support (male - female)",
+    "Treatment effect of recipient context",
+    "on spending support",
+    "Treatment effect of recipient attribute",
+    "on outcome (identity matching - non-matching)",
+    "H Additional Treatments",
+    "I Interaction Effects of Randomized Treatments",
+    "J Heterogeneity in the Effects by Respondent Parti-",
+    "sanship",
+    "K Multiple Hypothesis Testing Corrections",
+    "L Mediation Analyses",
+    "M Heterogeneity in the Effects of Group Identity by",
+    "Personal Exposure",
+    "Treatment effect of recipient attribute",
+    "on outcome (identity matching - non-matching)",
+    "N Pre-Analysis Plan",
+    "Hypotheses",
+    "Shared Identity",
+    "Personal Exposure",
+    "Analytical Strategy",
+    "Shared Identity",
+    "Personal Exposure",
+    "References"
+  ],
+  "warnings": []
+}

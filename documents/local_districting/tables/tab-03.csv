@@ -1,0 +1,36 @@
+District Proportion,of,"CVAP, A",frican,-American,,,−0.944,−2.150
+,,,,,,,(1.408),(1.388)
+District Proportion,of,"CVAP, A",sian,,,,−2.138,−5.659∗∗∗
+,,,,,,,(1.426),(1.154)
+District Proportion,of,"CVAP, L",atino,,,,5.130∗∗∗,−5.545∗∗∗
+,,,,,,,(1.260),(1.207)
+District Total CVAP,,,,,,,0.00002,0.00001
+,,,,,,,(0.00001),(0.00001)
+District Democratic,V,ote Share,,,,,4.092∗,−0.480
+,,,,,,,(2.006),(3.837)
+Homeownership Rat,e i,n District,,,,,−0.046,1.809∗
+,,,,,,,(0.937),(0.805)
+Citywide Segregatio,n,,,,,,1.774,−2.968
+,,,,,,,(2.372),(2.126)
+District Vote Share,to,Latino C,andid,"ates, 2014",Controller,,−5.635,
+,,,,,,,(3.344),
+District Vote Share,to,Latino C,andid,"ates, 2016",Senate,,2.912,
+,,,,,,,(1.900),
+District Vote Share,to,Latino C,andid,"ates, 2018",Lieutenant Gov,ernor,−0.382,
+,,,,,,,(2.510),
+District Vote Share,to,White C,andid,"ates, 2014",Controller,,,−0.833
+,,,,,,,,(2.881)
+District Vote Share,to,White C,andid,"ates, 2016",Senate,,,2.193
+,,,,,,,,(3.314)
+District Vote Share,to,White C,andid,"ates, 2018",Lieutenant Gov,ernor,,−0.276
+,,,,,,,,(2.457)
+Observations,,,,,,,507,507
+Log Likelihood,,,,,,,-245.484,-270.166
+Akaike Inf. Crit.,,,,,,,512.968,562.332
+Note:,,,,,,∗,p<0.05; ∗∗p<0.01;,∗∗∗p<0.001
+Table C-2: Confus,ion,Matrix,and,Statistics,for the Predict,ion Model,(1=Latino candid,ate electe
+0=other candidate,el,ected),,,,,,
+,,,,,Refere,nce,,
+,,,Pre,diction,0,1,,
+,,,,0,142,36,,
+,,,,1,3,21,,

@@ -1,0 +1,16 @@
+Design,with Homeownersh,"ip, DV =",Voted in
+,,All,Clean
+LIHTC,Project,−0.047∗,−0.052∗
+,,(0.023),(0.023)
+Renter,Blocks,0.042∗,0.039
+,,(0.021),(0.023)
+LIHTC,x Renter Blocks,0.021,0.025
+,,(0.030),(0.033)
+CBSA F,E,Yes,Yes
+LIHTC,SE Clusters,Yes,Yes
+R2,,0.135,0.122
+Adj. R2,,0.134,0.122
+Num. o,bs.,90941,79453
+RMSE,,0.545,0.543
+N Clust,ers,843,824
+∗∗∗p < 0.0,01; ∗∗p < 0.01; ∗p < 0.0,5,

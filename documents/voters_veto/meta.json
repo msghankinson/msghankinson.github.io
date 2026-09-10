@@ -1,0 +1,266 @@
+{
+  "slug": "voters_veto",
+  "pages": 47,
+  "title": "The Voters\u2019 Veto: Local Racial Demographic Change and Exclusionary Behavior",
+  "words": 9966,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Variation in the effect of local racial demographic change in precincts with major- ity non-white, majority Black, majority Latino, and majority white residents pretreatment (1980). Point estimates shown with 95%-confidence intervals.",
+      "page": 12,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Association of increases by different racial/ethnic groups across all precincts. Point estimates shown with 95%-confidence intervals.",
+      "page": 13,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-1",
+      "caption": "Distribution of support for the voters\u2019 veto using precinct centroids. Blue as the top tercile of support (\u226562% in favor); orange as the bottom tercile of support (\u226447% in favor). The middle tercile is omitted for visualization purposes only.",
+      "page": 27,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-2",
+      "caption": "Relationship between precinct-level Republican registration in 1992 and support for Article 34 repeal in 1993.",
+      "page": 28,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-3",
+      "caption": "Relationship between precinct-level percent white, non-Hispanic (1980) and support for Article 34 repeal (1993).",
+      "page": 28,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C-4",
+      "caption": "Distribution of increase in non-white population as a percentage point change, from 1980 to 1993 shown using precinct centroids. Green as bottom tercile of racial change; pink as top tercile of racial change. Middle tercile omitted.",
+      "page": 30,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C-5",
+      "caption": "Distribution of increase in non-white population as a proportion change, from 1980 to 1993 shown using precinct centroids. Green as bottom tercile of racial change; pink as top tercile of racial change. Middle tercile omitted.",
+      "page": 31,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C-6",
+      "caption": "Variation in the two treatment variables based on a precinct-level percent white, non-Hispanic population in 1980 (pretreatment).",
+      "page": 31,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C-7",
+      "caption": "Census tracts above the 90th percentile for their increase in non-white population share, 1980-1993. Distance to the nearest of these tracts is used as the treatment for the for the proximity analysis. A-8",
+      "page": 32,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure F-8",
+      "caption": "Relationship between precinct-level change in non-white population (winsorized) and support for Article 34 repeal.",
+      "page": 38,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure F-9",
+      "caption": "Relationship between distance from a diversifying Census tract and support for Article 34 repeal in 1993. 10 to 15 kilometers binned together due to data sparseness.",
+      "page": 38,
+      "image": "figures/fig-11.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table 1",
+      "caption": "Effect of change in a precinct\u2019s non-white population (1980-1993) on support for voters\u2019 veto, 1993. Treatment data are winsorized.",
+      "page": 10,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 2",
+      "caption": "Effect of proximity to diversifying tract on support for voter\u2019s veto, among precincts which changed minimally from 1980 to 1993.",
+      "page": 15,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-1",
+      "caption": "Effect of change in a precinct\u2019s non-white population (1980-1993) on support for voters\u2019 veto, 1993. Treatment data are winsorized.",
+      "page": 33,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-2",
+      "caption": "Effect of change in a precinct\u2019s non-Black population (1980-1993) on support for voters\u2019 veto, 1993. Treatment data are winsorized.",
+      "page": 34,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-3",
+      "caption": "Effect of change in a precinct\u2019s non-Hispanic population (1980-1993) on support for voters\u2019 veto, 1993. Treatment data are winsorized.",
+      "page": 35,
+      "image": "tables/tab-05.png",
+      "csv": "tables/tab-05.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table E-4",
+      "caption": "Effect of change in non-white population (1980-1993) on support for voters\u2019 veto, spatial Durbin error model. Treatment data are winsorized.",
+      "page": 37,
+      "image": "tables/tab-06.png",
+      "csv": "tables/tab-06.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table G-5",
+      "caption": "Effect of change in a precinct\u2019s population density on support for voters\u2019 veto, 1993. Treatment data are winsorized. Controls included in all models, but excluded from table due to space constraints.",
+      "page": 39,
+      "image": "tables/tab-07.png",
+      "csv": "tables/tab-07.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table G-6",
+      "caption": "Effect of change the rate of residential churn within the past 10 years on support for voters\u2019 veto, 1993. Treatment data are winsorized. Controls included in all models, but excluded from table due to space constraints.",
+      "page": 39,
+      "image": "tables/tab-08.png",
+      "csv": "tables/tab-08.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table G-7",
+      "caption": "Effect of change in a precinct\u2019s median household income on support for voters\u2019 veto, 1993. Treatment data are winsorized. Controls included in all models, but excluded from table due to space constraints.",
+      "page": 40,
+      "image": "tables/tab-09.png",
+      "csv": "tables/tab-09.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table G-8",
+      "caption": "Effect of change in a precinct\u2019s percent foreign born on support for voters\u2019 veto, 1993. Treatment data are winsorized. Controls included in all models, but excluded from table due to space constraints.",
+      "page": 40,
+      "image": "tables/tab-10.png",
+      "csv": "tables/tab-10.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table H-9",
+      "caption": "Effect of change in a precinct\u2019s non-white population (1980-1993) on support for voters\u2019 veto. Treatment data are not winsorized.",
+      "page": 42,
+      "image": "tables/tab-11.png",
+      "csv": "tables/tab-11.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-10",
+      "caption": "Effect of proximity to diversifying tract on support for voter\u2019s veto. Controls included in all models, but excluded from table due to space constraints.",
+      "page": 43,
+      "image": "tables/tab-12.png",
+      "csv": "tables/tab-12.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-11",
+      "caption": "Effect of proximity to diversifying tract on support for voter\u2019s veto. Controls included in all models, but excluded from table due to space constraints.",
+      "page": 43,
+      "image": "tables/tab-13.png",
+      "csv": "tables/tab-13.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-12",
+      "caption": "Effect of proximity to diversifying tract on support for voter\u2019s veto. Controls included in all models, but excluded from table due to space constraints.",
+      "page": 44,
+      "image": "tables/tab-14.png",
+      "csv": "tables/tab-14.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-13",
+      "caption": "Effect of proximity to diversifying tract on support for voter\u2019s veto. Controls included in all models, but excluded from table due to space constraints.",
+      "page": 44,
+      "image": "tables/tab-15.png",
+      "csv": "tables/tab-15.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-14",
+      "caption": "Effect of proximity to diversifying tract on support for voter\u2019s veto, among precincts which changed minimally from 1980 to 1993. Population threshold for diversifying tract removed.",
+      "page": 45,
+      "image": "tables/tab-16.png",
+      "csv": "tables/tab-16.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table J-15",
+      "caption": "Effect of proximity to diversifying tract on support for voter\u2019s veto, among precincts which changed minimally from 1980 to 1993. Interacted with precinct percent non-white, 1980.",
+      "page": 46,
+      "image": "tables/tab-17.png",
+      "csv": "tables/tab-17.csv"
+    }
+  ],
+  "headings": [
+    "Michael Hankinson",
+    "May 27, 2026",
+    "Direct Democracy as an Exclusionary Institution",
+    "Demographic Change in Los Angeles County, 1993",
+    "Internal Demographic Change",
+    "Data",
+    "Empirical Strategy",
+    "Results",
+    "Mechanisms by Racial Groups",
+    "Proximity to Demographic Change",
+    "Data and Empirical Strategy",
+    "Results",
+    "Discussion",
+    "Conclusion",
+    "References",
+    "Online Appendix for \u201cThe Voters\u2019 Veto: Local Racial",
+    "Contents",
+    "A Article 34 Background",
+    "B Descriptive Relationships",
+    "C Defining Treatment",
+    "D Within Precinct Results",
+    "D.1 Intergroup Competition",
+    "E Spatial Durbin Error Model",
+    "F Visualization of Bivariate Relationships",
+    "G Alternative Explanations",
+    "H Internal Change, Non-Winsorized Data",
+    "I Proximity to Change, Alternative Thresholds",
+    "J Proximity to Change, by 1980 Racial Composition",
+    "References"
+  ],
+  "warnings": []
+}

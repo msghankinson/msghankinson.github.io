@@ -1,0 +1,10 @@
+Model,Treatment,Rentership Sam,ple
+Near-Far Design,,,
+1. Binary,Binary,Binary,"6,000"
+2. Proximity (cont.) Cont,inuous (distance),Binary,"6,000"
+3. Units (cont.) Co,ntinuous (size),Binary,"6,000"
+4. Continuous rentership,Binary,Continuous,"9,292"
+Near-Near Design,,,
+5. Binary,Binary,Binary,"4,038"
+6. Units (cont.) Co,ntinuous (size),Binary,"4,038"
+7. Continuous rentership,Binary,Continuous,"6,144"

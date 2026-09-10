@@ -1,0 +1,28 @@
+Proportion Alone,,−1.638**,−0.584,−0.110,,,
+,,(0.490),(0.474),(0.212),,,
+Quantile(Proportion,Alone),,,,−2.129*,−0.746,−0.224
+,,,,,(0.831),(0.810),(0.320)
+Post-Redistricting (20,22+),−0.530,−0.610*,−0.035,−0.566,−0.623*,−0.038
+,,(0.395),(0.252),(0.119),(0.395),(0.258),(0.120)
+N,,324,324,324,324,324,324
+Election Period FE,,X,X,X,X,X,X
+"+ p <0.1, * p <0.05,",** p <0,".01, *** p <0.001",,,,,
+Standard errors clus,tered by,city.,,,,,
+"In Table C-5, we",prese,nt estimates,of the mai,n effects o,f incumbe,nt protecti,on on
+come. As show,"n, cit",ies that mo,re aggress,ively prot,ected incu,mbents e,xperie
+nificantly fewer,candi,dates runnin,g for offic,e in post-,switch ele,ctions. W,hile w
+observe statisti,cally,significant e,ffects on t,he numb,er of Lati,no candid,ates o
+mber of Latinos,electe,"d, the estim",ated coef,ficients are,negative,and consi,stent
+patterns observ,ed in,the district-l,evel analy,sis.,,,
+,,Table C-6:,First vs. Subse,quent Electio,ns,,
+,,New cands L,at. cands La,t. elected N,ew cands L,at. cands La,t. elect
+Proportion Alone,,−1.321**,−0.498,−0.155,,,
+,,(0.501),(0.449),(0.211),,,
+Quantile(Proportion,Alone),,,,−1.677+,−0.603,−0.169
+,,,,,(0.936),(0.775),(0.352)
+imes First Election,,−1.198,−0.324,0.170,−1.634,−0.516,−0.199
+,,(1.013),(0.528),(0.227),(1.709),(0.685),(0.321)
+Post-Redistricting (20,22+),−0.533,−0.611*,−0.035,−0.563,−0.622*,−0.038
+,,(0.398),(0.254),(0.118),(0.398),(0.260),(0.121)
+N,,324,324,324,324,324,324
+Election Period FE,,X,X,X,X,X,X

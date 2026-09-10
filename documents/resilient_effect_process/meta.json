@@ -1,0 +1,255 @@
+{
+  "slug": "resilient_effect_process",
+  "pages": 58,
+  "title": "The Resilient, but Limited Effect of Process on Fairness and Legitimacy: Evidence from Wind Energy",
+  "words": 12506,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Stylized survey flow from both experiments.",
+      "page": 10,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Effect of process on fairness and legitimacy of siting decision when outcome is unknown (Branch 1 only). Point estimates shown with 95% confidence intervals.",
+      "page": 15,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Interaction between knowledge of outcome and effect of process on fairness and legitimacy of siting decision (Branches 1 and 2). Point estimates shown with 95% confidence intervals.",
+      "page": 18,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 4",
+      "caption": "Effect of receiving preferred outcome on fairness and legitimacy of siting decision when outcome is known (Branch 2 only). Point estimates shown with 95% confidence inter- vals.",
+      "page": 19,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-1",
+      "caption": "Diagram of Experiment 1 survey flow.",
+      "page": 27,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-2",
+      "caption": "Visualization of size of each turbine.",
+      "page": 29,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-3",
+      "caption": "Diagram of Experiment 2 survey flow.",
+      "page": 32,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-4",
+      "caption": "Visualization of size of each turbine.",
+      "page": 34,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-5",
+      "caption": "Histograms of legitimacy scale items. Scaling for items \u201cProtest\u201d and \u201cChange\u201d already reverse-coded to match scale.",
+      "page": 40,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-6",
+      "caption": "Correlation heatmap of legitimacy scale items.",
+      "page": 41,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-7",
+      "caption": "Effect of process on perceived fairness and legitimacy of turbine siting decision when the outcome is unknown (Branch 1 only), using the original 5-item legitimacy scale. Compared to Figure 1. Point estimates shown with 95% confidence intervals.",
+      "page": 42,
+      "image": "figures/fig-11.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure F-8",
+      "caption": "Interaction between preference for local government and effect of process on perceived fairness and legitimacy of turbine siting decision when the outcome is unknown (Branch 1 only). Point estimates shown with 95% confidence intervals.",
+      "page": 44,
+      "image": "figures/fig-12.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure G-9",
+      "caption": "Interaction between receiving preferred policy outcome and effect of process on perceived fairness and legitimacy of turbine siting decision when the outcome is unknown (Branch 2 only). Point estimates shown with 95% confidence intervals.",
+      "page": 46,
+      "image": "figures/fig-13.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure H-10",
+      "caption": "Effect of process on expected outcome of turbine siting decision when the out- come is unknown (Branches 1 and 2). Point estimates shown with 95% confidence intervals.",
+      "page": 47,
+      "image": "figures/fig-14.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure H-11",
+      "caption": "Effect of process on expected outcome of turbine siting decision when the outcome is unknown (Branches 1 and 2) by respondents pretreatment support for the wind farm. Point estimates shown with 95% confidence intervals.",
+      "page": 48,
+      "image": "figures/fig-15.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table D-1",
+      "caption": "Descriptive statistics: Experiment 1 and weighted average of sampled ZIP codes Characteristic Survey sample ZIP population (weighted) Homeowner (pct.) 71% 68% Female (pct.) 56% 51% White, non-Hispanic (pct.) 74% 60% Income (mean, household) $85,814 $91,997 Age (mean) 42 39 College educated (pct.) 55% 39% Republican/lean R. (pct.) 30% NA",
+      "page": 39,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table E-3",
+      "caption": "Scale reliability summary",
+      "page": 40,
+      "image": "tables/tab-02.png",
+      "csv": null
+    },
+    {
+      "kind": "table",
+      "label": "Table I-4",
+      "caption": "Effect of process on perceived fairness of siting decision (Experiment 1, Branch 1 only). Displayed in Figure 2.",
+      "page": 49,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-5",
+      "caption": "Effect of process on perceived fairness and legitimacy of siting decision (Experi- ment 2, Branch 1 only). Displayed in Figure 2.",
+      "page": 50,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-6",
+      "caption": "Effect of state board with limited input on perceived fairness of siting decision, alternative specification (Experiment 1, Branch 1 only). Not displayed, but alluded to in main text.",
+      "page": 51,
+      "image": "tables/tab-05.png",
+      "csv": "tables/tab-05.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-7",
+      "caption": "Effect of process\u2014interacted with preference for local government\u2014on perceived fairness and legitimacy of siting decision (Experiment 1, Branch 1 only). Displayed in Figure S8.",
+      "page": 52,
+      "image": "tables/tab-06.png",
+      "csv": "tables/tab-06.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-8",
+      "caption": "Effect of process\u2014interacted with preference for local government\u2014on perceived fairness and legitimacy of siting decision (Experiment 2, Branch 1 only). Displayed in Figure S8.",
+      "page": 53,
+      "image": "tables/tab-07.png",
+      "csv": "tables/tab-07.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-9",
+      "caption": "Effect of process\u2014interacted with knowledge of decision outcome\u2014on perceived fairness and legitimacy of siting decision (Experiment 1, Branches 1 and 2). Displayed in",
+      "page": 54,
+      "image": "tables/tab-08.png",
+      "csv": "tables/tab-08.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-10",
+      "caption": "Effect of process\u2014interacted with knowledge of decision outcome\u2014on perceived fairness and legitimacy of siting decision (Experiment 2, Branches 1 and 2). Displayed in",
+      "page": 55,
+      "image": "tables/tab-09.png",
+      "csv": "tables/tab-09.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-11",
+      "caption": "Effect of process\u2014interacted with outcome match\u2014on perceived fairness and legitimacy of siting decision (Experiment 1, Branch 2 only). Displayed in Figure 4 and",
+      "page": 56,
+      "image": "tables/tab-10.png",
+      "csv": "tables/tab-10.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table I-12",
+      "caption": "Effect of process\u2014interacted with outcome match\u2014on perceived fairness and legitimacy of siting decision (Experiment 2, Branch 2 only). Displayed in Figure 4 and",
+      "page": 57,
+      "image": "tables/tab-11.png",
+      "csv": "tables/tab-11.csv"
+    }
+  ],
+  "headings": [
+    "Michael Hankinson",
+    "April 8, 2026",
+    "Procedural Fairness, Legitimacy, and the Sincere-Strategic",
+    "Distinction",
+    "Wind Turbine Siting Institutions",
+    "Analytical Approach",
+    "Methods",
+    "Design",
+    "Results",
+    "Effect of Process When Outcome Is Unknown",
+    "Resilience of Effects When Outcome Is Known",
+    "Discussion",
+    "References",
+    "Supplemental Information",
+    "Contents",
+    "A Experiment 1 Survey Instrument",
+    "B Experiment 2 Survey Instrument",
+    "C Turbine Height Implications",
+    "D Descriptive Statistics",
+    "E Validation of Legitimacy Scale",
+    "F Alignment with Local Government",
+    "G Outcome Matches and Perceptions",
+    "1. However, in Experiment 2, the interaction between outcome match and state board is",
+    "H Expected Outcomes",
+    "I Results in Tabular Form",
+    "I.1 Effect of Process",
+    "I.2 Resilience of Process",
+    "J One-Sided Test"
+  ],
+  "warnings": [
+    "could not locate region for Table D-2 on p.39",
+    "Table E-3: no machine-readable CSV",
+    "could not locate region for Figure S9 on p.56",
+    "could not locate region for Figure S9 on p.57",
+    "could not locate region for Table J-13 on p.58"
+  ]
+}

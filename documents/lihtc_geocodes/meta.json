@@ -1,0 +1,33 @@
+{
+  "slug": "lihtc_geocodes",
+  "pages": 19,
+  "title": "Inaccuracies in Low Income Housing Geocodes: When and Why They Matter",
+  "words": 5466,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "A boxplot showing the distribution of the distances by which HUD and Google, respectively, are different from the true location conditional on being inaccurate, as determined by manual checks. The left edge of the box indicates the 25th percentile, the bolded line in the center is the median, and the right edge of the box is the 75th percentile. Black dots represent outliers, observations greater than 1.5 times the interquartile range above the 75th percentile. Means are indicated with a gray crossed circle. Four observations that were over 10,000 meters off from the true location were removed for visualization purposes. Three were from Google (11,552m; 34,216m; 32,747m off), and one was from HUD (32,435m off).",
+      "page": 8,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "A map of a Census tract in Santa Clara county, with interior lines denoting Census blocks. There were three new LIHTC developments during the time period of our study (noted with dots). Google (indicated with the \u201c+\u201d) located Facility 2 exactly, but did not locate either of the others in the correct tract. HUD (indicated with \u201cx\u201d) correctly located Facility 3, but placed Facility 2 in the wrong Census block (albeit the correct tract). Facility 1 had a mistyped directional in the address (it was recorded as \u201cN\u201d rather than \u201cS\u201d Sixth Street) so neither Google nor HUD placed it in the correct tract. This tract was chosen as an illustration because it contained both a Google and a HUD error, but is not necessarily representative of the overall error rates.",
+      "page": 12,
+      "image": "figures/fig-02.png",
+      "csv": null
+    }
+  ],
+  "tables": [],
+  "headings": [
+    "Nicole E. Wilson, Michael Hankinson, Asya Magazinnik, and Melissa Sands*",
+    "March 18, 2023"
+  ],
+  "warnings": [
+    "could not locate region for Table 1 on p.7",
+    "could not locate region for Table 2 on p.9"
+  ]
+}

@@ -1,0 +1,21 @@
+lte,rnative Clus,tering Approache,s (C,ase Study,Sample),,,,
+,,,Tota,l Units,Multifa,mily Units Sing,le-,f,amily
+,,,,(1),,(2),,,(3)
+Sin,gle-member,districts,,0.210,,0.124,,,0.083
+,Wild Bootstr,ap,p =,0.126,p =,0.161,p,=,0.444
+,Block Bootst,rap,p =,0.168,p =,0.304,p,=,0.242
+,Cluster Robu,st SEs,p =,0.107,p =,0.212,p,=,0.199
+Mi,nority block,groups,,0.311,,0.370,,−,0.033
+,Wild Bootstr,ap,p =,0.000∗∗∗,p =,0.040∗,p,=,0.521
+,Block Bootst,rap,p =,0.006∗∗,p =,0.000∗∗∗,p,=,0.186
+,Cluster Robu,st SEs,p =,0.000∗∗∗,p =,0.000∗∗∗,p,=,0.324
+SM,D∗Minority,block groups,−,0.424,−,0.358,,−,0.097
+,Wild Bootstr,ap,p =,0.000∗∗∗,p =,0.000∗∗∗,p,=,0.292
+,Block Bootst,rap,p =,0.006∗∗,p =,0.000∗∗∗,p,=,0.112
+,Cluster Robu,st SEs,p =,0.000∗∗∗,p =,0.001∗∗,p,=,0.151
+Co,ntrols,,,Yes,,Yes,,,Yes
+Cit,y FE,,,Yes,,Yes,,,Yes
+Ye,ar FE,,,Yes,,Yes,,,Yes
+Cit,y Trends,,,Yes,,Yes,,,Yes
+Ob,servations,,1,",184","1,",184,,1,",184"
+,∗ ∗∗,∗∗∗,,,,,,,

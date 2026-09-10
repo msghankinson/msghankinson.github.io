@@ -1,0 +1,18 @@
+T,able G-7: Effect,of change in a precinct’s,median househ,old income,on s,upport fo,r v,oters’
+v,"eto, 1993. Treat",ment data are winsorized.,Controls incl,uded in all,mo,"dels, but",exc,luded
+fr,om table due to,space constraints.,,,,,,
+,,,Suppo,rt for voters,’ ve,"to, 1993",,
+,,,Model 1,Model 2,M,odel 3,M,odel 4
+,Pct. point ∆ in,"foreign born, 1980-93",0.015∗∗∗,0.013∗∗∗,,,,
+,,,(0.003),(0.002),,,,
+,Prop. ∆ in forei,"gn born, 1980-93",,,,0.002,−,0.000
+,,,,,(,0.002),(,0.002)
+,Place Fixed Effe,cts,Yes,Yes,,Yes,,Yes
+,Controls,,Yes,Yes,,Yes,,Yes
+,Time-varying Co,ntrols,No,Yes,,No,,Yes
+,R2,,0.717,0.733,,0.710,,0.729
+,Adj. R2,,0.705,0.722,,0.698,,0.717
+,Num. obs.,36,51 36,49,365,1 3,64,9
+,RMSE,,2.725,2.647,,2.757,,2.668
+,N Clusters,1,42 1,42,14,2,14,2
+,∗∗∗p < 0.001; ∗∗p < 0.,01; ∗p < 0.05,,,,,,

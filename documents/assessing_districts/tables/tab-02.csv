@@ -1,0 +1,43 @@
+,T,able A-2: City Summ,ary Sta,ti,stics,,
+,,All,Swit,ch,ed,Included,
+Variabl,e,,,,,,
+,,N = 482,N =,1,67,N = 109,
+Populati,on,"68,097 (209,042)","87,318",(9,"0,216)","83,655 (64,617)",
+% Non-,Latino White,43.2 (24.8),39.4,(1,8.7),38.6 (18.1),
+% Latin,o,37.0 (25.8),38.1,(1,8.8),40.3 (18.7),
+% Non-,Latino Black,3.6 (4.8),4.1,(4,.4),3.9 (4.2),
+% Asian,,12.1 (14.2),14.3,(1,4.5),13.2 (13.8),
+% Other,,4.1 (2.4),4.1,(1,.7),4.0 (1.7),
+Median,Income ($),"85,996 (42,794)","83,922",(2,"8,005)","81,457 (26,363)",
+% Home,ownership,58.7 (14.1),59.0,(1,0.7),59.0 (9.6),
+Dissimil,arity,0.225 (0.117),0.262,(0,.094),0.270 (0.099),
+Gini Co,efficient,0.130 (0.056),0.149,(0,.045),0.150 (0.041),
+Unkn,own,32,,0,,0,
+1 Mean,(SD),,,,,,
+Table A-2 comp,ares our samp,le to the larger sampl,e of citi,es,that h,ave switched to dis,"tricts, and"
+to all California citi,es. All demo,graphic and economi,c measu,re,s pres,ented in the table,come from
+the 2020 American,Community S,urvey (ACS) 5-year,estimat,es,", retri",eved from the Cens,us Bureau
+API via the tidyce,nsus package,for R. We present t,hese sa,me,meas,ures for each city i,ncluded in
+this study in Table,A-3. At the pl,"ace level, we collected",data f,or,every,incorporated city a,nd town in
+California: total po,pulation and,race/ethnicity from t,able B0,30,"02, m",edian household in,come from
+"table B19013, and h",ousing tenure,from table B25003.,Becaus,e t,able B,03002 classifies rac,e and His-
+"panic origin jointly,",our racial an,d ethnic categories ar,e mutu,all,y excl,usive: Latino resid,ents of any
+"race, and non-Latin","o White, Blac","k, and Asian resident",s (with,N,ative,Hawaiian and Paci,fic Islander
+residents grouped w,ith Asian re,sidents); the remaini,ng pop,ul,ation i,s classified as “Ot,her.” The
+homeownership rate,is the share,of occupied housing,units t,ha,t are o,wner-occupied. To,construct
+the within-city segr,egation and,"inequality measures,",we add,iti,onally,collected tract-le,vel median
+household income a,nd Latino and,non-Latino populati,on cou,nts,from,the same tables. W,e assigned
+tracts to cities by s,patially inter,secting tract bounda,ries wi,th,place,"boundaries, drop",ping tracts
+with missing media,n income or,"zero population, and",compu,ted,the,Gini and dissimilar,ity indices
+described below fro,m the tracts,falling within each cit,y.,,,,
+•,,,,,,,
+Gini Index:,"Let x = (x ,x 1",",...,x ) denote the 2 n",vector,of,tract-,level median incom,"es, and let"
+"w = (w ,w ,. 1 2","..,w ) deno n",te the corresponding,popula,tio,n wei,ghts. We first calc,ulated the
+,,(cid:80)n wixi,,,,,
+weighted mea,n income: µ,= i=1 . We the (cid:80)n w,n comp,ut,ed all,pairwise absolute,differences
+,,i=1 i,,,,,
+in income |x i,"− x |, weight j",ed by the product of,tract p,op,ulatio,ns w w . The Gini i j,index was
+,,(cid:80)n,(cid:80)n w,w,|x −x,|,
+,,i=,1 j=1,i,j i,j,
+calculated usi,ng the followi,ng formula: G =,(cid:80)n,,2,.,
+,,,2µ( i=,w 1,) i,,

@@ -1,0 +1,29 @@
+0.02,,,,,,,
+0.00,,,,,,,
+0.02,,,,,,,
+0.04,,,,,,,
+,Homeow,ners White,Bl,ack Hisp,anic Va,cancy,Density
+,"(n = 4,0","38) (n = 3,99",5) (n =,"4,273) (n =","4,056) (n","= 4,048) (","n = 3,876)"
+,,,,Variable,,,
+,,,Tercile,High Tercile,Low Tercile,,
+re G-9:,Treat,ment effects fro,m the nea,"r-near design,",using other,block-level,covariates
+ry treat,"ments,",including 95%-c,onfidence,intervals. The,se “Homeow,ners” confide,nce interv
+not adju,sted fo,r multiple hypo,thesis testi,ng so as to pr,esent an equ,ivalent comp,arison of
+tments,across a,ll block-level co,variates.,,,,
+Mid,dle Te,rcile of Hom,eowners,hip,,,
+,,,Near-Far,Near-Far,Near-Far N,ear-Near N,ear-Near
+LIHTC,Project,(binary),0.003,,,−0.007,
+,,,(0.005),,,(0.009),
+LIHTC,Project,(proximity),,0.002,,,
+,,,,(0.005),,,
+LIHTC,Project,(units),,,−0.004,,−0.022∗
+,,,,,(0.006),,(0.009)
+LIHTC,FE,,LIHTC,LIHTC,LIHTC,CBSA,CBSA
+LIHTC,SE Clu,sters,Yes,Yes,Yes,Yes,Yes
+R2,,,0.300,0.300,0.300,0.092,0.096
+Adj. R2,,,0.212,0.212,0.212,0.079,0.083
+Num. o,bs.,3,260,3260 3,260 2,087 2,087
+RMSE,,,0.447,0.447,0.447,0.475,0.474
+N Clust,ers,,365,365,365,572,572
+∗∗∗p < 0.0,01; ∗∗p <,0.01; ∗p < 0.05,,,,,
+le G-15:,Effect,"of new, nearby",LIHTC on,change in sup,port for hous,ing bonds us,ing block

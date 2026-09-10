@@ -1,0 +1,254 @@
+{
+  "slug": "renters_preprint",
+  "pages": 56,
+  "title": "When Do Renters Behave Like Homeowners? High Rent, Price Anxiety, and NIMBYism",
+  "words": 12991,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Support for a neighborhood ban on new development by support for a 10 percent increase in the city\u2019s housing supply.",
+      "page": 17,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Example of the conjoint task.",
+      "page": 19,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Effect of proximity on homeowners by affordability of proposed housing.",
+      "page": 23,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 4",
+      "caption": "Effect of proximity on renters by affordability of proposed housing.",
+      "page": 24,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 5",
+      "caption": "Effect of proximity on renters by affordability of proposed housing, grouped by average rent citywide. Displayed effect is shift from 2 miles away (baseline) to 1/8 mile away. Quintile cutpoints for average rent by city at $1,217, $1,480, $1,936, and $2,247.",
+      "page": 27,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 6",
+      "caption": "Renter support for a 10 percent increase in their city/town\u2019s housing supply, by average rent citywide.",
+      "page": 28,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 7",
+      "caption": "Effect of proximity on renters towards market rate housing by attitude towards housing prices citywide.",
+      "page": 29,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A.1",
+      "caption": "Effect of proximity on recontacted San Francisco renters towards market rate housing by support for hypothetical ban on market rate housing in own neighborhood.",
+      "page": 46,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C.2",
+      "caption": "Homeowner spatial sensitivity by household income. \u2018Above Median Income\u2019 > $80,000, \u2018Below Median Income\u2019 \u2264 $80,000.",
+      "page": 52,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C.3",
+      "caption": "Homeowner spatial sensitivity by ideology.",
+      "page": 52,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C.4",
+      "caption": "Effect of \u20181/8 miles away\u2019 compared to baseline of \u20182 miles away\u2019 for each level of affordability, by homeownership status.",
+      "page": 53,
+      "image": "figures/fig-11.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C.5",
+      "caption": "Renter spatial sensitivity towards all affordability levels, by citywide average rent.",
+      "page": 53,
+      "image": "figures/fig-12.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C.6",
+      "caption": "Renter spatial sensitivity towards affordability levels, by ZIP code average rent.",
+      "page": 54,
+      "image": "figures/fig-13.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C.7",
+      "caption": "Homeowner spatial sensitivity to all affordability levels, by citywide average rent.",
+      "page": 54,
+      "image": "figures/fig-14.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C.8",
+      "caption": "Renter spatial sensitivity towards affordable housing, by price anxiety. Note lack of divergence between \u2018Price Anxious\u2019 and \u2018Price Neutral\u2019 compared to preferences towards market rate housing (Figure 7).",
+      "page": 55,
+      "image": "figures/fig-15.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C.9",
+      "caption": "Renter support for a 10% increase in their city/town\u2019s housing supply, grouped into quintiles by ZIP code average rent.",
+      "page": 55,
+      "image": "figures/fig-16.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C.10",
+      "caption": "Homeowner support for a 10% increase in city/town\u2019s housing supply, by citywide average rent.",
+      "page": 56,
+      "image": "figures/fig-17.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table 1",
+      "caption": "Expected support for new housing development by spatial scale (Macro-scale v. Micro-scale).",
+      "page": 12,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A.1",
+      "caption": "Descriptive Statistics, San Francisco Sample",
+      "page": 44,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A.2",
+      "caption": "Proposition Vote Share, San Francisco Sample",
+      "page": 44,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A.3",
+      "caption": "Policy Proposals, San Francisco Sample",
+      "page": 45,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B.4",
+      "caption": "Descriptive Statistics, National Sample",
+      "page": 47,
+      "image": "tables/tab-05.png",
+      "csv": "tables/tab-05.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B.5",
+      "caption": "Support for 10 Percent Supply Increase",
+      "page": 48,
+      "image": "tables/tab-06.png",
+      "csv": "tables/tab-06.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B.6",
+      "caption": "Support for 10 Percent Supply Increase - 7 Point Scale",
+      "page": 49,
+      "image": "tables/tab-07.png",
+      "csv": "tables/tab-07.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B.7",
+      "caption": "Support for Ban on Neighborhood Development",
+      "page": 50,
+      "image": "tables/tab-08.png",
+      "csv": "tables/tab-08.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B.8",
+      "caption": "Support for Ban on Neighborhood Development - 7 Point Scale",
+      "page": 51,
+      "image": "tables/tab-09.png",
+      "csv": "tables/tab-09.csv"
+    }
+  ],
+  "headings": [
+    "Michael Hankinson\u2217",
+    "1 NIMBYism",
+    "1.1 Macro-Scale",
+    "1.2 Micro-Scale",
+    "1.3 Homeowners and Renters",
+    "2 City-Specific Test",
+    "3 National Survey",
+    "1. How far is the building from your home?",
+    "2. How do local residents feel about the building?",
+    "3. What share of units will be affordable for low-income residents?",
+    "4. How tall will the building be?",
+    "6. Will residents own or rent?",
+    "7. How many units will the building have?",
+    "4 National Results",
+    "4.1 NIMBYism",
+    "4.2 NIMBYism across Markets",
+    "5 Discussion",
+    "6 Conclusion",
+    "References",
+    "Appendix A: San Francisco",
+    "A.1: Rent Control",
+    "A.2: Descriptive Statistics, San Francisco Sample",
+    "A.3: Policy Proposals, San Francisco Sample",
+    "10 Pct Supply NIMBY Ban Proposal",
+    "A.4: Recontacted Conjoint, San Francisco Sample",
+    "Appendix B: National Survey",
+    "B.1: Descriptive Statistics, National Survey",
+    "B.2: 10% Supply Increase, National Sample",
+    "B.3: Neighborhood Ban, National Sample",
+    "Appendix C: Conjoint Results, National Sample",
+    "C.1: Policy Support by Quintile, National Sample"
+  ],
+  "warnings": [
+    "could not locate region for Table 2 on p.21"
+  ]
+}

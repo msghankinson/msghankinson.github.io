@@ -1,0 +1,10 @@
+Table D3: Descr,iptive stati,stics for 1x,1 km grid c,ells,
+Statistic,N,Mean,St. Dev.,Min,Max
+∆ turbine,"45,702",0.01,0.09,0,1
+∆ approval,"45,702",0.11,0.13,−0.69,0.81
+Approval (pre-2007),"45,702",0.83,0.18,0.00,1.00
+Average population 2007-2020,"45,702",122.00,574.98,0.00,"22,932.20"
+Elevation (m),"45,698",29.11,24.92,−6.94,159.45
+Mean wind capacity,"45,491",477.22,114.93,0.00,"1,012.69"
+Hilliness,"45,698",7.91,5.95,0.00,57.68
+Distance to coast,"45,702",9.55,9.67,0.0000,49.10

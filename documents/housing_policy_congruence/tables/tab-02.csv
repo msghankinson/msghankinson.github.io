@@ -1,0 +1,14 @@
+,,Table,2: MRP,Predicted,Support fo,r Housin,g Policies,,,
+,Policy,,Min,Q1 M,edian,Q3,Max,Mean,,SD
+,Zoning Ref,orm,0.23,0.43,0.50,0.54,0.86,0.51,,0.09
+,Affordable,,,,,,,,,
+,Housing,,0.54,0.68,0.71,0.76,0.97,0.75,,0.06
+,Incentives,,,,,,,,,
+,Rent Contr,ol,0.36,0.71,0.74,0.78,0.96,0.76,,0.06
+Link,ing Elect,ed Offici,als to M,RP Esti,mates,,,,,
+Using,these zip c,ode level,"estimates,",we then e,stimate pu,blic opini,on for ea,ch poli,ticia,ns district.
+For l,ocal council,"members,",first we i,dentify if,the memb,er is at-l,arge (rep,resent,ing,their entire
+muni,cipality) or,ward base,d. For at-,large mem,bers (n =,"498), we",estimate,munici,pal-,level public
+opini,on by joinin,g the coun,cilmember,s to their c,ensus plac,e (typical,ly incorp,orated,mun,icipalities).
+Then,", we crossw",alk zip co,des to cen,sus places,using a cr,osswalk f,rom the,Missou,ri C,ensus Data
+7,,,,,,,,,,

@@ -1,0 +1,345 @@
+{
+  "slug": "policy_adjacent",
+  "pages": 69,
+  "title": "The Policy Adjacent: How Affordable Housing Generates Policy Feedback Among Neighboring Residents",
+  "words": 20660,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "1036 Mission Street, San Francisco, CA captured via Google Street View",
+      "page": 7,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Visualization of the near-far design. Treated blocks \u2014 those that are near LIHTC developments built in 2003-2006 \u2014 are orange, and control blocks \u2014 those that are just farther from LIHTC developments built in 2003-2006 \u2014 are black.",
+      "page": 15,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Visualization of near-near design. Treated blocks \u2014 those that receive LIHTC develop- ments in 2003-2006 \u2014 are orange, and control blocks \u2014 those that receive LIHTC developments in 2007-2010 \u2014 are black.",
+      "page": 18,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 7",
+      "caption": "Effect of new, nearby LIHTC on change in support for housing bonds among renters, by neighborhood gentrification status, including 95%-confidence intervals.",
+      "page": 28,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-1",
+      "caption": "Histogram of block-level change in support for housing bonds from 2002 to 2006, weighted by the average number of voters across elections. Weighted mean change in support shown by dashed vertical line.",
+      "page": 39,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-2",
+      "caption": "Distribution of LIHTC developments composing our treatment group, i.e., those placed in service from 2003 to 2006.",
+      "page": 40,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure F-3",
+      "caption": "Sensitivity of results for homeowner blocks across various distance band specifications, including 95%-confidence intervals adjusted for multiple hypothesis testing.",
+      "page": 50,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure F-4",
+      "caption": "Sensitivity of results for renter blocks across various distance band specifications, including 95%-confidence intervals adjusted for multiple hypothesis testing.",
+      "page": 50,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure F-5",
+      "caption": "Histogram of block-level homeownership rate among treated units, weighted by the average number of voters across elections. Tercile cutpoints shown by dashed vertical line.",
+      "page": 51,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure F-6",
+      "caption": "Sensitivity of results to homeowner cutpoints, including 95%-confidence intervals ad- justed for multiple hypothesis testing.",
+      "page": 51,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure F-7",
+      "caption": "Sensitivity of results to renter cutpoints, including 95%-confidence intervals adjusted for multiple hypothesis testing.",
+      "page": 52,
+      "image": "figures/fig-11.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure G-9",
+      "caption": "Treatment effects from the near-near design, using other block-level covariates as binary treatments, including 95%-confidence intervals. These \u201cHomeowners\u201d confidence intervals are not adjusted for multiple hypothesis testing so as to present an equivalent comparison of the treatments across all block-level covariates.",
+      "page": 54,
+      "image": "figures/fig-12.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure H-10",
+      "caption": "Treatment effects of nearby LIHTC on opinion change, as implied by assumptions on differential churn given by upper and lower x-axes. The x-axis at top of figure represents the proportion of voters who moved out of the block between 2002 and 2006 that is assumed to have supported the bond in 2002. The x-axis at bottom represents the proportion of voters who moved into the block between 2002 and 2006 that is assumed to have supported the bond in 2006. Estimates are generated using the regression model that produces our main results for homeowner blocks, near-far analysis, with binary treatment (the specification for column 1 of Table D-7), but here the dependent variable is not total change in support for the bond but rather the change in support due only to opinion change, under the corresponding assumptions.",
+      "page": 60,
+      "image": "figures/fig-13.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure H-11",
+      "caption": "Treatment effects of nearby LIHTC on opinion change, as implied by assumptions on differential churn given by upper and lower x-axes. The x-axis at top of figure represents the proportion of voters who moved out of the block between 2002 and 2006 that is assumed to have supported the bond in 2002. The x-axis at bottom represents the proportion of voters who moved into the block between 2002 and 2006 that is assumed to have supported the bond in 2006. Estimates are generated using the regression model that produces our main results for homeowner blocks, near-near analysis, with binary treatment (the specification for column 1 of Table D-8), but here the dependent variable is not total change in support for the bond but rather the change in support due only to opinion change, under the corresponding assumptions.",
+      "page": 61,
+      "image": "figures/fig-14.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure H-12",
+      "caption": "Results from the near-far design on change in block-level voter turnout, including 95%-confidence intervals.",
+      "page": 63,
+      "image": "figures/fig-15.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure H-14",
+      "caption": "Results from the near-far design on change in block-level voter roll-off, including 95%-confidence intervals.",
+      "page": 65,
+      "image": "figures/fig-16.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table 1",
+      "caption": "Model specifications.",
+      "page": 20,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-1",
+      "caption": "Balance, Near-Far Analysis, All Blocks",
+      "page": 42,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-2",
+      "caption": "Balance, Near-Far Analysis, Homeowner Blocks",
+      "page": 42,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-3",
+      "caption": "Balance, Near-Far Analysis, Renter Blocks",
+      "page": 42,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-4",
+      "caption": "Balance, Near-Near Analysis, All Blocks",
+      "page": 43,
+      "image": "tables/tab-05.png",
+      "csv": "tables/tab-05.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-5",
+      "caption": "Balance, Near-Near Analysis, Homeowner Blocks",
+      "page": 43,
+      "image": "tables/tab-06.png",
+      "csv": "tables/tab-06.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-6",
+      "caption": "Balance, Near-Near Analysis, Renter Blocks",
+      "page": 43,
+      "image": "tables/tab-07.png",
+      "csv": "tables/tab-07.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-7",
+      "caption": "Effect of new, nearby LIHTC on change in support for housing bonds using near-far design.",
+      "page": 44,
+      "image": "tables/tab-08.png",
+      "csv": "tables/tab-08.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-8",
+      "caption": "Effect of new, nearby LIHTC on change in support for housing bonds using near-near design.",
+      "page": 44,
+      "image": "tables/tab-09.png",
+      "csv": "tables/tab-09.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-9",
+      "caption": "Effect of new, nearby LIHTC on change in support for housing bonds using near-far design, \u201cClean\u201d sample.",
+      "page": 45,
+      "image": "tables/tab-10.png",
+      "csv": "tables/tab-10.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-10",
+      "caption": "Effect of new, nearby LIHTC on change in support for housing bonds using near-near design, \u201cClean\u201d sample.",
+      "page": 45,
+      "image": "tables/tab-11.png",
+      "csv": "tables/tab-11.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-11",
+      "caption": "Effect of new, nearby LIHTC on change in support for housing bonds based on continuous rentership model, with positive and negative price effects cut by tercile.",
+      "page": 46,
+      "image": "tables/tab-12.png",
+      "csv": "tables/tab-12.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-12",
+      "caption": "Effect of new, nearby LIHTC on change in support for housing bonds among renters, treatment interacted with neighborhood gentrification status.",
+      "page": 47,
+      "image": "tables/tab-13.png",
+      "csv": "tables/tab-13.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table G-14",
+      "caption": "Effect of new, nearby LIHTC on change in support for housing bonds using near-far design, placebo check with 2007-2010 LIHTC developments.",
+      "page": 53,
+      "image": "tables/tab-14.png",
+      "csv": "tables/tab-14.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table G-15",
+      "caption": "Effect of new, nearby LIHTC on change in support for housing bonds using blocks in middle tercile of homeownership.",
+      "page": 54,
+      "image": "tables/tab-15.png",
+      "csv": "tables/tab-15.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table G-16",
+      "caption": "Nonparametric effect of LIHTC on change in support for housing bonds (2002 to 2006) using near-far design. Sample size reported is the number of Census blocks in each subgroup.",
+      "page": 55,
+      "image": "tables/tab-16.png",
+      "csv": "tables/tab-16.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table G-17",
+      "caption": "Nonparametric effect of LIHTC on change in support for housing bonds (2002 to 2006) using near-near design. Sample size reported is the number of Census blocks in each subgroup.",
+      "page": 55,
+      "image": "tables/tab-17.png",
+      "csv": "tables/tab-17.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table H-18",
+      "caption": "Summary statistics of treated blocks using pretreatment variables at the block-level, based on LIHTC\u2019s effects on nearby housing prices.",
+      "page": 56,
+      "image": "tables/tab-18.png",
+      "csv": "tables/tab-18.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table H-19",
+      "caption": "Near-Far Design with Homeownership, DV = Voted in 2006 \u2212 Voted in 2002",
+      "page": 64,
+      "image": "tables/tab-19.png",
+      "csv": "tables/tab-19.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table H-20",
+      "caption": "Near-Near Design with Homeownership, DV = Voted in 2006 \u2212 Voted in 2002",
+      "page": 64,
+      "image": "tables/tab-20.png",
+      "csv": "tables/tab-20.csv"
+    }
+  ],
+  "headings": [
+    "Policy Feedback and the Low-Income Housing Tax Credit",
+    "Data and Measurement",
+    "Research Designs",
+    "2. Continuous in distance. Alternatively, T may be constructed as a continuous variable",
+    "1. Binary Binary Binary 6,000",
+    "2. Proximity (cont.) Continuous (distance) Binary 6,000",
+    "3. Units (cont.) Continuous (size) Binary 6,000",
+    "4. Continuous rentership Binary Continuous 9,292",
+    "5. Binary Binary Binary 4,038",
+    "6. Units (cont.) Continuous (size) Binary 4,038",
+    "7. Continuous rentership Binary Continuous 6,144",
+    "Results",
+    "Discussion",
+    "Conclusion",
+    "References",
+    "Supplementary Information for \u201cThe Policy Adjacent: How Af-",
+    "Contents",
+    "A Media Coverage and LIHTC\u2019s Traceability",
+    "B Data",
+    "C Balance Tables",
+    "D Results in Tabular Form",
+    "E Multiple Hypothesis Adjustment",
+    "F Sensitivity Analysis",
+    "G Robustness Checks",
+    "H Mechanisms",
+    "02 B 02 02",
+    "02 B 02",
+    "06 B 06",
+    "06 B 02 B",
+    "References"
+  ],
+  "warnings": [
+    "could not locate region for Figure 3 on p.17",
+    "could not locate region for Table 1 on p.19",
+    "could not locate region for Figure 4 on p.21",
+    "could not locate region for Figure 5 on p.22",
+    "could not locate region for Figure 6 on p.26",
+    "could not locate region for Figure B-2 on p.39",
+    "could not locate region for Table E-13 on p.49",
+    "could not locate region for Figure G-8 on p.53",
+    "could not locate region for Figure H-13 on p.63",
+    "could not locate region for Figure H-15 on p.65",
+    "could not locate region for Figure H-16 on p.66",
+    "could not locate region for Figure H-17 on p.67",
+    "could not locate region for Figure H-18 on p.68"
+  ]
+}

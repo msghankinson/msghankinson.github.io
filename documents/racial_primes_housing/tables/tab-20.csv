@@ -1,0 +1,31 @@
+Treatment,,0.012,−0.019
+,,(0.028),(0.032)
+Support for h,ousing supply,0.420∗∗∗,0.360∗∗
+,,(0.032),(0.040)
+Treatment x,Support supply,−0.009,0.035
+,,(0.039),(0.045)
+Homeowner,,,−0.015
+,,,(0.015)
+Income (cont,.),,−0.007∗∗
+,,,(0.002)
+Female,,,0.038∗∗
+,,,(0.013)
+College or m,ore,,−0.030∗
+,,,(0.013)
+Age,,,−0.003∗∗
+,,,(0.000)
+Non-white,,,0.027
+,,,(0.014)
+Republican (,"-1, 1)",,0.031
+,,,(0.018)
+Conservative,"(-1, 1)",,−0.049∗∗
+,,,(0.017)
+Intercept,,0.117∗∗∗,0.320∗∗
+,,(0.024),(0.040)
+R2,,0.158,0.206
+Adj. R2,,0.157,0.201
+Num. obs.,27,92 1,951
+RMSE,,0.276,0.272
+∗∗∗p < 0.001; ∗∗p,< 0.01; ∗p < 0.05,,
+pport for stat,e housing control am,ong residents of r,acially ch
+support (Stu,"dy 4, RQ1).",,

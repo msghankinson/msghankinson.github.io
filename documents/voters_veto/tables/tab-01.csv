@@ -1,0 +1,26 @@
+,S,upport for voter,"s’ veto, 1"
+,,Model 1,Model 2
+Pct. point,∆ in non-white pop.,0.045∗∗∗,
+,,(0.011),
+Prop. ∆ in,non-white pop.,,0.034∗∗
+,,,(0.010)
+"Pct. white,",non-Hispanic (1980),0.067,0.055
+,,(0.035),(0.040)
+Pct. unemp,loyed (1980),−0.517∗∗∗,−0.670∗∗
+,,(0.143),(0.223)
+Pct. homeo,wner (1980),0.137∗∗∗,0.123∗∗
+,,(0.039),(0.038)
+Pct. vacant,(1980),−0.303∗∗,−0.274∗
+,,(0.113),(0.113)
+Log median,household income (1980),0.010,−0.004
+,,(0.014),(0.015)
+Pop. densit,y (1980),−6.040∗∗∗,−5.367∗∗
+,,(0.528),(0.783)
+City FE,,Yes,Yes
+R2,,0.751,0.723
+Adj. R2,,0.740,0.711
+Num. obs.,3,651 3,651
+RMSE,,2.556,2.694
+N Clusters,,142,142
+∗∗∗p < 0.001; ∗∗,p < 0.01; ∗p < 0.05,,
+ffect of cha,nge in a precinct’s non-white,population (198,0-1993)

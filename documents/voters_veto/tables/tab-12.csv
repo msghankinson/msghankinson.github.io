@@ -1,0 +1,18 @@
+-10: Effect,of,proximity,to diver,sifying tr,act on supp,ort for voter’,s veto.
+d in all mo,del,"s, but exclu",ded fro,m table du,e to space c,onstraints.,
+,,,,,Perce,ntage Points,∆
+,,,,M,odel 1,Model 2,Model 3
+Proximity,to,proportion,change,(95th),,,0.058∗∗∗
+,,,,,,(,0.008)
+Proximity,to,proportion,change,(90th),,0.052∗∗∗,
+,,,,,(,0.008),
+Proximity,to,proportion,change,(85th),0.022,,
+,,,,,(0.012),,
+Place Fixe,d E,ffects,,,Yes,Yes,Yes
+Controls,,,,,Yes,Yes,Yes
+R2,,,,,0.584,0.665,0.682
+Adj. R2,,,,,0.538,0.628,0.647
+Num. obs,.,,,4,03 40,3 40,3
+RMSE,,,,,2.370,2.125,2.072
+N Cluster,s,,,,41 3,7 2,7
+∗∗∗p < 0.001;,∗∗p,< 0.01; ∗p < 0.0,5,,,,

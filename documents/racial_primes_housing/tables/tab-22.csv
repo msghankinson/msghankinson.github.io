@@ -1,0 +1,31 @@
+Treatment,0.073∗∗,0.043
+,(0.022),(0.024)
+Party match with Governor,0.033,−0.002
+,(0.021),(0.022)
+Treatment x Party match,−0.041,0.017
+,(0.032),(0.035)
+Homeowner,,0.015
+,,(0.021)
+Income (cont.),,−0.013∗∗
+,,(0.004)
+Female,,−0.089∗∗
+,,(0.018)
+College or more,,0.059∗∗
+,,(0.019)
+Age,,−0.002∗∗
+,,(0.001)
+Non-white,,−0.018
+,,(0.020)
+"Republican (-1, 1)",,0.040
+,,(0.024)
+"Conservative (-1, 1)",,−0.076∗∗
+,,(0.025)
+Intercept,−0.043∗∗,0.123∗∗
+,(0.015),(0.040)
+R2,0.005,0.044
+Adj. R2,0.004,0.038
+Num. obs. 2,434 1,830
+RMSE,0.398,0.380
+∗∗∗p < 0.001; ∗∗p < 0.01; ∗p < 0.05,,
+r-writing support for state hous,ing control amon,g reside
+"match with governor (Study 4,",RQ3).,

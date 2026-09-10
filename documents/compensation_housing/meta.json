@@ -1,0 +1,262 @@
+{
+  "slug": "compensation_housing",
+  "pages": 69,
+  "title": "How Self-Interest and Symbolic Politics Shape the Effectiveness of Compensation for Nearby Housing Development",
+  "words": 16404,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Distribution of cooperation agreements, Boston, MA (2016-2021)",
+      "page": 10,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Example prompt",
+      "page": 12,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Geographic distributions of respondents and experimental stimuli.",
+      "page": 17,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 4",
+      "caption": "Predictors of support for housing proposals without compensation. Lines indicate 95%- confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 18,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 5",
+      "caption": "Predictors of support for housing proposals with compensation. Lines indicate 95%- confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 19,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 6",
+      "caption": "Predictors of support for housing proposals, affordability interacted with compen- sation. Lines indicate 95%- confidence intervals (thin lines) and 90%-confidence intervals (thick lines).",
+      "page": 21,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 7",
+      "caption": "Log2 ratio of term frequencies in open-ended text comments regarding financial compensation (affordable housing treatment/market-rate housing treatment)",
+      "page": 23,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-1",
+      "caption": "Compensation effects, renters.",
+      "page": 51,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure D-2",
+      "caption": "Compensation effects, homeowners.",
+      "page": 53,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-3",
+      "caption": "Effect of compensation by proximity.",
+      "page": 56,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-4",
+      "caption": "Effect of compensation by housing affordability.",
+      "page": 56,
+      "image": "figures/fig-11.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-5",
+      "caption": "Effect of compensation by tenure.",
+      "page": 57,
+      "image": "figures/fig-12.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-6",
+      "caption": "Effect of compensation by housing affordability among renters.",
+      "page": 58,
+      "image": "figures/fig-13.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure E-7",
+      "caption": "Effect of compensation by form of compensation.",
+      "page": 58,
+      "image": "figures/fig-14.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table A-1",
+      "caption": "Institutionalization of Public Benefits Negotiation in Discretionary Review Process, 25 Most Populous Cities City Structure # Description Media Account Source New York, Community 59 Formal part of dis- \u201cAfter ongoing negotiations with Community Acevedo, NY Boards cretionary review Board 2\u2019s Land Use committee, Phipps adjusted A. 2020. pipeline. the income bands for the units from their initial 110 QNS. to 90 percent of the Area Median Income (AMI).\u201d Dec 7. Los Angeles, Neighborhood 99 Not part of dis- \u201cAlong with entitlement approvals, Clifford Beers Boerner, CA Councils cretionary review Housing is seeking a letter of support for the project D. 2021. pipeline, but meet- from UNNC, the latter\u2019s agenda shows.\u201d What",
+      "page": 40,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-2",
+      "caption": "Sample Descriptive Statistics, All Respondents",
+      "page": 46,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-3",
+      "caption": "Sample Descriptive Statistics, Wave 1",
+      "page": 46,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-4",
+      "caption": "Sample Descriptive Statistics, Wave 2",
+      "page": 47,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-5",
+      "caption": "Sample Descriptive Statistics, Wave 3",
+      "page": 47,
+      "image": "tables/tab-05.png",
+      "csv": "tables/tab-05.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-6",
+      "caption": "Predictors of Support for Housing Proposals without Compensation",
+      "page": 49,
+      "image": "tables/tab-06.png",
+      "csv": "tables/tab-06.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-7",
+      "caption": "Predictors of Support for Housing Proposals with Compensation",
+      "page": 50,
+      "image": "tables/tab-07.png",
+      "csv": "tables/tab-07.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-8",
+      "caption": "Predictors of Support for Housing Proposals with Compensation, by Homeown- ership",
+      "page": 52,
+      "image": "tables/tab-08.png",
+      "csv": "tables/tab-08.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-9",
+      "caption": "Predictors of Support for Market-Rate Housing Proposals with Compensation, by Respondent Income",
+      "page": 54,
+      "image": "tables/tab-09.png",
+      "csv": "tables/tab-09.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table H-10",
+      "caption": "Predictors of Support for Housing Proposals without Compensation, Interacted with Ideology and Partisanship",
+      "page": 67,
+      "image": "tables/tab-10.png",
+      "csv": null
+    },
+    {
+      "kind": "table",
+      "label": "Table H-11",
+      "caption": "Predictors of Support for Housing Proposals without Compensation, by Survey Sub-Sample",
+      "page": 68,
+      "image": "tables/tab-11.png",
+      "csv": "tables/tab-11.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table H-12",
+      "caption": "Predictors of Support for Housing Proposals with Compensation, by Survey Sub-Sample",
+      "page": 69,
+      "image": "tables/tab-12.png",
+      "csv": "tables/tab-12.csv"
+    }
+  ],
+  "headings": [
+    "Michael Hankinson Justin de Benedictis-Kessner",
+    "July 17, 2024",
+    "Compensation and Negotiation for Housing",
+    "How Concentrated Benefits Are Institutionalized",
+    "1. A structure of geographically-defined groups recognized by city government as repre-",
+    "3. These groups are asked to supply formal recommendations regarding approval of the",
+    "Experimental Design",
+    "Data",
+    "2.6 Figure H-3 shows the spatial distribution of respondents and our experimental stimuli",
+    "Results",
+    "The Effects of Affordability",
+    "The Effects of Compensation",
+    "Evidence from Open-Ended Responses",
+    "Discussion",
+    "Policy Implications",
+    "Conclusion",
+    "Notes",
+    "References",
+    "Supplementary Appendix for",
+    "Contents",
+    "A Institutionalization of Community Negotiation for",
+    "Public Benefits",
+    "B Evaluating Public Support Using a \u201cWillingness-to-",
+    "Accept\u201d Experiment",
+    "B.1 Bid Selection",
+    "C Descriptive Statistics",
+    "D Results, Tabular Form",
+    "D.1 Results by Homeownership Status",
+    "E Alternative Modeling Approaches",
+    "F Survey Instrument",
+    "4. User identifies their home",
+    "F.1 Individual proposals",
+    "F.2 Demographics",
+    "G Pre-Analysis Plan",
+    "G.1 Individual Proposals",
+    "H Exploratory Analyses"
+  ],
+  "warnings": [
+    "could not locate region for Figure H-6 on p.20",
+    "could not locate region for Table H-8 on p.51",
+    "could not locate region for Table H-8 on p.55",
+    "Table H-10: no machine-readable CSV"
+  ]
+}

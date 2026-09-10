@@ -1,0 +1,35 @@
+"rmitted, Interacted with City Charact",eristics (Bina,ry Outcome:,Any,Permits,=1)
+,H1,H2,H3,,H4
+,(1),(2),(3),,(4)
+Single-member districts −,0.113 −,0.244∗ −,0.21,5∗ −,0.129
+,(0.087),(0.117),(0.09,7),(0.109)
+SMD∗Low segregation,,0.188,,,
+,,(0.176),,,
+SMD∗High majority population,,,0.03,4,
+,,,(0.13,6),
+SMD∗Low majority control,,,,−,0.017
+,,,,,(0.176)
+Percent non-Hispanic white,0.035,,,,
+,(0.037),,,,
+Percent Black −,0.099,,,,
+,(0.063),,,,
+Percent Hispanic,0.022,,,,
+,(0.043),,,,
+Population (thousands),0.002 −,0.001,0.00,5,0.005
+,(0.020),(0.024),(0.01,9),(0.019)
+Vacancy rate,3.627,5.805,9.10,0,5.524
+,(4.967),(6.186),(5.76,0),(6.610)
+Home ownership rate −,0.318,1.851 −,2.55,6 −,1.132
+,(2.218),(2.788),(2.38,3),(2.976)
+Median home value (thousands) −,0.003 −,0.002 −,0.00,3 −,0.004∗
+,(0.002),(0.002),(0.00,3),(0.002)
+Median income (thousands),0.022,0.016,0.01,9,0.022
+,(0.016),(0.020),(0.01,9),(0.018)
+Past minority representation,0.708,0.302,1.02,3,0.844
+,(0.570),(0.652),(0.54,5),(0.508)
+City FE,Yes,Yes,Yes,,Yes
+Year FE,Yes,Yes,Yes,,Yes
+City-specific Trends,Yes,Yes,Yes,,Yes
+Observations,597,399,397,,397
+R2 0,.534 0,.539 0,.593,0,.583
+,,∗ ∗,∗,∗∗∗,

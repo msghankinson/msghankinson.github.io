@@ -1,0 +1,29 @@
+,Prox. to pct.,point,∆ in non-white,0.028,,0.010,
+,,,,(0.017),,(0.009),
+,Prox. to prop,. ∆ in,non-white,,0.056∗∗∗,,0.043∗
+,,,,,(0.011),,(0.008)
+,Prox. to pct.,point x,"white prec., 1980",0.005,−,0.002,
+,,,,(0.023),,(0.019),
+,Prox. prop. x,white,"prec., 1980",−,0.008,−,0.049∗
+,,,,,(0.017),,(0.019)
+,Pct. unemplo,yed (19,80) −,0.472 −,0.977∗∗∗ −,0.909∗∗∗ −,1.283∗
+,,,,(0.255),(0.210),(0.198),(0.191)
+,Pct. homeow,ner (19,80),0.026,0.034 −,0.057 −,0.058
+,,,,(0.052),(0.052),(0.047),(0.039)
+,Pct. vacant (,1980),−,1.068 −,0.964∗ −,0.873∗ −,0.725∗
+,,,,(0.605),(0.451),(0.349),(0.309)
+,Log median h,ouseho,ld income (1980) −,0.047 −,0.074∗,0.023 −,0.018
+,,,,(0.043),(0.033),(0.029),(0.024)
+,Pop. density,(1980),−,8.927 −,3.601 −,13.427 −,10.552
+,,,(,11.408),(8.387),(7.109),(5.881)
+,Place Fixed E,ffects,,Yes,Yes,Yes,Yes
+,Controls,,,Yes,Yes,Yes,Yes
+,R2,,,0.599,0.664,0.596,0.654
+,Adj. R2,,,0.549,0.622,0.539,0.605
+,Num. obs.,,3,74 3,74 3,40 3,40
+,RMSE,,,2.313,2.118,2.447,2.266
+,N Clusters,,,36,36,32,32
+,∗∗∗p < 0.001; ∗∗p,< 0.01; ∗p,< 0.05,,,,
+T,able J-15: E,ffect of,proximity to diversif,ying tract,on support f,or voter’s ve,"to, am"
+p,recincts whic,h chan,ged minimally from 1,980 to 199,3. Interacted,with precin,ct perc
+n,"on-white, 198",0.,,,,,

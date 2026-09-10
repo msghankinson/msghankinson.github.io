@@ -1,0 +1,14 @@
+able C-10: Effect of Conversion t,o,Sin,gle-Member,Di,stricts on,Logged,Total Units,Approved (Case,St,udy S
+,,,(1),,(2),,(3),(4),,(5)
+Single-member districts,,,0.040,,0.160,,0.059,0.179,,0.21
+,p,=,0.749,p =,0.300,p =,0.761,p = 0.334,p =,0.12
+Minority block groups,,,0.387,,0.387,,0.387,0.312,,0.31
+,p,=,0.000∗∗∗,p =,0.000∗∗∗,p =,0.000∗∗∗,p = 0.000∗∗∗,p =,0.00
+SMD∗Minority block groups,,−,0.377,,−0.377,−,0.377,−0.425,,−0.42
+,p,=,0.000∗∗∗,p =,0.000∗∗∗,p =,0.000∗∗∗,p = 0.000∗∗∗,p =,0.00
+Controls,,,No,,No,,No,Yes,,Yes
+City FE,,,No,,Yes,,Yes,Yes,,Yes
+Year FE,,,No,,Yes,,Yes,Yes,,Yes
+City Trends,,,No,,No,,Yes,No,,Yes
+Observations,,1,",184",,"1,184",1,",184","1,184",,"1,184"
+∗ ∗∗ ∗∗∗,,,,,,,,,,

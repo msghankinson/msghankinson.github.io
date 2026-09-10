@@ -1,0 +1,17 @@
+,Mean,(treated) Mean,(control) Std. mean,difference
+H,omeownership rate,0.85,0.85,-0.01
+Pe,rcent voted in 2002,0.50,0.52,-0.08
+Percent,non-Hispanic white,0.45,0.49,-0.12
+Percent,non-Hispanic Black,0.07,0.06,0.01
+,Percent Hispanic,0.29,0.28,0.04
+,Vacancy rate,0.04,0.04,0.03
+Density,(pop./km-squared),3774.38,3759.55,0.00
+,"Table C-2: Balance, Ne","ar-Far Analysis,",Homeowner Blocks,
+,Mean,(treated) Mean,(control) Std. mean,difference
+H,omeownership rate,0.06,0.07,-0.04
+Pe,rcent voted in 2002,0.38,0.39,-0.05
+Percent,non-Hispanic white,0.31,0.36,-0.16
+Percent,non-Hispanic Black,0.10,0.08,0.08
+,Percent Hispanic,0.38,0.35,0.10
+,Vacancy rate,0.05,0.05,0.02
+Density,(pop./km-squared),22271.75,16211.35,0.36

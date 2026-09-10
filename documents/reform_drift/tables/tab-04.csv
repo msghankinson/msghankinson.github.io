@@ -1,0 +1,31 @@
+,Proportion,Alone,−1.32,1**,,−0.498,−0.155,,,
+,,,(0.50,1),,(0.450),(0.211),,,
+,Quantile(Pr,oporti,on Alone),,,,,−1.677+,−0.603,−0.169
+,,,,,,,,(0.937),(0.775),(0.352)
+,Post-Redist,ricting,(2022+) −0.5,33,,−0.611*,−0.035,−0.563,−0.622*,−0.038
+,,,(0.39,8),,(0.254),(0.119),(0.398),(0.260),(0.121)
+,N,,23,7,,237,237,237,237,237
+,Election Pe,riod FE,X,,,X,X,X,X,X
+,"+ p <0.1, *",p <0.0,"5, ** p <0.01, *** p",<0,.001,,,,,
+,Standard e,rrors cl,ustered by city.,,,,,,,
+,"Finally, r",estric,ting attention,to,ele,ctions o,ccurring,two or more,election c,ycles after
+the,switch y,ields,similar conclu,sio,ns.,As sho,wn in Tab,"le C-7, the st",atistically,significant
+red,uction in,the,number of ne,w,can,didates,"persists,",and the esti,mated effe,cts on the
+nu,mber of L,atino,candidates an,d t,he,number,of Latino,s elected rem,ain negati,"ve, though"
+imp,recisely,estim,ated. Taken t,oge,the,"r, these",results su,ggest that th,e dampen,ing effects
+of i,ncumben,t pro,tection are no,t n,ece,ssarily l,imited to,the immedi,ate period,following
+the,switch t,o dist,rict elections.,,,,,,,
+C.2,Effects,of I,ncumbent Pro,tec,tio,n Other,Outcome,s,,
+Bey,ond des,cripti,ve representa,tion,", a",ttemps t,o draw,district line,in ways th,at protect
+inc,umbents,may,have consequ,enc,es,on other,relevant,mapmaking,quantities,of interest
+We,examine,two,district-level,met,rics,: compa,ctness (m,easured by,the Reock,score) and
+the,proporti,on o,f the district,po,pul,ation tha,t is Lati,no. We use,linear reg,ression to
+per,form a d,iffere,nce-in-means,tes,t o,n these t,wo outco,mes by whe,ther or no,t a district
+has,an incu,mben,t alone.,,,,,,,
+,,T,able C-8: Effe,ct,of,Incumbe,nt Prote,ction on Di,stric-,
+,,,t-Le,vel,M,etrics,,,,
+,,,,,,,Reoc,k Prop. Lat,ino,
+,,,District w/ In,cu,mb,ent Alon,− e 0.02,− 1 0.003,,
+,,,,,,,(0.015,) (0.018,),
+,,,N,,,,513,513,,
+,,,R2,,,,0.007,0.000,,

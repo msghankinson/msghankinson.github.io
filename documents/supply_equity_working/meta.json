@@ -1,0 +1,255 @@
+{
+  "slug": "supply_equity_working",
+  "pages": 65,
+  "title": "The Supply\u2013Equity Trade-off: The Effect of Spatial Representation on the Local Housing Supply",
+  "words": 16574,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Logged Multifamily Units Permitted by Treatment Status and Year Relative to First District Election (Causally Identified Sample)",
+      "page": 20,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Difference in Logged Total Units Approved (High Minority Block Groups Mi- nus Low Minority Block Groups), by Treatment Status and Year Relative to First District Election (Case Study Sample)",
+      "page": 26,
+      "image": "figures/fig-02.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 3",
+      "caption": "Difference in Logged Total Units Approved between Minority Block Groups and White Block Groups, At-Large vs. District (Case Study Sample)",
+      "page": 28,
+      "image": "figures/fig-03.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-1",
+      "caption": "Proportion of California Cities with District Elections over Time",
+      "page": 38,
+      "image": "figures/fig-04.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-2",
+      "caption": "Relation of Causally Identified Sample to All California Cities",
+      "page": 38,
+      "image": "figures/fig-05.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-3",
+      "caption": "Treatment Status Over Time, Causally Identified Sample",
+      "page": 39,
+      "image": "figures/fig-06.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure A-4",
+      "caption": "Distributions of Variables Used to Assess Conditional Effects (Causally Identified Sample)",
+      "page": 42,
+      "image": "figures/fig-07.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-5",
+      "caption": "Logged Multifamily Units Permitted by Treatment Status and Year Relative to First District Election (Causally Identified Sample)",
+      "page": 43,
+      "image": "figures/fig-08.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-7",
+      "caption": "Event Study Plots of Treatment Effects and Confidence Intervals (Causally Identified Sample)",
+      "page": 51,
+      "image": "figures/fig-09.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-8",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Multifamily Units Permitted, Estimated Using Fixed Effects Counterfactual Estimator (Liu, Wang, and Xu 2020) (Causally Identified Sample)",
+      "page": 52,
+      "image": "figures/fig-10.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure B-9",
+      "caption": "Goodman-Bacon Decomposition of the Effect of Single-Member Districts on Logged Multifamily Units Permitted (Causally Identified Sample)",
+      "page": 53,
+      "image": "figures/fig-11.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C-10",
+      "caption": "Logged Total Units Approved, by Treatment Status and Year Relative to First District Election (Case Study Sample)",
+      "page": 54,
+      "image": "figures/fig-12.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C-11",
+      "caption": "Logged Total Units Approved, by Block Group Composition (Minority or White) and Year Relative to First District Election (Case Study Sample)",
+      "page": 57,
+      "image": "figures/fig-13.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C-12",
+      "caption": "Event Study Plot of Spatial Diff-in-Diff Interaction (Case Study Sample)",
+      "page": 59,
+      "image": "figures/fig-14.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table 2",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Multifamily Units Per- mitted, Interacted with City Characteristics",
+      "page": 22,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 3",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Total Units Approved (Case Study Sample)",
+      "page": 27,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B-4",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Units Permitted, By Housing Type (Causally Identified Sample)",
+      "page": 45,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B-5",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Multifamily Units Permitted, Interacted with Segregation (Causally Identified Sample), Robustness to Alternative Specifications",
+      "page": 46,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B-6",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Multifamily Units Permitted, Interacted with Majority Population (Causally Identified Sample), Robustness to Alternative Model Specifications",
+      "page": 47,
+      "image": "tables/tab-05.png",
+      "csv": "tables/tab-05.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B-7",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Multifamily Units Permitted, Interacted with Majority Control (Causally Identified Sample), Robustness to Alternative Specifications",
+      "page": 48,
+      "image": "tables/tab-06.png",
+      "csv": "tables/tab-06.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B-8",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Multifamily Units Permitted, Interacted with City Characteristics",
+      "page": 49,
+      "image": "tables/tab-07.png",
+      "csv": "tables/tab-07.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table B-9",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Multifamily Units Permitted, Interacted with City Characteristics (Binary Outcome: Any Permits=1)",
+      "page": 50,
+      "image": "tables/tab-08.png",
+      "csv": "tables/tab-08.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-10",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Total Units Approved (Case Study Sample)",
+      "page": 55,
+      "image": "tables/tab-09.png",
+      "csv": "tables/tab-09.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-11",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Total Units Ap- proved, Robustness to Exclusion of One City (Case Study Sample)",
+      "page": 56,
+      "image": "tables/tab-10.png",
+      "csv": "tables/tab-10.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-12",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Units Approved Terciles Defined Over All Treated Cities (Case Study Sample) (Minority block groups: less than 38 percent white, white block groups: more than 67 percent white)",
+      "page": 58,
+      "image": "tables/tab-11.png",
+      "csv": "tables/tab-11.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-13",
+      "caption": "Effect of Conversion to Single-Member Districts on Logged Units Approved, Alternative Clustering Approaches (Case Study Sample)",
+      "page": 60,
+      "image": "tables/tab-12.png",
+      "csv": "tables/tab-12.csv"
+    }
+  ],
+  "headings": [
+    "Michael Hankinson Asya Magazinnik",
+    "The Spatial Scale of Representation",
+    "The Political Economy of Zoning",
+    "Hypotheses",
+    "Identifying the Causal Effect of District Elections on",
+    "Policy Outcomes",
+    "Aggregate Outcomes",
+    "1. To compute majority control of council, we scale the council-dominant majority\u2019s past",
+    "Effects on the Aggregate Supply of Housing",
+    "Distributive Outcomes",
+    "Effects on the Spatial Distribution of Housing",
+    "Robustness Checks",
+    "Conclusion",
+    "References",
+    "Online Appendix for \u201cThe Supply\u2013Equity Trade-off: The",
+    "Contents",
+    "A Descriptive Statistics",
+    "B Aggregate Outcomes",
+    "C Distributive Outcomes",
+    "C.1 Distributive Standard Errors",
+    "D Data Collection",
+    "D.1 Aggregate Permits",
+    "D.2 Electoral Institutions",
+    "D.3 Estimating Candidate Ethnicities",
+    "D.4 Interviews with Key CVRA Stakeholders",
+    "D.5 Zoning Amendments"
+  ],
+  "warnings": [
+    "could not locate region for Table 1 on p.17",
+    "could not locate region for Figure 3 on p.27",
+    "could not locate region for Appendix Table C-10 on p.28",
+    "could not locate region for Table A-1 on p.40",
+    "could not locate region for Table A-2 on p.41",
+    "could not locate region for Table A-3 on p.41",
+    "could not locate region for Table D-14 on p.63"
+  ]
+}

@@ -1,0 +1,30 @@
+,"State board,",limited,input,−0.086∗∗,−0.086∗∗
+,,,,(0.026),(0.026)
+,Outcome ma,tch,,0.139∗∗∗,0.137∗∗
+,,,,(0.025),(0.025)
+,"State board,",limited,input x Outcome match,0.006,0.003
+,,,,(0.035),(0.035)
+,Homeowner,,,,0.017
+,,,,,(0.021)
+,"White, non-H",ispanic,,,0.010
+,,,,,(0.021)
+,Income (cont,.),,,0.001
+,,,,,(0.003)
+,Female (bi.),,,,−0.014
+,,,,,(0.018)
+,College or m,ore,,,0.002
+,,,,,(0.019)
+,Age,,,,−0.002∗∗
+,,,,,(0.001)
+,Republican (,"-1, 1)",,,−0.043∗∗
+,,,,,(0.010)
+,(Intercept),,,0.483∗∗∗,0.538∗∗
+,,,,(0.019),(0.041)
+,R2,,,0.085,0.114
+,Adj. R2,,,0.082,0.104
+,Num. obs.,,,953,946
+,RMSE,,,0.270,0.267
+,∗∗∗p < 0.001; ∗∗p,< 0.01; ∗p,< 0.05,,
+Table I-11,: Effect of p,rocess—,interacted with outcome,match—on pe,rceived
+legitimacy,of siting de,cision (,"Experiment 1, Branch 2 o",nly). Displa,yed in F
+Figure S9.,,,,,

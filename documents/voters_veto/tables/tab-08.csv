@@ -1,0 +1,22 @@
+∗∗p < 0.001; ∗∗p < 0.01;,∗p < 0.05,,,,,,
+ble G-5: Effect of,change in a precinct’s,population,density on sup,port fo,r vo,ters’,"veto,"
+93. Treatment da,ta are winsorized. Con,trols includ,ed in all model,"s, but",excl,uded,from
+le due to space c,onstraints.,,,,,,
+,,Supp,ort for voters’,"veto, 1",993,,
+,,Model 1,Model 2 M,odel 3,M,odel,4
+Pct. point ∆ in n,"ew arrivals, 1980-93",0.001,0.001,,,,
+,,(0.002),(0.002),,,,
+Prop. ∆ in new a,"rrivals, 1980-93",,,0.002,,0.00,2
+,,,(,0.002),,(0.00,2)
+Place Fixed Effec,ts,Yes,Yes,Yes,,Yes,
+Controls,,Yes,Yes,Yes,,Yes,
+Time-varying Con,trols,No,Yes,No,,Yes,
+R2,,0.710,0.729,0.710,,0.72,9
+Adj. R2,,0.698,0.717,0.698,,0.71,7
+Num. obs.,3,651 3,649 365,1,36,49,
+RMSE,,2.758,2.668,2.758,,2.66,7
+N Clusters,,142,142 14,2,1,42,
+∗∗∗p < 0.001; ∗∗p < 0.01,; ∗p < 0.05,,,,,,
+ble G-6: Effect of,change the rate of resid,ential churn,within the pas,t 10 ye,ars o,n sup,port
+"voters’ veto, 199",3. Treatment data are,winsorized.,Controls includ,ed in a,ll m,odels,", but"
+luded from table,due to space constrain,ts.,,,,,

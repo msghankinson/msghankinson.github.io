@@ -1,0 +1,36 @@
+able 2: Effect of,Conversion to Single-,Member Dist,ricts on Logge,d,Multifam,ily Units P
+"itted, Interacted",with City Characteri,stics,,,,
+,,H1,H2,,H3,H4
+,,(1),(2),,(3),(4)
+Single-member d,istricts −,0.805,−1.226∗,−,1.348∗∗,−1.292∗
+,,(0.459),(0.612),,(0.475),(0.592)
+SMD∗Low segre,gation,,0.388,,,
+,,,(0.872),,,
+SMD∗High majo,rity population,,,,0.216,
+,,,,,(0.571),
+SMD∗Low majo,rity control,,,,,0.362
+,,,,,,(0.883)
+Percent non-His,panic white,0.080,,,,
+,,(0.162),,,,
+Percent Black,−,0.379,,,,
+,,(0.299),,,,
+Percent Hispanic,,0.051,,,,
+,,(0.171),,,,
+Population (tho,usands) −,0.055,−0.119,−,0.004,−0.094
+,,(0.103),(0.129),,(0.088),(0.121)
+Vacancy rate,,18.206,41.479,,36.532,20.807
+,(,20.706),(27.165),(,22.760),(26.374)
+Home ownership,rate,10.872,15.738,,3.863,10.044
+,,(8.841),(11.774),,(8.143),(10.793)
+Median home va,lue (thousands) −,0.010,−0.006,−,0.010,−0.015
+,,(0.008),(0.010),,(0.009),(0.009)
+Median income (,thousands),0.024,−0.002,−,0.001,0.015
+,,(0.074),(0.093),,(0.079),(0.082)
+Past minority re,presentation,1.549,−1.096,,1.908,0.646
+,,(2.732),(3.086),,(2.757),(2.543)
+City FE,,Yes,Yes,,Yes,Yes
+Year FE,,Yes,Yes,,Yes,Yes
+City-specific Tre,nds,Yes,Yes,,Yes,Yes
+Observations,,597,399,,397,397
+R2,0,.573,0.563,0,.611,0.615
+,,,∗,,∗∗,∗∗∗

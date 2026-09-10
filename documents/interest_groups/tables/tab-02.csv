@@ -1,0 +1,12 @@
+Variable,,,N,Mean Std,. Dev.,Min P,ctl. 25 P,ctl. 75,Max
+Minutes (Al,l),,164,144,238,10,32,170,2546
+Binary (All),,,164,0.2,0.4,0,0,0,1
+Minutes (Ci,ty Counc,il),164,136,230,10,31,166,2526
+Binary (City,Council,),164,0.18,0.38,0,0,0,1
+Minutes (Pl,anning C,ommission),164,8.4,26,0,0,2,201
+Binary (Pla,nning Co,mmission),164,0.043,0.2,0,0,0,1
+Zoning Tax,(quarter,area),164,87368,128636,-9668,5868,134437,533703
+Median Hom,e Value,(2020),162,373371,255762,73100,194275,463925,1452100
+Wharton In,dex (2018,),41,0.5,1,-1.7,-0.38,0.99,3
+Democratic,Ideology,(2016),144,0.071,0.19,-0.42,-0.062,0.18,0.62
+Dem. Pres.,Vote Sha,re (2016),144,0.61,0.18,0.18,0.48,0.72,0.97

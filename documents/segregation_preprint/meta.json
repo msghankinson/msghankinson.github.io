@@ -1,0 +1,88 @@
+{
+  "slug": "segregation_preprint",
+  "pages": 28,
+  "title": "Recent studies find that high levels of black-white segregation increased rates of",
+  "words": 10513,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Map of Overlapping Subprime Lending and Minority Clusters for Baltimore, MD, Metropolitan Area (TI = 0.89)",
+      "page": 8,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure 2",
+      "caption": "Map of Overlapping Subprime Lending and Minority Clusters for Anaheim-Santa Ana, CA, Metropolitan Area (TI = 0.82)",
+      "page": 9,
+      "image": "figures/fig-02.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table 1",
+      "caption": "Summary Statistics of Variables Used in Analyses Variables Mean SD Dependent variables Metropolitan-level proportion of subprime 0.284 0.218 lending in minority tracts, 2006 Metropolitan-level targeting index, 2006 0.634 0.271 Tract-level subprime loan rate, 2006 0.305 0.165 Segregation indices (metropolitan level) Black/Hispanic clustering index, 2000 0.586 0.146",
+      "page": 12,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 3",
+      "caption": "Regression Results for Multilevel Analysis of Tract-Level Subprime Lending Rates on Segregation (1) (2) Random intercept model Cross-level interaction Tract level Minority tract, 2000 0.15** 0.14** (0.02) (0.02) Population (square root), 0.00 0.00 2000 (0.00) (0.00)",
+      "page": 19,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A2",
+      "caption": "Regression Results for Multilevel Analysis of Tract-Level Subprime Lending Rates for Home Purchases on Segregation (1) (2) Random intercept model Cross-level interaction Tract level Minority tract, 2000 0.19** 0.16** (0.02) (0.02) Population (square root), 0.00 0.00 2000 (0.00) (0.00)",
+      "page": 26,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    }
+  ],
+  "headings": [
+    "Racial and Spatial Targeting: Segregation",
+    "and Subprime Lending within and across",
+    "Metropolitan Areas",
+    "Prior Research on Segregation and the Housing Crisis",
+    "Strategy and Hypotheses",
+    "Data and Methods",
+    "Dependent Variables",
+    "Explanatory Variables",
+    "0.84. In the presentation of results, we also note results from analyses using dis-",
+    "Model Specifications",
+    "\u03b2 + \u03b2 (Segreegation) + \u03b2 (Proportion Bl./Hisp.)",
+    "+ \u03b2 (Log of Population) ++ \u03b2 (Log Median Household Income)",
+    "+ \u03b2 (West) + \u03b2 (Midwest) + \u03b2 (Soouth) + \u03b2 (Housing Starts Ratio)",
+    "Level 1: (Subprime Loan Rate) = \u03b2 + \u03b2 (Minority Tract)",
+    "++ \u03b2 (Sq. Rt. Population) + \u03b2 (Ownership) (2)",
+    "Level 2: \u03b2 = \u03b3 + \u03b3 (Segregation) + \u03b3 ((Proportion Bl./Hisp.)",
+    "+ \u03b3 (Log of Population) + \u03b3 (Log Median Household Incomee)",
+    "+ \u03b3 (West) + \u03b3 (Midwest) + \u03b3 (South) (3)",
+    "\u03b2 = \u03b3 + \u03b3 (Segregation) + \u00b5 . (5)",
+    "Results",
+    "Segregation and Subprime Lending in Minority Tracts and Clusters",
+    "Multilevel Analysis for Tract-Level Subprime Lending Rates",
+    "Discussion and Conclusion",
+    "Notes",
+    "2. CBSAs are census-defined geographic units that are distinct from Metropolitan",
+    "3. We identified local clusters with the Local Moran\u2019s I based on contiguous polygons",
+    "5. We computed the Global Moran\u2019s I using first-order polygon contiguity based on",
+    "6. For metropolitan areas with black clustering indices, the clustering index has cor-",
+    "7. Robust standard errors adjust for heteroskedasticity and are calculated using the",
+    "8. Using segregation indices for blacks and Hispanics separately, black-white dissimilar-",
+    "9. Using segregation indices for blacks and Hispanics separately, black isolation has a",
+    "10. Using the dissimilarity index, the coefficients for segregation and the housing starts",
+    "11. Rugh and Massey (2010) and Hyra et al. (2013) use instrumental variable analy-",
+    "About the Authors",
+    "References"
+  ],
+  "warnings": []
+}

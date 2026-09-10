@@ -1,0 +1,28 @@
+Pct. point,∆ in non-white pop.,0.022∗∗∗,0.020∗∗∗,,
+,,(0.003),(0.003),,
+Prop. ∆ in,non-white pop.,,,0.028∗∗∗,0.008∗
+,,,,(0.003),(0.003)
+"Pct. white,",non-Hispanic (1980),,0.099∗∗∗,,0.110∗
+,,,(0.014),,(0.015)
+Pct. unemp,loyed (1980),−,0.581∗∗∗,−,0.644∗
+,,,(0.074),,(0.076)
+Pct. homeo,wner (1980),,0.095∗∗∗,,0.084∗
+,,,(0.012),,(0.012)
+Pct. vacant,(1980),,0.072,,0.079
+,,,(0.068),,(0.069)
+Log med. h,.h. income (1980),,0.013,,0.009
+,,,(0.008),,(0.009)
+Pop. densit,y (1980),−,3.178∗∗∗,−,3.197∗
+,,,(0.922),,(0.938)
+Place Fixed,Effects,Yes,No,Yes,No
+Controls,,No,Yes,No,Yes
+Num. obs.,,3112 31,12,3112 31,12
+Parameters,,235,17,235,17
+Log Likeliho,od,3592.387 36,53.932,3637.647 36,02.665
+AIC (Linear,model),−5404.983 −62,33.041,−5852.253 −58,51.342
+AIC (Spatia,l model),−6714.774 −72,73.864,−6805.294 −71,71.331
+LR test: sta,tistic,1311.790 10,42.823,955.041 13,21.988
+LR test: p-,value,0.000,0.000,0.000,0.000
+∗∗∗p < 0.001; ∗∗,p < 0.01; ∗p < 0.05,,,,
+able E-4: E,ffect of change in non-,white population (19,80-1993) o,n support for voters’,"veto,"
+patial Durbi,n error model. Treatm,ent data are winsor,ized.,,

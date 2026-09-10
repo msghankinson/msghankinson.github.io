@@ -1,0 +1,24 @@
+,,,,Redistributi,ve Policy,Needs-based,Policy
+,,,,(1),(2),(3),(4)
+Above Median,Income,,,0.019,−0.035,,0.083
+,,,,(0.042),(0.065),,(0.053)
+Party = Indepe,ndent,,,−0.175∗∗∗,−0.156∗∗,−0.079,0.013
+,,,,(0.053),(0.070),(0.061),(0.072)
+Party = Repub,lican,,,−0.162∗∗∗,−0.106∗,−0.177∗∗∗,−0.139∗∗
+,,,,(0.050),(0.062),(0.047),(0.060)
+Above Median,Overdose,Rate × P,arty = Independent,,,−0.025,−0.065
+,,,,,,(0.089),(0.107)
+Above Median,Overdose,Rate × P,arty = Republican,,,0.046,0.047
+,,,,,,(0.069),(0.071)
+Above Median,Overdose,Rate,,,−0.010,−0.107∗∗,−0.077∗
+,,,,,(0.032),(0.044),(0.046)
+Above Median,Income ×,Party =,Independent,−0.262∗∗∗,−0.214∗∗,,
+,,,,(0.087),(0.101),,
+Above Median,Income ×,Party =,Republican,−0.208∗∗∗,−0.175∗∗,,
+,,,,(0.068),(0.071),,
+Constant,,,,0.684∗∗∗,0.580∗∗∗,0.562∗∗∗,0.437∗∗∗
+,,,,(0.030),(0.100),(0.032),(0.099)
+Demographic c,ontrols,,,,(cid:88),,(cid:88)
+Observations,,,,990,842,"1,010",902
+Adjusted R2,,,,0.092,0.126,0.024,0.045
+F Statistic,,,,21.135∗∗∗,8.112∗∗∗,5.861∗∗∗,3.496∗∗∗

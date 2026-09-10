@@ -1,0 +1,28 @@
+T,able,C-16: D,esign analysis.,Smallest,effect size,of inter,est: d =,0.15 (≈,0.047 o,n th,e,0–1
+s,cale a,t the ob,served outcom,e SDs).,Per-study es,timates,are the,white-respo,ndent,trea,tm,ent
+e,ffect (,the lowe,r-order treatme,nt term in,a treatmen,t×non-,white inter,action wit,h covar,iates,"),",i.e.
+t,he est,imates p,ooled in Figur,e 1. MD,E is the 80%,-power,minimum,detectabl,e effect,", M",D,E =
+(,z 1−α/,+ z 2 powe,) · SE. Equival r,ence is a,TOST: the 9,0% CI l,ies entirely,within ±,SESOI.,,,
+,Study,,,n Es,t. SE,95%,CI MD,E (raw),MDE (d,),E,quiv.
+,Study,1 (Afford,able Housing),552 -0.,025 0.028,"[-0.081,",0.030],0.079,0.261,,,No
+,Study,2 (Local,Housing),1829 -0.,014 0.013,"[-0.039,",0.010],0.035,0.112,,,Yes
+,Study,3 (Local,Housing),1454 0.0,12 0.023,"[-0.033,",0.057],0.064,0.198,,,No
+,Study,4 (State,Control),1951 -0.,009 0.015,"[-0.039,",0.021],0.043,0.143,,,Yes
+,Poole,"d (white,",RE),— -0.,010 0.009,"[-0.027,",0.007],0.024,0.077,,,Yes
+,Poole,"d (ATE,",RE),— -0.,008 0.008,"[-0.024,",0.008],0.022,0.072,,,Yes
+,Note:,two-sided,α = 0.05; power =,0.80. MDE,computed fro,m the co,variate-adjus,ted treatmen,t-coeffic,ient S,E,(HC2
+,robust,"), so the p",er-study and pool,ed figures s,hare one basis.,The tig,htest equivale,nce margin,(smallest,∆ fo,r,which
+,the 90,% CI lies,"within [−∆,∆]) is",±0.024 (d,≈ 0.08) for th,e pooled,white estim,ate and ±0.0,21 (d ≈,0.07),f,or the
+,pooled,ATE. Th,e pooled estimate,is dominat,ed by Study 3,: meta w,eights are S,tudy 1 = 3.,"3%, Stu",dy 2,=,"7.6%,"
+,Study,3 = 64.0%,", Study 4 = 25.0%",.,,,,,,,,
+,Me,an treat,ment effects vs.,distributi,onal spread,across,studies (w,hite respo,ndents,only,),
+,,,M,ean effect,,,Distr,ibutional s,pread,,,
+,,Study 1,,,,,,,,,,
+,(Local h,ousing att.),,,,,,,,,,
+,,Study 2,,,,,,,,,,
+,(Local h,ousing att.),,,,,,,,,,
+,,Study 3,,,,,,,,,,
+,(Local h,ousing att.),,,,,,,,,,
+,,Study 4,,,,,,,,,,
+,(State,control att.),,,,,,,,,,
+,,Pooled (RE),,,,,,,,,,

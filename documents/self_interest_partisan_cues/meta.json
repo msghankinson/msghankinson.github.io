@@ -1,0 +1,190 @@
+{
+  "slug": "self_interest_partisan_cues",
+  "pages": 56,
+  "title": "The Independent Effects of Partisan Cues and Self-Interest: Evidence from Local Housing Policy Attitudes",
+  "words": 13256,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure B-1",
+      "caption": "Sample size withing each income and density quartile cross-section.",
+      "page": 33,
+      "image": "figures/fig-01.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table 1",
+      "caption": "Effect of partisan cues and proposal attributes on probability of support. See Section E for tables displaying full demographic controls.",
+      "page": 16,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 2",
+      "caption": "Effect of partisan cues interacted with predictors of housing priors, among respon- dents with substantial financial exposure.",
+      "page": 19,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 3",
+      "caption": "Effect of partisan cues interacted with predictors of housing priors, among respon- dents heavily invested in housing politics.",
+      "page": 21,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 4",
+      "caption": "Effect of partisan cues interacted with predictors of housing priors, among respon- dents with strong symbolic attachments.",
+      "page": 23,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-2",
+      "caption": "Effect of partisan cues and proposal attributes on probability of support. No demographic control variables.",
+      "page": 35,
+      "image": "tables/tab-05.png",
+      "csv": "tables/tab-05.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-3",
+      "caption": "Effect of partisan cues interacted with predictors of housing priors, among re- spondents with substantial financial exposure. No demographic control variables.",
+      "page": 36,
+      "image": "tables/tab-06.png",
+      "csv": "tables/tab-06.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-4",
+      "caption": "Effect of partisan cues interacted with predictors of housing priors, among re- spondents heavily invested in housing politics. No demographic control variables.",
+      "page": 37,
+      "image": "tables/tab-07.png",
+      "csv": "tables/tab-07.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-5",
+      "caption": "Effect of partisan cues interacted with predictors of housing priors, among re- spondents with strong symbolic attachments. No demographic control variables.",
+      "page": 38,
+      "image": "tables/tab-08.png",
+      "csv": "tables/tab-08.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-6",
+      "caption": "Effect of partisan cues and proposal attributes on probability of attending local meeting about proposal.",
+      "page": 39,
+      "image": "tables/tab-09.png",
+      "csv": "tables/tab-09.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-7",
+      "caption": "Effect of partisan cues and proposal attributes on probability of support.",
+      "page": 40,
+      "image": "tables/tab-10.png",
+      "csv": "tables/tab-10.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table D-8",
+      "caption": "Effect of partisan cues and proposal attributes on probability of support. First proposal only.",
+      "page": 41,
+      "image": "tables/tab-11.png",
+      "csv": "tables/tab-11.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table E-9",
+      "caption": "Effect of partisan cues and proposal attributes on probability of support.",
+      "page": 42,
+      "image": "tables/tab-12.png",
+      "csv": "tables/tab-12.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table E-10",
+      "caption": "Effect of partisan cues interacted with predictors of housing priors, among respondents with substantial financial exposure.",
+      "page": 43,
+      "image": "tables/tab-13.png",
+      "csv": "tables/tab-13.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table E-11",
+      "caption": "Effect of partisan cues interacted with predictors of housing priors, among respondents heavily invested in housing politics.",
+      "page": 44,
+      "image": "tables/tab-14.png",
+      "csv": "tables/tab-14.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table E-12",
+      "caption": "Effect of partisan cues interacted with predictors of housing priors, among respondents with strong symbolic attachments.",
+      "page": 45,
+      "image": "tables/tab-15.png",
+      "csv": "tables/tab-15.csv"
+    }
+  ],
+  "headings": [
+    "Michael Hankinson",
+    "February 8, 2026",
+    "Partisanship, Self-Interest, and Opinion Formation",
+    "Design",
+    "Model",
+    "Hypotheses",
+    "Results",
+    "Variation by Housing Priors",
+    "Discussion",
+    "Conclusion",
+    "References",
+    "Supplementary Information",
+    "A Sample",
+    "B Descriptive Statistics",
+    "C Results without Controls",
+    "D Additional Results",
+    "E Tables Displaying Full Controls",
+    "F Survey Instrument",
+    "F.1 Attention Check I",
+    "F.2 Demographics",
+    "1. What is the highest level of education you have completed?",
+    "2. Do you identify as male or female?",
+    "3. In what year were you born?",
+    "4. What is the 5-digit ZIP code of your primary residence?",
+    "7. If Generally speaking, do you consider yourself a... = Democrat: Would you call",
+    "8. If Generally speaking, do you consider yourself a... = Republican: Would you call",
+    "11. Are you of Spanish, Hispanic, or Latino origin?",
+    "F.3 Housing Traits",
+    "1. Which of the following best describes you?",
+    "2. In what year did you move into your current neighborhood?",
+    "4. How many bedrooms are in your housing unit?",
+    "5. How many bathrooms are in your housing unit?",
+    "9. If homeowner: Thinking about your neighborhood, what is your best guess for the",
+    "10. Think about your neighborhood. Which best represents the typical type of housing in",
+    "12. Think about the size of your neighborhood. For some people, their neighborhood is",
+    "F.4 Pretreatment Attitudes",
+    "3. Next, we have some questions about your thoughts on housing development in your",
+    "6. If homeowner: Have you paid off your mortgage?",
+    "9. How important is this issue\u2014whether or not to build more in your neighborhood\u2014to",
+    "F.5 Attention Check II",
+    "F.6 Willingness to Pay Module",
+    "1. Imagine [TYPICAL HOUSING TYPE] [RANDOMIZE DISTANCE] away from your",
+    "F.7 Compensation Module",
+    "4. Distance",
+    "1. Would you vote for or against this proposal?",
+    "2. How would you describe your support or opposition towards this proposal (including",
+    "F.8 Compensation Policy Thoughts"
+  ],
+  "warnings": [
+    "could not locate region for Table B-1 on p.34"
+  ]
+}

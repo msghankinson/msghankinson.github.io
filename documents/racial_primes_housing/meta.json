@@ -1,0 +1,258 @@
+{
+  "slug": "racial_primes_housing",
+  "pages": 88,
+  "title": "Racial Demographic Change Primes Do Not Affect Affordable Housing Attitudes Among Whites",
+  "words": 22469,
+  "figures": [
+    {
+      "kind": "figure",
+      "label": "Figure 1",
+      "caption": "Treatment effects on housing policy support among white respondents and race interac- tion.",
+      "page": 21,
+      "image": "figures/fig-01.png",
+      "csv": null
+    },
+    {
+      "kind": "figure",
+      "label": "Figure C-1",
+      "caption": "Analysis of treatment effects among white respondents alone. Left: average treatment effect on housing support (0\u20131 scale). Right: variance ratio s2 /s2 on a log scale; values right of treat ctrl 1.0\u00d7 indicate greater spread in the treated group. Diamonds show pooled random-effects estimates.",
+      "page": 48,
+      "image": "figures/fig-02.png",
+      "csv": null
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "label": "Table 1",
+      "caption": "Summary of Studies, Conditions, and Samples",
+      "page": 7,
+      "image": "tables/tab-01.png",
+      "csv": "tables/tab-01.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 2",
+      "caption": "Housing and immigration support among white long-time homeowners in racially changing ZIPs (Study 1, H1 and RQ1).",
+      "page": 10,
+      "image": "tables/tab-02.png",
+      "csv": "tables/tab-02.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 3",
+      "caption": "Housing and immigration support among long-time homeowners in racially changing ZIPs, by respondent race (Study 1, RQ3).",
+      "page": 11,
+      "image": "tables/tab-03.png",
+      "csv": "tables/tab-03.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 4",
+      "caption": "Housing support in a national two-wave panel (Study 2, H1 and H2).",
+      "page": 13,
+      "image": "tables/tab-04.png",
+      "csv": "tables/tab-04.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 5",
+      "caption": "Housing support in a national sample with non-white oversample (Study 3, H1 and H2).",
+      "page": 15,
+      "image": "tables/tab-05.png",
+      "csv": "tables/tab-05.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 6",
+      "caption": "Support for state housing control among residents of racially changing ZIPs (Study 4, H1).",
+      "page": 18,
+      "image": "tables/tab-06.png",
+      "csv": "tables/tab-06.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table 7",
+      "caption": "Support for state housing control among residents of racially changing ZIPs, by partisan match with governor (Study 4, RQ4). Models 3\u20134 restrict to white respondents.",
+      "page": 19,
+      "image": "tables/tab-07.png",
+      "csv": "tables/tab-07.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A-1",
+      "caption": "Descriptive statistics, Studies 1 and 2. Mean (SD).",
+      "page": 32,
+      "image": "tables/tab-08.png",
+      "csv": "tables/tab-08.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table A-2",
+      "caption": "Descriptive statistics, Studies 3 and 4. Mean (SD).",
+      "page": 32,
+      "image": "tables/tab-09.png",
+      "csv": "tables/tab-09.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-3",
+      "caption": "Letter-writing behavior among white long-time homeowners in racially changing ZIPs (Study 1, RQ2).",
+      "page": 36,
+      "image": "tables/tab-10.png",
+      "csv": "tables/tab-10.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-4",
+      "caption": "Immigration support in a national two-wave panel (Study 2, RQ1).",
+      "page": 37,
+      "image": "tables/tab-11.png",
+      "csv": "tables/tab-11.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-5",
+      "caption": "Housing support in a national two-wave panel, by respondent race (Study 2, RQ2).",
+      "page": 38,
+      "image": "tables/tab-12.png",
+      "csv": "tables/tab-12.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-6",
+      "caption": "Housing support in a national two-wave panel, by treatment arm (Study 2, RQ3).",
+      "page": 39,
+      "image": "tables/tab-13.png",
+      "csv": "tables/tab-13.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-7",
+      "caption": "Housing support among national panel respondents in racially changing ZIPs (Study 2, H1 and H2).",
+      "page": 40,
+      "image": "tables/tab-14.png",
+      "csv": "tables/tab-14.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-8",
+      "caption": "Housing support in a national sample with non-white oversample, by respondent race (Study 3, RQ2).",
+      "page": 41,
+      "image": "tables/tab-15.png",
+      "csv": "tables/tab-15.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-9",
+      "caption": "Meeting attendance in a national sample with non-white oversample (Study 3, RQ3).",
+      "page": 42,
+      "image": "tables/tab-16.png",
+      "csv": "tables/tab-16.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-10",
+      "caption": "Immigration support in a national sample with non-white oversample (Study 3, RQ1).",
+      "page": 42,
+      "image": "tables/tab-17.png",
+      "csv": "tables/tab-17.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-11",
+      "caption": "Emotional responses in a national sample with non-white oversample (Study 3, Ex- ploratory Analysis).",
+      "page": 43,
+      "image": "tables/tab-18.png",
+      "csv": "tables/tab-18.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-12",
+      "caption": "Emotional responses in a national sample with non-white oversample, by symbolic racism score (Study 3, Exploratory Analysis 2).",
+      "page": 44,
+      "image": "tables/tab-19.png",
+      "csv": "tables/tab-19.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-13",
+      "caption": "Support for state housing control among residents of racially changing ZIPs, by prior housing supply support (Study 4, RQ1).",
+      "page": 45,
+      "image": "tables/tab-20.png",
+      "csv": "tables/tab-20.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-14",
+      "caption": "Letter-writing support for state housing control among residents of racially changing ZIPs (Study 4, RQ2).",
+      "page": 46,
+      "image": "tables/tab-21.png",
+      "csv": "tables/tab-21.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-15",
+      "caption": "Letter-writing support for state housing control among residents of racially changing ZIPs, by partisan match with governor (Study 4, RQ3).",
+      "page": 47,
+      "image": "tables/tab-22.png",
+      "csv": "tables/tab-22.csv"
+    },
+    {
+      "kind": "table",
+      "label": "Table C-16",
+      "caption": "Design analysis. Smallest effect size of interest: d = 0.15 ( \u2248 0.047 on the 0\u20131 scale at the observed outcome SDs ). Per-study estimates are the white-respondent treatment effect (the lower-order treatment term in a treatment \u00d7 non-white interaction with covariates), i.e. the estimates pooled in Figure 1. MDE is the 80%-power minimum detectable effect, MDE = (z + z ) \u00b7 SE. Equivalence is a TOST: the 90% CI lies entirely within \u00b1SESOI. 1\u2212\u03b1/2 power Study n Est. SE 95% CI MDE (raw) MDE (d) Equiv. Study 1 (Affordable Housing) 552 -0.025 0.028 [-0.081, 0.030] 0.079 0.261 No Study 2 (Local Housing) 1829 -0.014 0.013 [-0.039, 0.010] 0.035 0.112 Yes",
+      "page": 48,
+      "image": "tables/tab-23.png",
+      "csv": "tables/tab-23.csv"
+    }
+  ],
+  "headings": [
+    "Racial Primes in Political Science",
+    "Racial Demographic Change and Affordable Housing Policy",
+    "Analytical Strategy",
+    "Hypotheses",
+    "Study 1",
+    "Study 2",
+    "Study 3",
+    "Study 4",
+    "Meta-Analysis and Statistical Power",
+    "Discussion",
+    "References",
+    "Online Appendix for \u201cRacial Demographic Change Primes Do Not",
+    "Contents",
+    "A Descriptive Statistics",
+    "B Experimental Conditions",
+    "C Additional Tables",
+    "D Pre-Registrations",
+    "Study Design Overview",
+    "Hypotheses",
+    "Research Questions",
+    "Analytical Strategy",
+    "References",
+    "Online Appendix for \u201cLocal Control Over A\u21b5ordable Housing\u201d",
+    "Contents",
+    "A Wave 1: Survey Questionnaire",
+    "B Wave 2: Survey Questionnaire",
+    "1. What is your annual household income (including bonuses and commissions) in U.S. dollars?",
+    "2. Do you identify as male or female?",
+    "3. In what year were you born?",
+    "5. What is the highest level of education you have completed?",
+    "Study Design Overview",
+    "Hypotheses",
+    "Research Questions",
+    "Analytical Strategy",
+    "References",
+    "Online Appendix for \u201cLocal Control Over A\u21b5ordable Housing\u201d",
+    "Contents",
+    "A Wave 1: Survey Questionnaire",
+    "1. What is your 5-digit ZIP code?",
+    "B Wave 2: Survey Questionnaire",
+    "1. What is your annual household income (including bonuses and commissions) in U.S. dollars?",
+    "2. Do you identify as male or female?",
+    "3. In what year were you born?",
+    "5. What is the highest level of education you have completed?",
+    "3. Thank you so much for your participation so far!"
+  ],
+  "warnings": []
+}

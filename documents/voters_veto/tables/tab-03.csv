@@ -1,0 +1,10 @@
+,,(0.008),,(0.014)
+City FE,Yes,Yes,Yes,Yes
+Controls,Yes,Yes,Yes,Yes
+Time-varying Controls,No,Yes,No,Yes
+R2,0.751,0.763,0.723,0.737
+Adj. R2,0.740,0.753,0.711,0.726
+Num. obs. 365,1 36,49 365,1 36,49
+RMSE,2.556,2.495,2.694,2.627
+N Clusters 14,2 1,42 14,2 1,42
+∗∗∗p < 0.001; ∗∗p < 0.01; ∗p < 0.05,,,,

@@ -1,0 +1,23 @@
+,(1),(2),(3),(4),(5)
+Single-member districts,0.105,−0.816,−1.183∗∗ −,1.036∗,−1.226∗
+,(0.456),(0.448),(0.448),(0.426),(0.612)
+SMD∗Low segregation,−0.119,0.302,0.406,0.541,0.388
+,(0.713),(0.481),(0.481),(0.572),(0.872)
+Population (thousands),,,,0.101,−0.119
+,,,,(0.064),(0.129)
+Vacancy rate,,,,27.175,41.479
+,,,(,15.428),(27.165)
+Home ownership rate,,,,14.567,15.738
+,,,,(9.525),(11.774)
+Median home value (thousands),,,−,0.007,−0.006
+,,,,(0.007),(0.010)
+Median income (thousands),,,,0.009,−0.002
+,,,,(0.078),(0.093)
+Past minority representation,,,−,0.683,−1.096
+,,,,(2.371),(3.086)
+City FE,No,Yes,Yes,Yes,Yes
+Year FE,No,Yes,Yes,Yes,Yes
+City-specific Trends,No,No,Yes,No,Yes
+Observations,399,399,399,399,399
+R2,0.0003,0.450,0.549 0,.471,0.563
+,,,∗ ∗,∗,∗∗∗

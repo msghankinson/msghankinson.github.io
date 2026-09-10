@@ -1,0 +1,30 @@
+,"State board,",limited,input,−,0.096∗∗∗ −,0.097∗
+,,,,,(0.017),(0.017)
+,Prefer local g,overnm,ent,,0.171∗∗∗,0.167∗
+,,,,,(0.022),(0.023)
+,"State board,",limited,input x Local,preference −,0.057 −,0.063
+,,,,,(0.034),(0.033)
+,Homeowner,,,,−,0.011
+,,,,,,(0.019)
+,"White, non-H",ispanic,,,,0.025
+,,,,,,(0.019)
+,Income (cont,.),,,,0.003
+,,,,,,(0.003)
+,Female (bi.),,,,−,0.002
+,,,,,,(0.017)
+,College or m,ore,,,,0.029
+,,,,,,(0.018)
+,Age,,,,−,0.002∗
+,,,,,,(0.001)
+,Republican (,"-1, 1)",,,−,0.035∗
+,,,,,,(0.010)
+,(Intercept),,,,0.541∗∗∗,0.593∗
+,,,,,(0.011),(0.034)
+,R2,,,,0.109,0.144
+,Adj. R2,,,,0.106,0.135
+,Num. obs.,,,9,64 9,56
+,RMSE,,,,0.260,0.256
+,∗∗∗p < 0.001; ∗∗p,< 0.01; ∗p,< 0.05,,,
+Table I-7:,Effect of pro,cess—in,teracted with,preference for,local govern,ment—
+fairness a,nd legitimacy,of siting,decision (Exp,"eriment 1, Br",anch 1 only).,Display
+S8.,,,,,,

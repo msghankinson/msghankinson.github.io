@@ -1,0 +1,16 @@
+able C-12: Effe,ct of Conversion,to,Single-Memb,er Di,stricts on Logged U,ni,ts,Approved
+erciles Defined,Over All Treated,C,ities (Case St,udy,Sample) (Minority b,lo,ck,groups:
+han 38 percent,"white, white bloc",k,groups: more,than,67 percent white),,,
+,,T,otal Units,Mult,ifamily Units Sing,le,-f,amily unit
+,,,(1),,(2),,,(3)
+Single-member,districts,,0.392,,0.254,,,0.117
+,,p,= 0.176,p,= 0.316,p,=,0.623
+Minority block,groups,,0.365,,0.393,,,0.048
+,,p,= 0.097,p,= 0.134,p,=,0.761
+SMD∗Minority,block groups,,−0.546,,−0.491,,−,0.120
+,,p,= 0.000∗∗∗,p,= 0.000∗∗∗,p,=,0.496
+Controls,,,Yes,,Yes,,,Yes
+City FE,,,Yes,,Yes,,,Yes
+Year FE,,,Yes,,Yes,,,Yes
+City Trends,,,Yes,,Yes,,,Yes
+Observations,,,"1,136",,"1,136",,1,",136"

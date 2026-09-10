@@ -1,0 +1,20 @@
+Table B.6: Support f,or 10 Percent S,upply Increase - 7,Point
+,Bivariate F,ull Full with,Fixed
+,(1) (,2),(3)
+Homeownership,−.90,−.69,−.60
+,(.06),(.07),(.09)
+"Ideology, Liberal",,.13,.11
+,,(.03),(.04)
+"Income, Log",,−.09,−.07
+,,(.03),(.04)
+"White, Non-Hispanic",,−.24,−.18
+,,(.06),(.08)
+Age,,−.01,−.01
+,,(.002),(.002)
+Male,,.16,.15
+,,(.06),(.07)
+Constant,4.20,4.44,4.08
+,(.05),(.10),(.20)
+Observations,"2,902 2,",846 2,",846"
+R2,.07 .,09,.31
+Adjusted R2,.07 .,09,.11

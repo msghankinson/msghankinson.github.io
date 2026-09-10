@@ -1,0 +1,14 @@
+Statistic,Mean S,t. Dev.,Min,Pctl(25),Pctl(75),Max
+Age,48.399,16.735,18,34,62,90
+% Above Median Overdose Rate,0.466,0.499,0,0,1,1
+% Above State Median Income,0.511,0.500,0,0,1,1
+% Female,0.536,0.499,0,0,1,1
+% Democrat,0.494,0.500,0.000,0.000,1.000,1.000
+% Liberal,0.348,0.476,0.000,0.000,1.000,1.000
+% College Degree,0.494,0.500,0,0,1,1
+% Married,0.505,0.500,0,0,1,1
+% White,0.663,0.473,0,0,1,1
+% Black,0.112,0.315,0,0,0,1
+% Hispanic,0.151,0.359,0,0,0,1
+% Homeowner,0.678,0.467,0.000,0.000,1.000,1.000
+% Know Someone with Addiction,0.536,0.499,0,0,1,1

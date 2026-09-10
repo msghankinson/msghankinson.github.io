@@ -1,0 +1,30 @@
+,"State board,",limited,input −,0.103∗∗∗ −,0.104∗
+,,,,(0.017),(0.017)
+,Outcome kno,wn,,0.005,0.005
+,,,,(0.017),(0.017)
+,"State board,",limited,input x Outcome known,0.021,0.020
+,,,,(0.024),(0.024)
+,Homeowner,,,,0.008
+,,,,,(0.014)
+,"White, non-H",ispanic,,,0.013
+,,,,,(0.014)
+,Income (cont,.),,,0.002
+,,,,,(0.002)
+,Female (bi.),,,−,0.016
+,,,,,(0.012)
+,College or m,ore,,,0.027∗
+,,,,,(0.013)
+,Age,,,−,0.002∗
+,,,,,(0.000)
+,Republican (,"-1, 1)",,−,0.044∗
+,,,,,(0.007)
+,(Intercept),,,0.546∗∗∗,0.576∗
+,,,,(0.012),(0.027)
+,R2,,,0.029,0.064
+,Adj. R2,,,0.028,0.060
+,Num. obs.,,19,95 19,79
+,RMSE,,,0.273,0.268
+,∗∗∗p < 0.001; ∗∗p,< 0.01; ∗p,< 0.05,,
+Table I-9,: Effect of p,rocess—,interacted with knowledge of,decision outco,me—o
+fairness,and legitimac,y of sit,"ing decision (Experiment 1,",Branches 1 an,d 2). D
+Figure 3.,,,,,

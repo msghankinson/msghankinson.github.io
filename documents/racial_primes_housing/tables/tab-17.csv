@@ -1,0 +1,28 @@
+,(,0.013),(0.024)
+R2,,0.001,0.048
+Adj. R2,−,0.000,0.043
+Num. obs.,142,0 13,79
+RMSE,,0.330,0.323
+∗∗∗p < 0.001; ∗,∗p < 0.01; ∗p <,0.05,
+ndance in a,national sam,ple with non-,white o
+,M,odel 1,Model 2
+Treatment,,0.015,0.015
+,(,0.015),(0.013)
+Non-white,,,−0.002
+,,,(0.014)
+Income (con,t.),,−0.006
+,,,(0.004)
+Female,,,0.028∗
+,,,(0.014)
+College or m,ore,,0.033∗
+,,,(0.014)
+Republican,"(-1, 1)",,−0.142∗
+,,,(0.008)
+Intercept,,0.476∗∗∗,0.420∗
+,(,0.011),(0.019)
+R2,,0.001,0.203
+Adj. R2,,0.000,0.200
+Num. obs.,150,1 14,52
+RMSE,,0.286,0.256
+∗∗∗p < 0.001; ∗,∗p < 0.01; ∗p <,0.05,
+support in a,national sa,mple with non,-white
